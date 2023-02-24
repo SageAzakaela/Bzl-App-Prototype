@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Station_505_Intensity1.mp3-5788300b515ffb28583f3b221a1573f3.mp3str"
+
+[deps]
+
+source_file="res://Prototype/Buzzes_1st_Attempt/Station_505_Intensity1.mp3"
+dest_files=[ "res://.import/Station_505_Intensity1.mp3-5788300b515ffb28583f3b221a1573f3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
