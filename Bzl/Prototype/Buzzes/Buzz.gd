@@ -12,6 +12,21 @@ func _ready():
 	print("Keywords for Buzz: ", Keywords)
 	$HBoxContainer/BuzzText.text = Buzz_Text
 	$HBoxContainer/User.text = CurrentLogIn.logged_in_username as String
+	
+	## Lets export the Keywords to Labels for future yoinking
+	if Keywords.size() > 0:
+		$Keyword1.text = Keywords[0]
+	if Keywords.size() > 1:
+		$Keyword2.text = Keywords[1]
+	if Keywords.size() > 2:
+		$Keyword3.text = Keywords[2]
+	if Keywords.size() > 3:
+		$Keyword4.text = Keywords[3]
+	if Keywords.size() > 4:
+		$Keyword5.text = Keywords[4]
+	if Keywords.size() > 5:
+		$Keyword6.text = Keywords[5]
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

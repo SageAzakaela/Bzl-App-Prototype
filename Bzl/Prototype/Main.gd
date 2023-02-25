@@ -91,3 +91,14 @@ func _on_SubmitBuzz_pressed():
 func _on_UserPanelAccessButtom_pressed():
 	UserPanel.visible = true
 	UserPanelExit = true
+
+
+func _on_BrowseRecent_toggled(button_pressed):
+	if button_pressed == true:
+		$Background/HBoxContainer/Hives/HiveContainer/BrowseRecent.text = "Return to Feed"
+		$Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer.visible = false
+		$Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/RecentTags.visible = true
+	else:
+		$Background/HBoxContainer/Hives/HiveContainer/BrowseRecent.text = "Browse Most Recent Hives"
+		$Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer.visible = true
+		$Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/RecentTags.visible = false

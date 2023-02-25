@@ -122,6 +122,7 @@ placeholder_text = "Hive Keywords"
 margin_top = 186.0
 margin_right = 204.0
 margin_bottom = 206.0
+toggle_mode = true
 text = "Browse Most Recent Hives"
 
 [node name="UserPanel" type="Panel" parent="Background/HBoxContainer/Hives/HiveContainer"]
@@ -638,6 +639,8 @@ margin_top = 133.0
 margin_bottom = 185.0
 text = "Exit User Panel"
 
+[connection signal="pressed" from="Background/HBoxContainer/Hives/HiveContainer/BrowseRecent" to="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/RecentTags" method="_on_BrowseRecent_pressed"]
+[connection signal="toggled" from="Background/HBoxContainer/Hives/HiveContainer/BrowseRecent" to="." method="_on_BrowseRecent_toggled"]
 [connection signal="pressed" from="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/UserPanelAccessButtom" to="." method="_on_UserPanelAccessButtom_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/HBoxContainer/SubmitBuzz" to="." method="_on_SubmitBuzz_pressed"]
 [connection signal="pressed" from="LogInScreen/LogInScreenPanel/MakeANewAccount/CreateUserButton" to="LogInScreen/LogInScreenPanel/MakeANewAccount/CreateUserButton" method="_on_CreateUserButton_pressed"]
