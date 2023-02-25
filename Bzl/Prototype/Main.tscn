@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Prototype/Buzzes_1st_Attempt/Station_505_Intensity1.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Prototype/Buzzes_1st_Attempt/black-and-purple-hexagon-grid.jpg" type="Texture" id=2]
@@ -7,10 +7,34 @@
 [ext_resource path="res://Prototype/Buzzes/Blip_Select18.wav" type="AudioStream" id=5]
 [ext_resource path="res://Prototype/CreateUserButton.gd" type="Script" id=6]
 [ext_resource path="res://Prototype/LogInScreen/LoginButton.gd" type="Script" id=7]
-[ext_resource path="res://images/BEE.png" type="Texture" id=8]
+[ext_resource path="res://Prototype/AvatarHolder.gd" type="Script" id=8]
 [ext_resource path="res://Prototype/UserPanel.gd" type="Script" id=9]
 [ext_resource path="res://Prototype/RecentHive/RecentTags.gd" type="Script" id=10]
 [ext_resource path="res://Prototype/RecentHive/RecentHive.tscn" type="PackedScene" id=11]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0005_DefaultEyes.png" type="Texture" id=12]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0022_BASE.png" type="Texture" id=13]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0011_Stripes1.png" type="Texture" id=14]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0019_Antannae3.png" type="Texture" id=15]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0021_Antennae1.png" type="Texture" id=16]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0002_PrettyEyes.png" type="Texture" id=17]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0018_Antannae4.png" type="Texture" id=18]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0004_NervousEyes.png" type="Texture" id=19]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0006_Stripes6.png" type="Texture" id=20]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0007_Stripes5.png" type="Texture" id=21]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0008_Stripes4.png" type="Texture" id=22]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0001_AngryEyes.png" type="Texture" id=23]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0003_OldEyes.png" type="Texture" id=24]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0020_Antannae2.png" type="Texture" id=25]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0017_Antannae5.png" type="Texture" id=26]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0009_Stripes3.png" type="Texture" id=27]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0010_Stripes2.png" type="Texture" id=28]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0016_Antannae6.png" type="Texture" id=29]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0013_Stinger3.png" type="Texture" id=30]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0014_Stinger2.png" type="Texture" id=31]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0015_Stinger1.png" type="Texture" id=32]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0012_Stinger4.png" type="Texture" id=33]
+[ext_resource path="res://Prototype/CharacterCreator.gd" type="Script" id=34]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0000_Wings1.png" type="Texture" id=35]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
@@ -22,13 +46,103 @@ PanelContainer/styles/panel = SubResource( 1 )
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.454902, 0.454902, 0.454902, 0 )
 
-[sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 360, 360 )
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 19 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 24 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 23 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 28 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 27 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 21 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 20 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 25 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=22]
+texture = ExtResource( 26 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=23]
+texture = ExtResource( 29 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=24]
+texture = ExtResource( 32 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=25]
+texture = ExtResource( 31 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=26]
+texture = ExtResource( 30 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=27]
+texture = ExtResource( 33 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=29]
+texture = ExtResource( 35 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
 
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[sub_resource type="StyleBoxEmpty" id=28]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -147,12 +261,166 @@ margin_right = 204.0
 margin_bottom = 193.0
 rect_min_size = Vector2( 0, 175 )
 custom_styles/panel = SubResource( 4 )
+script = ExtResource( 8 )
 
-[node name="Avatar" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
+[node name="Base" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
 margin_right = 204.0
 margin_bottom = 175.0
-rect_min_size = Vector2( 150, 150 )
-custom_styles/panel = SubResource( 5 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+custom_styles/panel = SubResource( 6 )
+
+[node name="Eyes" type="Control" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
+margin_right = 204.0
+margin_bottom = 175.0
+
+[node name="Eyes" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="Eyes2" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="Eyes3" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Eyes4" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 10 )
+
+[node name="Eyes5" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 11 )
+
+[node name="Stripes" type="Control" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
+margin_right = 204.0
+margin_bottom = 175.0
+
+[node name="Stripes1" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 12 )
+
+[node name="Stripes2" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Stripes3" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 14 )
+
+[node name="Stripes4" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 15 )
+
+[node name="Stripes5" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 16 )
+
+[node name="Stripes6" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 17 )
+
+[node name="Antannae" type="Control" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
+margin_right = 204.0
+margin_bottom = 175.0
+
+[node name="Antannae1" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 18 )
+
+[node name="Antannae2" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 19 )
+
+[node name="Antannae3" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 20 )
+
+[node name="Antannae4" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+
+[node name="Antannae5" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 22 )
+
+[node name="Antannae6" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 23 )
+
+[node name="Stinger" type="Control" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
+margin_right = 204.0
+margin_bottom = 175.0
+
+[node name="Stinger1" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 24 )
+
+[node name="Stinger2" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 25 )
+
+[node name="Stinger3" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 26 )
+
+[node name="Stinger4" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 27 )
+
+[node name="Wings" type="Control" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
+margin_right = 204.0
+margin_bottom = 175.0
+
+[node name="Wings1" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Wings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 29 )
 
 [node name="UserPanelAccessButtom" type="Button" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer"]
 margin_top = 197.0
@@ -501,19 +769,19 @@ align = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer"]
 margin_top = 18.0
 margin_right = 1024.0
-margin_bottom = 218.0
+margin_bottom = 220.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="UserInfo" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer"]
 margin_right = 120.0
-margin_bottom = 200.0
+margin_bottom = 202.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo"]
 margin_right = 120.0
-margin_bottom = 200.0
+margin_bottom = 202.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -537,15 +805,15 @@ text = "Pronouns:"
 [node name="MarginContainer" type="MarginContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo/VBoxContainer"]
 margin_top = 39.0
 margin_right = 120.0
-margin_bottom = 98.0
+margin_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
 
 [node name="Bio" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo/VBoxContainer"]
-margin_top = 102.0
+margin_top = 103.0
 margin_right = 120.0
-margin_bottom = 200.0
+margin_bottom = 202.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Bio:"
@@ -553,13 +821,13 @@ text = "Bio:"
 [node name="UserInfo2" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer"]
 margin_left = 124.0
 margin_right = 415.0
-margin_bottom = 200.0
+margin_bottom = 202.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.48
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2"]
 margin_right = 291.0
-margin_bottom = 200.0
+margin_bottom = 202.0
 size_flags_vertical = 3
 
 [node name="Username" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
@@ -591,15 +859,15 @@ text = "Edit Pronouns"
 [node name="MarginContainer" type="MarginContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
 margin_top = 60.0
 margin_right = 291.0
-margin_bottom = 97.0
+margin_bottom = 98.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
 [node name="Bio" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
-margin_top = 101.0
+margin_top = 102.0
 margin_right = 291.0
-margin_bottom = 175.0
+margin_bottom = 178.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "A short little bio would go here"
@@ -617,19 +885,411 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="EditBioButton" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
-margin_top = 179.0
+margin_top = 182.0
 margin_right = 291.0
-margin_bottom = 199.0
+margin_bottom = 202.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.12
 toggle_mode = true
 text = "Edit Bio"
 
-[node name="ExtraSpaceForNow" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer"]
+[node name="CharacterCreator" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer"]
 margin_left = 419.0
 margin_right = 1024.0
-margin_bottom = 200.0
+margin_bottom = 202.0
 size_flags_horizontal = 3
+script = ExtResource( 34 )
+
+[node name="Collums" type="HBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator"]
+margin_right = 605.0
+margin_bottom = 202.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AvatarHolder" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums"]
+margin_right = 225.0
+margin_bottom = 202.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+custom_styles/panel = SubResource( 28 )
+
+[node name="Base" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
+margin_right = 225.0
+margin_bottom = 202.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+custom_styles/panel = SubResource( 6 )
+
+[node name="Eyes" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
+margin_right = 225.0
+margin_bottom = 202.0
+
+[node name="Eyes" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 7 )
+
+[node name="Eyes2" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="Eyes3" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Eyes4" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 10 )
+
+[node name="Eyes5" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 11 )
+
+[node name="Stripes" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
+margin_right = 225.0
+margin_bottom = 202.0
+
+[node name="Stripes1" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 12 )
+
+[node name="Stripes2" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Stripes3" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 14 )
+
+[node name="Stripes4" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 15 )
+
+[node name="Stripes5" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 16 )
+
+[node name="Stripes6" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 17 )
+
+[node name="Antannae" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
+margin_right = 225.0
+margin_bottom = 202.0
+
+[node name="Antannae1" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 18 )
+
+[node name="Antannae2" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 19 )
+
+[node name="Antannae3" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 20 )
+
+[node name="Antannae4" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+
+[node name="Antannae5" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 22 )
+
+[node name="Antannae6" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 23 )
+
+[node name="Stinger" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
+margin_right = 225.0
+margin_bottom = 202.0
+
+[node name="Stinger1" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 24 )
+
+[node name="Stinger2" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 25 )
+
+[node name="Stinger3" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 26 )
+
+[node name="Stinger4" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 27 )
+
+[node name="Wings" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
+margin_right = 225.0
+margin_bottom = 202.0
+
+[node name="Wings1" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Wings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 29 )
+
+[node name="RandomizeButton" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
+margin_right = 225.0
+margin_bottom = 202.0
+mouse_filter = 1
+
+[node name="Randomize" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/RandomizeButton"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -20.0
+margin_right = 225.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Randomize"
+
+[node name="SaveButton2" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/RandomizeButton"]
+anchor_right = 1.0
+margin_bottom = 20.0
+text = "Save Avatar"
+
+[node name="AvatarDesigner" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums"]
+margin_left = 229.0
+margin_right = 605.0
+margin_bottom = 202.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 369.0
+margin_bottom = 195.0
+
+[node name="Back" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer"]
+margin_right = 118.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BackColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
+margin_right = 118.0
+margin_bottom = 20.0
+text = "<"
+
+[node name="BackEyes" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
+margin_top = 24.0
+margin_right = 118.0
+margin_bottom = 44.0
+text = "<"
+
+[node name="BackEyeColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
+margin_top = 48.0
+margin_right = 118.0
+margin_bottom = 68.0
+text = "<"
+
+[node name="BackWingColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
+margin_top = 72.0
+margin_right = 118.0
+margin_bottom = 92.0
+text = "<"
+
+[node name="BackStripes" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
+margin_top = 96.0
+margin_right = 118.0
+margin_bottom = 116.0
+text = "<"
+
+[node name="BackStripesColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
+margin_top = 120.0
+margin_right = 118.0
+margin_bottom = 140.0
+text = "<"
+
+[node name="BackAntennae" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
+margin_top = 144.0
+margin_right = 118.0
+margin_bottom = 164.0
+text = "<"
+
+[node name="BackStinger" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
+margin_top = 168.0
+margin_right = 118.0
+margin_bottom = 188.0
+text = "<"
+
+[node name="Part" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer"]
+margin_left = 122.0
+margin_right = 240.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Color" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
+margin_top = 3.0
+margin_right = 118.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Color"
+align = 1
+
+[node name="Eyes" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
+margin_top = 27.0
+margin_right = 118.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Eyes"
+align = 1
+
+[node name="EyeColor" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
+margin_top = 51.0
+margin_right = 118.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Eye Color"
+align = 1
+
+[node name="WingColor" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
+margin_top = 75.0
+margin_right = 118.0
+margin_bottom = 89.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Wing Color"
+align = 1
+
+[node name="Stripes" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
+margin_top = 99.0
+margin_right = 118.0
+margin_bottom = 113.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Stripes"
+align = 1
+
+[node name="StripesColor" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
+margin_top = 123.0
+margin_right = 118.0
+margin_bottom = 137.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Stripes Color"
+align = 1
+
+[node name="Antennae" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
+margin_top = 147.0
+margin_right = 118.0
+margin_bottom = 161.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Antennae"
+align = 1
+
+[node name="Stinger" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
+margin_top = 171.0
+margin_right = 118.0
+margin_bottom = 185.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Stinger"
+align = 1
+
+[node name="Forward" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer"]
+margin_left = 244.0
+margin_right = 362.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ForwardColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
+margin_right = 118.0
+margin_bottom = 20.0
+text = ">"
+
+[node name="ForwardEyes" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
+margin_top = 24.0
+margin_right = 118.0
+margin_bottom = 44.0
+text = ">"
+
+[node name="ForwardEyeColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
+margin_top = 48.0
+margin_right = 118.0
+margin_bottom = 68.0
+text = ">"
+
+[node name="ForwardWingColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
+margin_top = 72.0
+margin_right = 118.0
+margin_bottom = 92.0
+text = ">"
+
+[node name="ForwardStripes" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
+margin_top = 96.0
+margin_right = 118.0
+margin_bottom = 116.0
+text = ">"
+
+[node name="ForwardStripesColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
+margin_top = 120.0
+margin_right = 118.0
+margin_bottom = 140.0
+text = ">"
+
+[node name="ForwardAntennae" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
+margin_top = 144.0
+margin_right = 118.0
+margin_bottom = 164.0
+text = ">"
+
+[node name="ForwardStinger" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
+margin_top = 168.0
+margin_right = 118.0
+margin_bottom = 188.0
+text = ">"
 
 [node name="ExitUserPanel" type="Button" parent="UserPanel"]
 anchor_top = 0.5
@@ -648,4 +1308,22 @@ text = "Exit User Panel"
 [connection signal="pressed" from="LogInScreen/LogInScreenPanel/EnterApp" to="LogInScreen/LogInScreenPanel/ReturningUser/LoginButton" method="_on_EnterApp_pressed"]
 [connection signal="toggled" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/EditPronouns" to="UserPanel" method="_on_EditPronouns_toggled"]
 [connection signal="toggled" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/EditBioButton" to="UserPanel" method="_on_EditBioButton_toggled"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/RandomizeButton/Randomize" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_Randomize_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/RandomizeButton/SaveButton2" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back/BackColor" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_BackColor_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back/BackEyes" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_BackEyes_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back/BackEyeColor" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_BackEyeColor_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back/BackWingColor" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_BackWingColor_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back/BackStripes" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_BackStripes_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back/BackStripesColor" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_BackStripesColor_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back/BackAntennae" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_BackAntennae_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back/BackStinger" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_BackStinger_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward/ForwardColor" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_ForwardColor_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward/ForwardEyes" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_ForwardEyes_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward/ForwardEyeColor" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_ForwardEyeColor_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward/ForwardWingColor" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_ForwardWingColor_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward/ForwardStripes" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_ForwardStripes_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward/ForwardStripesColor" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_ForwardStripesColor_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward/ForwardAntennae" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_ForwardAntennae_pressed"]
+[connection signal="pressed" from="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward/ForwardStinger" to="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator" method="_on_ForwardStinger_pressed"]
 [connection signal="pressed" from="UserPanel/ExitUserPanel" to="UserPanel" method="_on_ExitUserPanel_pressed"]
