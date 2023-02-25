@@ -1,0 +1,15 @@
+[gd_scene format=2]
+
+[node name="RecentHive" type="Panel"]
+margin_right = 816.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="RecentHiveName" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "(This would contain the name of one of the most recent Hives Utilized)"
+align = 1
+valign = 1

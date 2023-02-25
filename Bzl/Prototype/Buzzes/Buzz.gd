@@ -14,7 +14,7 @@ func _ready():
 	$HBoxContainer/User.text = CurrentLogIn.logged_in_username as String
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$HBoxContainer/TimeRemaining.text = Time_Remaining as String
 	if Time_Remaining <= 0:
 		queue_free()

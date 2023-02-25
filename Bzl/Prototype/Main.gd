@@ -31,6 +31,10 @@ onready var buzz_text_entry = $Background/HBoxContainer/FeedAndPost/VBoxContaine
 onready var buzz_container = $Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer
 
 onready var current_user_label = $Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/Username
+
+onready var UserPanel = $UserPanel
+onready var UserPanelExit = $UserPanel/ExitUserPanel
+
 onready var blip = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/Blip
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,7 +42,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	## Lets make sure the Hive Keys match the text in the Hive Container
 	Hive_Key_1 = hive_1.text.to_lower()
 	Hive_Key_2 = hive_2.text.to_lower()
@@ -70,7 +74,7 @@ func _on_SubmitBuzz_pressed():
 	#instance the Buzz
 	var buzz = load("res://Prototype/Buzzes/Buzz.tscn").instance()
 	buzz.Buzz_Text = buzz_text_entry.text
-	buzz.Keywords = [buzz_key_1.text, buzz_key_2.text, buzz_key_3.text, buzz_key_4.text, buzz_key_5.text, buzz_key_6.text]
+	buzz.Keywords = [buzz_key_1.text.to_lower(), buzz_key_2.text.to_lower(), buzz_key_3.text.to_lower(), buzz_key_4.text.to_lower(), buzz_key_5.text.to_lower(), buzz_key_6.text.to_lower()]
 	buzz.Time_Remaining = 120
 	buzz_container.add_child(buzz)
 	
@@ -82,3 +86,8 @@ func _on_SubmitBuzz_pressed():
 	buzz_key_4.clear()
 	buzz_key_5.clear()
 	buzz_key_6.clear()
+
+
+func _on_UserPanelAccessButtom_pressed():
+	UserPanel.visible = true
+	UserPanelExit = true
