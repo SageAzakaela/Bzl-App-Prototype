@@ -102,3 +102,7 @@ func _on_BrowseRecent_toggled(button_pressed):
 		$Background/HBoxContainer/Hives/HiveContainer/BrowseRecent.text = "Browse Most Recent Hives"
 		$Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer.visible = true
 		$Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/RecentTags.visible = false
+
+
+func _on_BackStripes_pressed():
+	pass # Replace with function body.

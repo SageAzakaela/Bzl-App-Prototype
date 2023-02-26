@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Prototype/Buzzes_1st_Attempt/Station_505_Intensity1.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Prototype/Buzzes_1st_Attempt/black-and-purple-hexagon-grid.jpg" type="Texture" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0012_Stinger4.png" type="Texture" id=33]
 [ext_resource path="res://Prototype/CharacterCreator.gd" type="Script" id=34]
 [ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0000_Wings1.png" type="Texture" id=35]
+[ext_resource path="res://Prototype/NPC_Manager.gd" type="Script" id=36]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
@@ -468,6 +469,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Buzz" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer" instance=ExtResource( 3 )]
+
+[node name="NPC_Manager" type="Control" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer"]
+margin_top = 39.0
+margin_right = 816.0
+margin_bottom = 39.0
+script = ExtResource( 36 )
 
 [node name="RecentTags" type="ScrollContainer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground"]
 visible = false
@@ -1303,6 +1310,7 @@ text = "Exit User Panel"
 [connection signal="toggled" from="Background/HBoxContainer/Hives/HiveContainer/BrowseRecent" to="." method="_on_BrowseRecent_toggled"]
 [connection signal="pressed" from="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/UserPanelAccessButtom" to="." method="_on_UserPanelAccessButtom_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/HBoxContainer/SubmitBuzz" to="." method="_on_SubmitBuzz_pressed"]
+[connection signal="pressed" from="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/HBoxContainer/SubmitBuzz" to="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer/NPC_Manager" method="_on_SubmitBuzz_pressed"]
 [connection signal="pressed" from="LogInScreen/LogInScreenPanel/MakeANewAccount/CreateUserButton" to="LogInScreen/LogInScreenPanel/MakeANewAccount/CreateUserButton" method="_on_CreateUserButton_pressed"]
 [connection signal="pressed" from="LogInScreen/LogInScreenPanel/ReturningUser/LoginButton" to="LogInScreen/LogInScreenPanel/ReturningUser/LoginButton" method="_on_LoginButton_pressed"]
 [connection signal="pressed" from="LogInScreen/LogInScreenPanel/EnterApp" to="LogInScreen/LogInScreenPanel/ReturningUser/LoginButton" method="_on_EnterApp_pressed"]

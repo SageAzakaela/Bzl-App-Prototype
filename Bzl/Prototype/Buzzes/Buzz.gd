@@ -5,13 +5,19 @@ extends Panel
 export var Buzz_Text = ""
 export var Keywords = []
 export var Time_Remaining = 0
+export var User = ""
+export var User_Type = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("Buzz Text = ", Buzz_Text)
 	print("Keywords for Buzz: ", Keywords)
 	$HBoxContainer/BuzzText.text = Buzz_Text
-	$HBoxContainer/User.text = CurrentLogIn.logged_in_username as String
+
+	if User_Type == "NPC":
+		$HBoxContainer/User.text = User
+	else:
+		$HBoxContainer/User.text = CurrentLogIn.logged_in_username as String
 	
 	## Lets export the Keywords to Labels for future yoinking
 	if Keywords.size() > 0:
@@ -26,6 +32,7 @@ func _ready():
 		$Keyword5.text = Keywords[4]
 	if Keywords.size() > 5:
 		$Keyword6.text = Keywords[5]
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
