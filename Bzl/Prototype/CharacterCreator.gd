@@ -6,12 +6,11 @@ var random = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Initialize the RandomNumberGenerator
-	var random = RandomNumberGenerator.new()
 	random.randomize()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	# Check the value of the `color` variable
 	if CurrentLogIn.avatar_color <= 0:
 		# Set the color of the `Base` node to white
@@ -354,13 +353,13 @@ func _on_SaveButton_pressed():
 
 	# Save the updated information to the UserData dictionary
 	UserData.users[CurrentLogIn.logged_in_username]["avatar_color"] = CurrentLogIn.avatar_color
-	UserData.users[CurrentLogIn.logged_in_username]["eyes"] = CurrentLogIn.avatar_eyes
-	UserData.users[CurrentLogIn.logged_in_username]["eye_color"] = CurrentLogIn.avatar_eye_color
-	UserData.users[CurrentLogIn.logged_in_username]["wing_color"] = CurrentLogIn.avatar_wing_color
-	UserData.users[CurrentLogIn.logged_in_username]["stripe"] = CurrentLogIn.avatar_stripe
-	UserData.users[CurrentLogIn.logged_in_username]["stripes_color"] = CurrentLogIn.avatar_stripe_color
-	UserData.users[CurrentLogIn.logged_in_username]["antennae"] = CurrentLogIn.avatar_antennae
-	UserData.users[CurrentLogIn.logged_in_username]["stinger"] = CurrentLogIn.avatar_stinger
+	UserData.users[CurrentLogIn.logged_in_username]["avatar_eyes"] = CurrentLogIn.avatar_eyes
+	UserData.users[CurrentLogIn.logged_in_username]["avatar_eye_color"] = CurrentLogIn.avatar_eye_color
+	UserData.users[CurrentLogIn.logged_in_username]["avatar_wing_color"] = CurrentLogIn.avatar_wing_color
+	UserData.users[CurrentLogIn.logged_in_username]["avatar_stripe"] = CurrentLogIn.avatar_stripe
+	UserData.users[CurrentLogIn.logged_in_username]["avatar_stripe_color"] = CurrentLogIn.avatar_stripe_color
+	UserData.users[CurrentLogIn.logged_in_username]["avatar_antennae"] = CurrentLogIn.avatar_antennae
+	UserData.users[CurrentLogIn.logged_in_username]["avatar_stinger"] = CurrentLogIn.avatar_stinger
 
 	# Save the updated dictionary to the JSON file
 	UserData.save_to_file()

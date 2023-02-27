@@ -3,7 +3,7 @@ extends Control
 
 onready var buzz_container = get_node("..")
 
-var bzl_names = ["scout", "elder", "hivemind"]
+var bzl_names = ["scout", "elder", "hivemind", "dragonseeker"]
 var Keywords = []
 
 
@@ -56,6 +56,94 @@ var hivemind_structure = ["Structure is key to success in the virtual world. Let
 var hivemind_procedure = ["Following established procedures is key to success in the virtual world. Let's work together to achieve our goals!", "Procedures are key to success. Let's work together to make the most of our resources!", "By following established procedures, we can achieve more in less time. Let's be efficient!", "Let's work together to make the most of our resources by following established procedures.", "Establishing and following procedures is key to success. Let's work together to achieve our goals!"]
 var hivemind_order = ["Order is key to success in the virtual world. Let's work together to create a structured plan!", "Organization is key to success. Let's establish order and plan for maximum efficiency!", "By establishing order, we can achieve our goals more efficiently. Let's plan!", "Order and structure are key to success. Let's make the most of our resources!", "A well-ordered plan is key to success. Let's work together to create a structured plan!"]
 
+# dragon seeker
+
+var dragonseeker_keywords = ["dragons", "mythology", "legends", "creatures", "fantasy", "folklore"]
+
+
+
+var dragonseeker_dragons = [
+"Did you know that dragons in ancient China were seen as symbols of power and good luck? They were often depicted with pearls and other precious stones to show their wealth.",
+"In medieval Europe, dragons were depicted as fierce and dangerous creatures, often terrorizing villages and hoarding treasure. They were often depicted as being defeated by knights.",
+"Dragons in various cultures were said to have the ability to breathe fire or poison, control the weather, and even possess the power to grant wishes.",
+"The dragon is a common motif in many cultures, appearing in folklore and mythology from China, Europe, and even the Americas. They are often portrayed as powerful and mysterious creatures.",
+"There is a famous dragon in Norse mythology named Jörmungandr, also known as the Midgard Serpent. It was said to be so large that it could encircle the world and grasp its own tail.",
+"In some cultures, dragons were even seen as protectors, guarding sacred places and treasures. The dragon is often seen as a symbol of strength and courage, as well as a symbol of wisdom.",
+"Did you know that in ancient Chinese mythology, dragons were revered as symbols of power and strength? They were also believed to control the elements and bring good luck.",
+"The dragon is a popular symbol in many cultures around the world, from Europe to Asia. In Europe, they are often portrayed as fearsome beasts to be defeated, while in Asia they are seen as powerful but benevolent creatures.",
+"Dragons come in many shapes and sizes, but the most common type is the European dragon, with its large wings, sharp claws, and fiery breath. These dragons were said to live in caves and hoard treasure.",
+"In addition to their fearsome reputation, dragons have also been associated with wisdom and intelligence. They are often depicted as wise and all-knowing creatures, with the ability to solve problems and make good decisions.",
+"Not all dragons are fearsome beasts. In some cultures, dragons are seen as protectors and bringers of good fortune. For example, in Japanese mythology, the dragon is often seen as a symbol of protection and is said to bring rain for a bountiful harvest."
+]
+
+var dragonseeker_mythology = [	"The ancient Greeks believed that the world was created from the remnants of the Titans' defeat by Zeus. ",	
+"In Norse mythology, the god Thor was known for his strength and bravery. He was also the protector of humanity.",	
+"In Hindu mythology, the god Vishnu is known as the preserver of the universe. He is often depicted holding a conch shell.",	
+"In Chinese mythology, dragons are seen as powerful and benevolent creatures, representing strength, luck and good fortune.",	
+"In Native American folklore, the Thunderbird is a powerful spirit that is said to bring the sound of thunder when it beats its wings.",	
+"In African mythology, Anansi the Spider is a trickster god who is known for his cunning and wit.",	
+"In Japanese mythology, the eight-headed serpent Yamata no Orochi was defeated by the god Susanoo, who then became the god of the sea.",	
+"In Hawaiian mythology, Pele is the goddess of fire, lightning, wind and volcanoes. She is also known for her temper and jealousy.",	
+"In Aztec mythology, the feathered serpent god Quetzalcoatl was considered the god of wind, wisdom and the arts.",	
+"In Celtic mythology, the goddess Brigid was associated with fire, poetry, healing and the sun. She was also known as the goddess of the hearth."]
+
+var dragonseeker_legends = [
+"Did you know that in ancient Greece, the Chimera was a fearsome creature with the body of a lion, the head of a goat and the tail of a serpent? It was said to breathe fire and was defeated by the hero Bellerophon.",
+"In Norse mythology, the dragon Fafnir hoarded a treasure and was eventually killed by the hero Siegfried. The treasure was said to have brought misfortune to all who possessed it.",
+"The Chinese dragon is a symbol of good luck and is said to control the weather, especially rain. It is also said to have the power to grant wishes.",
+"In Hindu mythology, the serpent goddess Manasa is worshiped as the goddess of snakes and fertility. She is said to have the power to cure snakebites and other illnesses.",
+"The Welsh legend of Lludd and Llefelys tells of a dragon who terrorized Britain until Lludd, the King of Britain, trapped the dragon beneath a rock with the help of Llefelys.",
+"In Native American folklore, the Horned Serpent is said to have the power to control the weather and bring rain. It is also a symbol of wisdom and is often depicted with antlers or horns.",
+"In the epic of Beowulf, the title character battles and defeats a dragon who guards a treasure hoard. The battle is said to symbolize the triumph of good over evil.",
+"In Japanese folklore, the Ryu is a dragon with the ability to shapeshift into a human form. It is said to bring good luck and is often depicted as a symbol of strength.",
+"In African folklore, the Rainbow Serpent is said to control the weather and bring rain. It is also a symbol of fertility and is often depicted as a colorful, serpentine creature.",
+"The legend of St. George and the Dragon tells of a knight who saves a princess by slaying a dragon. This story is said to symbolize the triumph of good over evil and has been retold in various forms all over the world."
+]
+
+var dragonseeker_creatures = [
+"The Jersey Devil, a creature said to haunt the Pine Barrens of New Jersey, has been seen for over 260 years. Some describe it as having the body of a horse and the head of a goat.",
+"In the folklore of the Pacific Northwest, Bigfoot is a large, hairy, bipedal humanoid, said to roam the forests of the region. Some believe Bigfoot is a missing link between apes and humans.",
+"The Chupacabra, a blood-sucking creature said to inhabit parts of the Americas, is often described as a heavy, bipedal creature with spines or quills running down its back.",
+"The Mothman is a creature said to have been seen in the Point Pleasant area of West Virginia from 1966 to 1967. It is described as a tall, man-like figure with wings and glowing red eyes.",
+"The Yeti, also known as the Abominable Snowman, is said to inhabit the Himalayan region of Nepal and Tibet. It is described as a large, ape-like creature covered in fur.",
+"The Kraken is a legendary sea monster of giant size, said to dwell off the coasts of Norway and Greenland. It is often depicted as a giant octopus with tentacles capable of dragging ships underwater.",
+"The Bunyip is a legendary creature from Indigenous Australian mythology, said to live in swamps, billabongs, and creeks. It is described as a large, aquatic creature with a dog-like head and a horse-like tail.",
+"The Thunderbird is a legendary bird from Indigenous American mythology, said to create thunder with the flapping of its wings. It is often depicted as an enormous bird with powerful talons and the ability to control the elements.",
+"Big Foot, the mysterious and elusive creature known for its large footprints and elusive nature, is one of the most famous cryptids in the world. Despite numerous sightings and claims, there is still no concrete evidence of its existence.",
+"The Loch Ness Monster, also known as Nessie, is a cryptid said to inhabit the waters of Loch Ness in Scotland. The first recorded sighting of the monster was in 565 AD, and since then there have been numerous accounts of its appearance and mysterious behavior."
+]
+
+var dragonseeker_fantasy = [
+"In the world of Narnia, magical creatures like centaurs and fauns roam freely. They are ruled by the mighty lion Aslan, who protects Narnia from evil.",
+"The land of Middle Earth, as imagined by J.R.R. Tolkien, is filled with fantastical beings like elves, dwarves, and hobbits. The evil Sauron seeks to conquer Middle Earth, but is ultimately defeated by a hobbit named Frodo.",
+"The world of Westeros in George R.R. Martin's A Song of Ice and Fire series is home to dragons, ice zombies, and shadow assassins. The Seven Kingdoms of Westeros are constantly at war, with each house vying for control.",
+"In the world of The Witcher, monsters like werewolves, vampires, and giant spiders roam the countryside. The witchers, a group of monster hunters, use their supernatural abilities to protect the people of the land.",
+"In the world of The NeverEnding Story, a young boy named Bastian travels to a magical land filled with flying horses, talking animals, and evil sorcerers. He learns the importance of courage and friendship as he helps the people of Fantasia defeat the evil Nothing.",
+"The world of Final Fantasy is filled with magic and monsters. Each game in the series takes place in a different world, but they all feature powerful magic-users and epic battles between good and evil.",
+"In the world of Fullmetal Alchemist, alchemists use their knowledge of science and magic to perform incredible feats, like transmuting one element into another. The brothers Edward and Alphonse Elric search for a way to restore their bodies after a failed transmutation.",
+"In the world of Discworld, magic and mythical creatures exist in a world that is similar to our own. The wizard Rincewind travels to strange and exotic places, encountering dragons, death, and other supernatural beings.",
+"In the world of American Gods, gods and mythological creatures walk among us, often in disguise. The old gods, like Odin and Anubis, are being replaced by new gods, like Technology and Media. The main character, Shadow Moon, gets caught up in a war between the old and new gods.",
+"In the world of The Dark Tower, a gunslinger named Roland travels through a world that is both fantastical and familiar. He encounters vampires, werewolves, and other supernatural beings as he searches for the Dark Tower, a mythical structure that holds the key to the universe."
+]
+
+var dragonseeker_folklore = [
+"In Japanese folklore, the Kappa is a river creature known to play pranks on humans and animals alike. But, be careful, they have a weakness for cucumbers!",
+"The Chupacabra, a legendary creature said to inhabit parts of the Americas, is said to attack and drink the blood of livestock. Despite many reported sightings, there is no concrete evidence of its existence.",
+"The Mothman, a cryptid with large wings and glowing red eyes, is a popular folklore figure in West Virginia. It's said to be a harbinger of doom, appearing before disasters such as the collapse of the Silver Bridge in 1967.",
+"The Yeti, also known as the Abominable Snowman, is a legendary creature said to inhabit the Himalayan region of Nepal, Bhutan, and Tibet. Descriptions vary, but it's often depicted as a large, hairy, ape-like creature.",
+"In Irish folklore, the Leprechaun is a type of fairy said to be a mischievous shoemaker. They're known to hoard pots of gold and grant three wishes if caught.",
+"The Jersey Devil is a legendary creature said to inhabit the Pine Barrens of New Jersey. It's described as a kangaroo-like creature with wings and a goat-like head.",
+"The Australian Yowie is a cryptid said to inhabit the wilderness of Australia. It's described as a large, hairy, ape-like creature, similar to Bigfoot or the Yeti.",
+"In Native American folklore, the Skin-Walker is a type of witch said to be able to shapeshift into animals. They're often depicted as evil, using their powers for evil deeds.",
+"The Kraken is a legendary sea monster said to inhabit the waters of the North Atlantic. It's often depicted as a giant octopus with long tentacles that can drag ships and sailors under the water.",
+"In Norse mythology, the Jötunn are a race of giants who inhabit the realm of Jötunheimr. They're often depicted as cruel and hostile, in contrast to the gods who inhabit Asgard."
+	
+]
+
+
+
+
+
 
 
 var random
@@ -65,7 +153,7 @@ func _ready():
 	random = RandomNumberGenerator.new()
 	random.randomize()
 
-func _process(delta):
+func _process(_delta):
 	random.randomize()
 
 
@@ -80,6 +168,8 @@ func _on_SubmitBuzz_pressed():
 		random_keyword = elder_keywords[randi() % elder_keywords.size()]
 	elif random_bzl == "hivemind":
 		random_keyword = hivemind_keywords[randi() % hivemind_keywords.size()]
+	elif random_bzl == "dragonseeker":
+		random_keyword = dragonseeker_keywords[randi() % dragonseeker_keywords.size()]
 
 	# Select a random buzz text based on the selected keyword
 	var random_buzz = ""
@@ -149,9 +239,22 @@ func _on_SubmitBuzz_pressed():
 	elif random_keyword == "order" and random_bzl == "hivemind":
 		random_buzz = hivemind_order[randi() % hivemind_order.size()]
 
+	elif random_keyword == "dragons" and random_bzl == "dragonseeker":
+		random_buzz = dragonseeker_dragons[randi() % dragonseeker_dragons.size()]
+	elif random_keyword == "mythology" and random_bzl == "dragonseeker":
+		random_buzz = dragonseeker_mythology[randi() % dragonseeker_mythology.size()]
+	elif random_keyword == "legends" and random_bzl == "dragonseeker":
+		random_buzz = dragonseeker_legends[randi() % dragonseeker_legends.size()]
+	elif random_keyword == "creatures" and random_bzl == "dragonseeker":
+		random_buzz = dragonseeker_creatures[randi() % dragonseeker_creatures.size()]
+	elif random_keyword == "fantasy" and random_bzl == "dragonseeker":
+		random_buzz = dragonseeker_fantasy[randi() % dragonseeker_fantasy.size()]
+	elif random_keyword == "folklore" and random_bzl == "dragonseeker":
+		random_buzz = dragonseeker_folklore[randi() % dragonseeker_folklore.size()]
+
 
 	# Create a new buzz instance and add it to the buzz container
-	var buzz = load("res://Prototype/Buzzes/Buzz.tscn").instance()
+	var buzz = load("res://Prototype/Buzzes/NewBuzz.tscn").instance()
 	buzz.Buzz_Text = random_buzz
 	buzz.Keywords = [random_keyword]
 	buzz.Time_Remaining = 120

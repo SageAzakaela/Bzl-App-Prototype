@@ -33,12 +33,12 @@ func update_recent_hives():
 			var keyword6 = child.get_node("Keyword6")
 
 			# Get the text of each keyword node
-			var keyword_text1 = keyword1.text
-			var keyword_text2 = keyword2.text
-			var keyword_text3 = keyword3.text
-			var keyword_text4 = keyword4.text
-			var keyword_text5 = keyword5.text
-			var keyword_text6 = keyword6.text
+			var keyword_text1 = keyword1.text.to_lower()
+			var keyword_text2 = keyword2.text.to_lower()
+			var keyword_text3 = keyword3.text.to_lower()
+			var keyword_text4 = keyword4.text.to_lower()
+			var keyword_text5 = keyword5.text.to_lower()
+			var keyword_text6 = keyword6.text.to_lower()
 
 			# Update the count for each keyword
 			if keyword_text1 != "":

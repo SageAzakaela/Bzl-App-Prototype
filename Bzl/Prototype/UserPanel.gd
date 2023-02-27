@@ -20,7 +20,7 @@ onready var edit_prnouns_field = $UserPanelBox/VBoxContainer/HBoxContainer/UserI
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	Username.text = str(CurrentLogIn.logged_in_username)
 	Pronouns.text = str(CurrentLogIn.logged_in_pronouns)
 	Bio.text = str(CurrentLogIn.logged_in_bio)

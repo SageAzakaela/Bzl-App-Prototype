@@ -11,7 +11,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	# Check the value of the `color` variable
 	if CurrentLogIn.avatar_color <= 0:
 		# Set the color of the `Base` node to white

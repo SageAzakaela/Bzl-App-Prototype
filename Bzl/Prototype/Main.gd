@@ -72,7 +72,7 @@ func _process(_delta):
 func _on_SubmitBuzz_pressed():
 	blip.play()
 	#instance the Buzz
-	var buzz = load("res://Prototype/Buzzes/Buzz.tscn").instance()
+	var buzz = load("res://Prototype/Buzzes/NewBuzz.tscn").instance()
 	buzz.Buzz_Text = buzz_text_entry.text
 	buzz.Keywords = [buzz_key_1.text.to_lower(), buzz_key_2.text.to_lower(), buzz_key_3.text.to_lower(), buzz_key_4.text.to_lower(), buzz_key_5.text.to_lower(), buzz_key_6.text.to_lower()]
 	buzz.Time_Remaining = 120
@@ -102,7 +102,3 @@ func _on_BrowseRecent_toggled(button_pressed):
 		$Background/HBoxContainer/Hives/HiveContainer/BrowseRecent.text = "Browse Most Recent Hives"
 		$Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer.visible = true
 		$Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/RecentTags.visible = false
-
-
-func _on_BackStripes_pressed():
-	pass # Replace with function body.

@@ -1,13 +1,13 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Prototype/Buzzes_1st_Attempt/Station_505_Intensity1.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Prototype/Buzzes_1st_Attempt/black-and-purple-hexagon-grid.jpg" type="Texture" id=2]
-[ext_resource path="res://Prototype/Buzzes/Buzz.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prototype/Buzzes/NewBuzz.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prototype/Main.gd" type="Script" id=4]
 [ext_resource path="res://Prototype/Buzzes/Blip_Select18.wav" type="AudioStream" id=5]
 [ext_resource path="res://Prototype/CreateUserButton.gd" type="Script" id=6]
 [ext_resource path="res://Prototype/LogInScreen/LoginButton.gd" type="Script" id=7]
-[ext_resource path="res://Prototype/AvatarHolder.gd" type="Script" id=8]
+[ext_resource path="res://Prototype/AvatarHolder.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Prototype/UserPanel.gd" type="Script" id=9]
 [ext_resource path="res://Prototype/RecentHive/RecentTags.gd" type="Script" id=10]
 [ext_resource path="res://Prototype/RecentHive/RecentHive.tscn" type="PackedScene" id=11]
@@ -44,8 +44,11 @@ region_rect = Rect2( 0, 0, 1920, 1080 )
 [sub_resource type="Theme" id=2]
 PanelContainer/styles/panel = SubResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.454902, 0.454902, 0.454902, 0 )
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[sub_resource type="StyleBoxEmpty" id=28]
 
 [sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 13 )
@@ -138,12 +141,6 @@ region_rect = Rect2( 0, 0, 1600, 1600 )
 [sub_resource type="StyleBoxTexture" id=29]
 texture = ExtResource( 35 )
 region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 1920, 1080 )
-
-[sub_resource type="StyleBoxEmpty" id=28]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -256,172 +253,7 @@ margin_bottom = 14.0
 text = "USERNAME"
 align = 1
 
-[node name="AvatarHolder" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer"]
-margin_top = 18.0
-margin_right = 204.0
-margin_bottom = 193.0
-rect_min_size = Vector2( 0, 175 )
-custom_styles/panel = SubResource( 4 )
-script = ExtResource( 8 )
-
-[node name="Base" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
-margin_right = 204.0
-margin_bottom = 175.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.6
-custom_styles/panel = SubResource( 6 )
-
-[node name="Eyes" type="Control" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
-margin_right = 204.0
-margin_bottom = 175.0
-
-[node name="Eyes" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Eyes"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 7 )
-
-[node name="Eyes2" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Eyes"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 8 )
-
-[node name="Eyes3" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Eyes"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 9 )
-
-[node name="Eyes4" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Eyes"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 10 )
-
-[node name="Eyes5" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Eyes"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 11 )
-
-[node name="Stripes" type="Control" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
-margin_right = 204.0
-margin_bottom = 175.0
-
-[node name="Stripes1" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 12 )
-
-[node name="Stripes2" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 13 )
-
-[node name="Stripes3" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 14 )
-
-[node name="Stripes4" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 15 )
-
-[node name="Stripes5" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 16 )
-
-[node name="Stripes6" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stripes"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 17 )
-
-[node name="Antannae" type="Control" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
-margin_right = 204.0
-margin_bottom = 175.0
-
-[node name="Antannae1" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 18 )
-
-[node name="Antannae2" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 19 )
-
-[node name="Antannae3" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 20 )
-
-[node name="Antannae4" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 21 )
-
-[node name="Antannae5" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 22 )
-
-[node name="Antannae6" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Antannae"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 23 )
-
-[node name="Stinger" type="Control" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
-margin_right = 204.0
-margin_bottom = 175.0
-
-[node name="Stinger1" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stinger"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 24 )
-
-[node name="Stinger2" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stinger"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 25 )
-
-[node name="Stinger3" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stinger"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 26 )
-
-[node name="Stinger4" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Stinger"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 27 )
-
-[node name="Wings" type="Control" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder"]
-margin_right = 204.0
-margin_bottom = 175.0
-
-[node name="Wings1" type="PanelContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/AvatarHolder/Wings"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_styles/panel = SubResource( 29 )
+[node name="AvatarHolder" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer" instance=ExtResource( 8 )]
 
 [node name="UserPanelAccessButtom" type="Button" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer"]
 margin_top = 197.0
@@ -468,13 +300,16 @@ focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Buzz" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer" instance=ExtResource( 3 )]
-
 [node name="NPC_Manager" type="Control" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer"]
-margin_top = 39.0
 margin_right = 816.0
-margin_bottom = 39.0
 script = ExtResource( 36 )
+
+[node name="Buzz" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 4.0
+margin_right = 816.0
+margin_bottom = 204.0
 
 [node name="RecentTags" type="ScrollContainer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground"]
 visible = false
@@ -1305,6 +1140,11 @@ anchor_bottom = 0.5
 margin_top = 133.0
 margin_bottom = 185.0
 text = "Exit User Panel"
+
+[node name="UserRoom" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [connection signal="pressed" from="Background/HBoxContainer/Hives/HiveContainer/BrowseRecent" to="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/RecentTags" method="_on_BrowseRecent_pressed"]
 [connection signal="toggled" from="Background/HBoxContainer/Hives/HiveContainer/BrowseRecent" to="." method="_on_BrowseRecent_toggled"]
