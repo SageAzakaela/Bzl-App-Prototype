@@ -14,6 +14,8 @@ func _on_LoginButton_pressed():
 
 		# Retrieve the user's pronoun and bio information
 		CurrentLogIn.logged_in_username = username
+		CurrentLogIn.logged_in_nectar = UserData.get_user_points(username)
+		CurrentLogIn.logged_in_inventory = UserData.get_user_inventory(username)
 		CurrentLogIn.logged_in_pronouns = UserData.get_user_pronouns(username)
 		CurrentLogIn.logged_in_bio = UserData.get_user_bio(username)
 		CurrentLogIn.avatar_color = UserData.get_avatar_color(username)

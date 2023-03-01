@@ -27,13 +27,71 @@ func save_to_file():
 
 func add_user(username, password):
 	# Add the new username and password to the dictionary
-	users[str(username)] = {"password": str(password), "pronouns": "They/Them", "bio": "No bio written yet! :("}
+	users[str(username)] = {"password": str(password), "pronouns": "They/Them", "bio": "No bio written yet! :(", "nectar": 0, "inventory": []}
 	
 	# Save the updated dictionary to the JSON file
 	var file = File.new()
 	file.open("userdata.json", File.WRITE)
 	file.store_string(JSON.print(users))
 	file.close()
+
+func get_user_inventory(username):
+	if username in users:
+		return users[username].get("inventory")
+	else:
+		return 0
+		
+func add_item_to_inventory(username, item):
+	# Add the item to the user's inventory
+	users[username]["inventory"].append(item)
+#	CurrentLogIn.logged_in_inventory.append(item)
+	# Save the updated dictionary to the JSON file
+	save_to_file()
+	
+	print("Item added to inventory:", item)
+
+
+func remove_item_from_inventory(username, item):
+	# Remove the item from the user's inventory
+	users[username]["inventory"].remove(item)
+#	CurrentLogIn.logged_in_inventory.remove(item)
+	# Save the updated dictionary to the JSON file
+	save_to_file()
+	
+
+func get_user_points(username):
+	if username in users:
+		return users[username].get("nectar")
+	else:
+		return 0
+		
+func set_user_points(username, points):
+	# Update the user's pronouns in the dictionary
+	users[username]["nectar"] = points
+	# Update the CurrentLogIn.logged_in_pronouns value
+	CurrentLogIn.logged_in_nectar = points
+	# Save the updated dictionary to the JSON file
+	var file = File.new()
+	file.open("userdata.json", File.WRITE)
+	file.store_string(JSON.print(users))
+	file.close()
+	
+	
+func add_user_points(username, points):
+	# Add points to the user's nectar total
+	users[username]["nectar"] += points
+	CurrentLogIn.logged_in_nectar += points
+	# Save the updated dictionary to the JSON file
+	save_to_file()
+
+
+func remove_user_points(username, points):
+	# Add points to the user's nectar total
+	users[username]["nectar"] -= points
+	CurrentLogIn.logged_in_nectar -= points
+	# Save the updated dictionary to the JSON file
+	save_to_file()
+	
 
 func set_user_pronouns(username, pronouns):
 	# Update the user's pronouns in the dictionary

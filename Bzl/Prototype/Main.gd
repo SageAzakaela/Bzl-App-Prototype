@@ -31,9 +31,14 @@ onready var buzz_text_entry = $Background/HBoxContainer/FeedAndPost/VBoxContaine
 onready var buzz_container = $Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer
 
 onready var current_user_label = $Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/Username
+onready var user_nectar = $Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/NectarContainer/UserNectar
 
 onready var UserPanel = $UserPanel
 onready var UserPanelExit = $UserPanel/ExitUserPanel
+onready var user_inventory = $UserInventory
+onready var shop = $Shop
+
+
 
 onready var blip = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/Blip
 # Called when the node enters the scene tree for the first time.
@@ -64,6 +69,7 @@ func _process(_delta):
 					buzz.show()
 	## Lets see who's currently logged in
 	current_user_label.text = CurrentLogIn.logged_in_username as String
+	user_nectar.text = CurrentLogIn.logged_in_nectar as String
 
 
 
@@ -71,14 +77,25 @@ func _process(_delta):
 
 func _on_SubmitBuzz_pressed():
 	blip.play()
-	#instance the Buzz
+	var buzz_text = buzz_text_entry.text.strip_edges()
+	var keywords = [buzz_key_1.text.to_lower(), buzz_key_2.text.to_lower(), buzz_key_3.text.to_lower(), buzz_key_4.text.to_lower(), buzz_key_5.text.to_lower(), buzz_key_6.text.to_lower()]
+	if buzz_text.empty() or keywords.empty():
+		# Either the buzz text or keywords are empty, don't create a new buzz
+		print("Error: No Keyword or Post entered")
+		return
+
+	# Award points to the user who made the post
+	var user = CurrentLogIn.logged_in_username
+	UserData.add_user_points(user, 10)
+	
+	# Instance the Buzz
 	var buzz = load("res://Prototype/Buzzes/NewBuzz.tscn").instance()
-	buzz.Buzz_Text = buzz_text_entry.text
-	buzz.Keywords = [buzz_key_1.text.to_lower(), buzz_key_2.text.to_lower(), buzz_key_3.text.to_lower(), buzz_key_4.text.to_lower(), buzz_key_5.text.to_lower(), buzz_key_6.text.to_lower()]
+	buzz.Buzz_Text = buzz_text
+	buzz.Keywords = keywords
 	buzz.Time_Remaining = 120
 	buzz_container.add_child(buzz)
-	
-	#clear the text entry field and keyword fields
+
+	# Clear the text entry field and keyword fields
 	buzz_text_entry.clear()
 	buzz_key_1.clear()
 	buzz_key_2.clear()
@@ -86,6 +103,7 @@ func _on_SubmitBuzz_pressed():
 	buzz_key_4.clear()
 	buzz_key_5.clear()
 	buzz_key_6.clear()
+
 
 
 func _on_UserPanelAccessButtom_pressed():
@@ -102,3 +120,11 @@ func _on_BrowseRecent_toggled(button_pressed):
 		$Background/HBoxContainer/Hives/HiveContainer/BrowseRecent.text = "Browse Most Recent Hives"
 		$Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer.visible = true
 		$Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/RecentTags.visible = false
+
+
+func _on_Shop_pressed():
+	shop.visible = true
+
+
+func _on_Inventory_pressed():
+	user_inventory.visible = true

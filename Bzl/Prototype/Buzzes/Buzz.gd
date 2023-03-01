@@ -27,18 +27,37 @@ func _ready():
 	if Keywords.size() > 0:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword1.text = ("#" + Keywords[0])
 		$Keyword1.text = Keywords[0]
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword2.visible = false
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword3.visible = false
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword4.visible = false
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword5.visible = false
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.visible = false
 	if Keywords.size() > 1:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword2.text = ("#" + Keywords[1])
 		$Keyword2.text = Keywords[1]
+
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword3.visible = false
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword4.visible = false
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword5.visible = false
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.visible = false
 	if Keywords.size() > 2:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword3.text = ("#" + Keywords[2])
 		$Keyword3.text = Keywords[2]
+
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword4.visible = false
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword5.visible = false
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.visible = false
 	if Keywords.size() > 3:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword4.text = ("#" + Keywords[3])
 		$Keyword4.text = Keywords[3]
+
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword5.visible = false
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.visible = false
 	if Keywords.size() > 4:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword5.text = ("#" + Keywords[4])
 		$Keyword5.text = Keywords[4]
+
+		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.visible = false
 	if Keywords.size() > 5:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.text = ("#" + Keywords[5])
 		$Keyword6.text = Keywords[5]
@@ -58,6 +77,9 @@ func _on_ExtendButton_pressed():
 	Time_Remaining += 120
 	$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer/ExtendButton.disabled = true
 
+	var user = CurrentLogIn.logged_in_username
+	UserData.add_user_points(user, 5)
+
 
 func _on_Comments_toggled(button_pressed):
 	if button_pressed == true:
@@ -73,6 +95,11 @@ func _on_Submit_pressed():
 	var comment = load("res://Prototype/Buzzes/Comment.tscn").instance()
 	comment.comment_text = $VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment/CommentTextEntry.text
 	$VBoxContainer/CommentsSection/VBoxContainer.add_child(comment)
+	#add points for making a comment!
+	var user = CurrentLogIn.logged_in_username
+	UserData.add_user_points(user, 5)
+	# extend the lifespan per comment
+	Time_Remaining += 60
 
 func _on_Cancel_pressed():
 	$VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment.visible = false

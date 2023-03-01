@@ -1,65 +1,54 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Prototype/Buzzes/Buzz.gd" type="Script" id=1]
 [ext_resource path="res://Prototype/AvatarHolder.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prototype/fonts/FontBold.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Prototype/fonts/FontNormal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Prototype/BZL_Default_Theme.tres" type="Theme" id=5]
 
-[sub_resource type="StyleBoxEmpty" id=2]
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.105882, 0.105882, 0.105882, 1 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.105882, 0.105882, 0.105882, 1 )
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.176471, 0.176471, 0.176471, 1 )
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="Buzz" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
-custom_styles/panel = SubResource( 2 )
+theme = ExtResource( 5 )
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
+theme = ExtResource( 5 )
 
 [node name="Panel" type="Panel" parent="VBoxContainer"]
 margin_right = 1024.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 0, 200 )
+margin_bottom = 225.0
+rect_min_size = Vector2( 0, 225 )
 mouse_filter = 1
 size_flags_horizontal = 3
-size_flags_vertical = 9
-custom_styles/panel = SubResource( 3 )
+theme = ExtResource( 5 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 5 )
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer"]
 margin_right = 100.0
-margin_bottom = 200.0
+margin_bottom = 225.0
 rect_min_size = Vector2( 100, 0 )
 mouse_filter = 1
-custom_styles/panel = SubResource( 4 )
+theme = ExtResource( 5 )
 
 [node name="Panel" type="Panel" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer"]
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 size_flags_vertical = 0
-custom_styles/panel = SubResource( 1 )
+theme = ExtResource( 5 )
 
 [node name="AvatarHolder" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel" instance=ExtResource( 2 )]
 anchor_right = 1.0
@@ -68,57 +57,70 @@ margin_top = 0.0
 margin_right = 0.0
 margin_bottom = 0.0
 rect_min_size = Vector2( 100, 100 )
+theme = ExtResource( 5 )
 
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer"]
 margin_left = 104.0
-margin_right = 913.0
-margin_bottom = 200.0
+margin_right = 906.0
+margin_bottom = 225.0
 rect_min_size = Vector2( 100, 0 )
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 4 )
+theme = ExtResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2"]
-margin_right = 809.0
-margin_bottom = 200.0
+margin_right = 802.0
+margin_bottom = 225.0
+theme = ExtResource( 5 )
 
 [node name="Username" type="Label" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer"]
-margin_right = 809.0
-margin_bottom = 14.0
+margin_right = 802.0
+margin_bottom = 18.0
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
 text = "Username"
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer"]
-margin_top = 18.0
-margin_right = 809.0
-margin_bottom = 33.0
+margin_top = 22.0
+margin_right = 802.0
+margin_bottom = 37.0
 rect_min_size = Vector2( 0, 15 )
 mouse_filter = 1
+theme = ExtResource( 5 )
 
 [node name="BuzzText" type="Label" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer"]
-margin_top = 37.0
-margin_right = 809.0
-margin_bottom = 68.0
+margin_top = 41.0
+margin_right = 802.0
+margin_bottom = 80.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.560784, 0.560784, 0.560784, 1 )
+custom_fonts/font = ExtResource( 4 )
 text = "lorem ipsum dolor sit amet consectetut adispciscin elit. Nunc enim, portitor interdum gravida quis. Nunc velt nunc, felis mi partiurient enim. adispicing at socils amet lectus tortor augue interdum."
 autowrap = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer"]
-margin_top = 72.0
-margin_right = 809.0
-margin_bottom = 102.0
+margin_top = 84.0
+margin_right = 802.0
+margin_bottom = 114.0
 rect_min_size = Vector2( 0, 30 )
 mouse_filter = 1
+theme = ExtResource( 5 )
 
 [node name="BuzzTest2" type="HBoxContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer"]
-margin_top = 106.0
-margin_right = 809.0
-margin_bottom = 136.0
+margin_top = 118.0
+margin_right = 802.0
+margin_bottom = 148.0
 rect_min_size = Vector2( 0, 30 )
 size_flags_horizontal = 3
+theme = ExtResource( 5 )
 
 [node name="Keyword1" type="Label" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2"]
-margin_top = 8.0
-margin_bottom = 22.0
+margin_top = 6.0
+margin_bottom = 24.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.74902, 0, 0.541176, 1 )
+custom_fonts/font = ExtResource( 4 )
 align = 1
 valign = 1
 
@@ -127,12 +129,16 @@ margin_left = 4.0
 margin_right = 19.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 15, 0 )
+theme = ExtResource( 5 )
 
 [node name="Keyword2" type="Label" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2"]
 margin_left = 23.0
-margin_top = 8.0
+margin_top = 6.0
 margin_right = 23.0
-margin_bottom = 22.0
+margin_bottom = 24.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.74902, 0, 0.541176, 1 )
+custom_fonts/font = ExtResource( 4 )
 align = 1
 valign = 1
 
@@ -141,12 +147,16 @@ margin_left = 27.0
 margin_right = 42.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 15, 0 )
+theme = ExtResource( 5 )
 
 [node name="Keyword3" type="Label" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2"]
 margin_left = 46.0
-margin_top = 8.0
+margin_top = 6.0
 margin_right = 46.0
-margin_bottom = 22.0
+margin_bottom = 24.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.74902, 0, 0.541176, 1 )
+custom_fonts/font = ExtResource( 4 )
 align = 1
 valign = 1
 
@@ -155,12 +165,16 @@ margin_left = 50.0
 margin_right = 65.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 15, 0 )
+theme = ExtResource( 5 )
 
 [node name="Keyword4" type="Label" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2"]
 margin_left = 69.0
-margin_top = 8.0
+margin_top = 6.0
 margin_right = 69.0
-margin_bottom = 22.0
+margin_bottom = 24.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.74902, 0, 0.541176, 1 )
+custom_fonts/font = ExtResource( 4 )
 align = 1
 valign = 1
 
@@ -169,12 +183,16 @@ margin_left = 73.0
 margin_right = 88.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 15, 0 )
+theme = ExtResource( 5 )
 
 [node name="Keyword5" type="Label" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2"]
 margin_left = 92.0
-margin_top = 8.0
+margin_top = 6.0
 margin_right = 92.0
-margin_bottom = 22.0
+margin_bottom = 24.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.74902, 0, 0.541176, 1 )
+custom_fonts/font = ExtResource( 4 )
 align = 1
 valign = 1
 
@@ -183,83 +201,102 @@ margin_left = 96.0
 margin_right = 111.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 15, 0 )
+theme = ExtResource( 5 )
 
 [node name="Keyword6" type="Label" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2"]
 margin_left = 115.0
-margin_top = 8.0
+margin_top = 6.0
 margin_right = 115.0
-margin_bottom = 22.0
+margin_bottom = 24.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0.74902, 0, 0.541176, 1 )
+custom_fonts/font = ExtResource( 4 )
 align = 1
 valign = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer"]
-margin_top = 140.0
-margin_right = 809.0
-margin_bottom = 170.0
+margin_top = 152.0
+margin_right = 802.0
+margin_bottom = 182.0
 rect_min_size = Vector2( 0, 30 )
 mouse_filter = 1
+theme = ExtResource( 5 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer"]
-margin_top = 174.0
-margin_right = 809.0
-margin_bottom = 200.0
+margin_top = 186.0
+margin_right = 802.0
+margin_bottom = 211.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 5 )
 
 [node name="Comments" type="Button" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer"]
-margin_right = 158.0
-margin_bottom = 26.0
+margin_right = 157.0
+margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 5 )
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
 toggle_mode = true
 text = "Comments"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer"]
-margin_left = 162.0
-margin_right = 321.0
-margin_bottom = 26.0
+margin_left = 161.0
+margin_right = 318.0
+margin_bottom = 25.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 5 )
 
 [node name="BuzzBack" type="Button" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer"]
-margin_left = 325.0
-margin_right = 483.0
-margin_bottom = 26.0
+margin_left = 322.0
+margin_right = 479.0
+margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 5 )
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
 text = "Leave a Comment"
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer"]
-margin_left = 487.0
-margin_right = 646.0
-margin_bottom = 26.0
+margin_left = 483.0
+margin_right = 640.0
+margin_bottom = 25.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 5 )
 
 [node name="ExtendButton" type="Button" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer"]
-margin_left = 650.0
-margin_right = 809.0
-margin_bottom = 26.0
+margin_left = 644.0
+margin_right = 802.0
+margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 5 )
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
 text = "Boost"
 
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer"]
+margin_top = 215.0
+margin_right = 802.0
+margin_bottom = 225.0
+rect_min_size = Vector2( 0, 10 )
+
 [node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer"]
-margin_left = 917.0
+margin_left = 910.0
 margin_right = 1024.0
-margin_bottom = 200.0
+margin_bottom = 225.0
 rect_min_size = Vector2( 100, 0 )
-custom_styles/panel = SubResource( 4 )
+theme = ExtResource( 5 )
 
 [node name="TimeRemaining" type="Label" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer3"]
-margin_top = 93.0
-margin_right = 107.0
-margin_bottom = 107.0
+margin_top = 103.0
+margin_right = 114.0
+margin_bottom = 121.0
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
 text = "Time Remaining:"
 align = 1
 valign = 1
@@ -272,13 +309,17 @@ visible = false
 margin_top = 204.0
 margin_right = 1024.0
 margin_bottom = 600.0
-rect_min_size = Vector2( 0, 35 )
+rect_min_size = Vector2( 0, 150 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CommentsSection"]
 margin_right = 1024.0
+margin_bottom = 396.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 5 )
 
 [node name="LeaveAComment" type="WindowDialog" parent="VBoxContainer/CommentsSection/VBoxContainer"]
 margin_right = 1024.0
@@ -286,11 +327,13 @@ margin_bottom = 60.0
 rect_min_size = Vector2( 0, 60 )
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme = ExtResource( 5 )
 window_title = "Leave a Comment"
 
 [node name="CommentTextEntry" type="LineEdit" parent="VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 5 )
 placeholder_text = "Write your Comment Here"
 caret_blink = true
 caret_blink_speed = 0.5
@@ -303,6 +346,7 @@ anchor_bottom = 0.5
 margin_left = -101.0
 margin_top = 30.0
 margin_bottom = 60.0
+theme = ExtResource( 5 )
 text = "Submit"
 
 [node name="Cancel" type="Button" parent="VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment"]
@@ -314,6 +358,7 @@ margin_left = -202.0
 margin_top = 30.0
 margin_right = -102.0
 margin_bottom = 60.0
+theme = ExtResource( 5 )
 text = "Cancel"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -321,12 +366,14 @@ margin_right = 1024.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 0, 30 )
 mouse_filter = 2
+theme = ExtResource( 5 )
 
 [node name="Keyword1" type="Label" parent="."]
 visible = false
 margin_top = 293.0
 margin_right = 1024.0
 margin_bottom = 307.0
+theme = ExtResource( 5 )
 align = 1
 valign = 1
 
@@ -335,6 +382,7 @@ visible = false
 margin_top = 293.0
 margin_right = 1024.0
 margin_bottom = 307.0
+theme = ExtResource( 5 )
 align = 1
 valign = 1
 
@@ -343,6 +391,7 @@ visible = false
 margin_top = 293.0
 margin_right = 1024.0
 margin_bottom = 307.0
+theme = ExtResource( 5 )
 align = 1
 valign = 1
 
@@ -351,6 +400,7 @@ visible = false
 margin_top = 293.0
 margin_right = 1024.0
 margin_bottom = 307.0
+theme = ExtResource( 5 )
 align = 1
 valign = 1
 
@@ -359,6 +409,7 @@ visible = false
 margin_top = 293.0
 margin_right = 1024.0
 margin_bottom = 307.0
+theme = ExtResource( 5 )
 align = 1
 valign = 1
 
@@ -367,6 +418,7 @@ visible = false
 margin_top = 293.0
 margin_right = 1024.0
 margin_bottom = 307.0
+theme = ExtResource( 5 )
 align = 1
 valign = 1
 
