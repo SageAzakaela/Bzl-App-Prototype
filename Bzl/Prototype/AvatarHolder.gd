@@ -1,17 +1,22 @@
 extends PanelContainer
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-# Called when the node enters the scene tree for the first time.
-
 func _ready():
-	pass
+	var error
+	error = CurrentLogIn.connect("avatar_color_changed", self, "on_avatar_color_changed")
+	error = CurrentLogIn.connect("avatar_eyes_changed", self, "on_avatar_eyes_changed")
+	error = CurrentLogIn.connect("avatar_eye_color_changed", self, "on_avatar_color_changed")
+	error = CurrentLogIn.connect("avatar_wing_color_changed", self, "on_avatar_wing_color_changed")
+	error = CurrentLogIn.connect("avatar_stripe_changed", self, "on_avatar_stripe_changed")
+	error = CurrentLogIn.connect("avatar_stripe_color_changed", self, "on_avatar_stripe_color_changed")
+	error = CurrentLogIn.connect("avatar_antennae_changed", self, "on_avatar_antennae_changed")
+	error = CurrentLogIn.connect("avatar_stinger_changed", self, "on_avatar_stinger_changed")
+	
+	if error != OK:
+		push_warning("One or more 'avatar changed' signals could not connect.")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func on_avatar_color_changed():
 	# Check the value of the `color` variable
 	if CurrentLogIn.avatar_color <= 0:
 		# Set the color of the `Base` node to white
@@ -52,7 +57,9 @@ func _process(_delta):
 	elif CurrentLogIn.avatar_color >= 12:
 		# Set the color of the `Base` node to brown
 		$Base.modulate = Color(0.6, 0.4, 0.2)
-		
+
+
+func on_avatar_eyes_changed():
 	if CurrentLogIn.avatar_eyes == 0:
 		$Eyes/Eyes.visible = true
 		$Eyes/Eyes2.visible = false
@@ -84,6 +91,8 @@ func _process(_delta):
 		$Eyes/Eyes4.visible = false
 		$Eyes/Eyes5.visible = true
 
+
+func on_avatar_eye_color_changed():
 	if CurrentLogIn.avatar_eye_color == 0:
 		$Eyes.modulate = Color(1, 1, 1)
 	elif CurrentLogIn.avatar_eye_color == 1:
@@ -110,6 +119,7 @@ func _process(_delta):
 		$Eyes.modulate = Color(0.6, 0.3, 0.1)
 	
 	
+func on_avatar_wing_color_changed():
 	if CurrentLogIn.avatar_wing_color == 0:
 		$Wings.modulate = Color(1, 1, 1)
 	elif CurrentLogIn.avatar_wing_color == 1:
@@ -134,8 +144,9 @@ func _process(_delta):
 		$Wings.modulate = Color(0.5, 0.5, 0.5)
 	elif CurrentLogIn.avatar_wing_color == 11:
 		$Wings.modulate = Color(0.55, 0.27, 0.07)
-		
 	
+
+func on_avatar_stripe_changed():
 	if CurrentLogIn.avatar_stripe == 0:
 		$Stripes/Stripes1.visible = true
 		$Stripes/Stripes2.visible = false
@@ -178,7 +189,9 @@ func _process(_delta):
 		$Stripes/Stripes4.visible = false
 		$Stripes/Stripes5.visible = false
 		$Stripes/Stripes6.visible = true
-			
+	
+	
+func on_avatar_stripe_color_changed():
 	if CurrentLogIn.avatar_stripe_color == 0:
 		$Stripes.modulate = Color(1, 1, 1)
 	elif CurrentLogIn.avatar_stripe_color == 1:
@@ -204,6 +217,8 @@ func _process(_delta):
 	elif CurrentLogIn.avatar_stripe_color >= 11:
 		$Stripes.modulate = Color(0.55, 0.27, 0.07)
 	
+
+func on_avatar_antennae_changed():
 	if CurrentLogIn.avatar_antennae == 0:
 		$Antannae/Antannae1.visible = true
 		$Antannae/Antannae2.visible = false
@@ -251,7 +266,9 @@ func _process(_delta):
 		$Antannae/Antannae4.visible = false
 		$Antannae/Antannae5.visible = false
 		$Antannae/Antannae6.visible = true
-		
+
+
+func on_avatar_stinger_changed():
 	if CurrentLogIn.avatar_stinger == 0:
 		$Stinger/Stinger1.visible = true
 		$Stinger/Stinger2.visible = false
