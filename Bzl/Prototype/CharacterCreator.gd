@@ -1,284 +1,81 @@
 extends VBoxContainer
 
 
-
 var random = RandomNumberGenerator.new()
-# Called when the node enters the scene tree for the first time.
+
+var avatar_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0.5, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.25, 0.25, 0.25), Color(0.6, 0.4, 0.2)]
+var avatar_eye_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.3, 0, 0.5), Color(1, 0, 1), Color(0, 0, 0), Color(0.2, 0.2, 0.2), Color(0.6, 0.3, 0.1)]
+var avatar_wing_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.5, 0.5, 0.5), Color(0.55, 0.27, 0.07)]
+var avatar_stripe_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.5, 0.5, 0.5), Color(0.55, 0.27, 0.07)]
+
+onready var avatar_eye_types := [$Collums/AvatarHolder/Eyes/Eyes, $Collums/AvatarHolder/Eyes/Eyes2, $Collums/AvatarHolder/Eyes/Eyes3, $Collums/AvatarHolder/Eyes/Eyes4, $Collums/AvatarHolder/Eyes/Eyes5]
+onready var avatar_stripe_types := [$Collums/AvatarHolder/Stripes/Stripes1, $Collums/AvatarHolder/Stripes/Stripes2, $Collums/AvatarHolder/Stripes/Stripes3, $Collums/AvatarHolder/Stripes/Stripes4, $Collums/AvatarHolder/Stripes/Stripes5, $Collums/AvatarHolder/Stripes/Stripes6]
+onready var avatar_antennar_types := [$Collums/AvatarHolder/Antannae/Antannae1, $Collums/AvatarHolder/Antannae/Antannae2, $Collums/AvatarHolder/Antannae/Antannae3, $Collums/AvatarHolder/Antannae/Antannae4, $Collums/AvatarHolder/Antannae/Antannae5, $Collums/AvatarHolder/Antannae/Antannae6]
+onready var avatar_stinger_types := [$Collums/AvatarHolder/Stinger/Stinger1, $Collums/AvatarHolder/Stinger/Stinger2, $Collums/AvatarHolder/Stinger/Stinger3, $Collums/AvatarHolder/Stinger/Stinger4]
+
+
 func _ready():
 	# Initialize the RandomNumberGenerator
 	random.randomize()
+	
+	var error
+	error = CurrentLogIn.connect("avatar_color_changed", self, "on_avatar_color_changed")
+	error = CurrentLogIn.connect("avatar_eyes_changed", self, "on_avatar_eyes_changed")
+	error = CurrentLogIn.connect("avatar_eye_color_changed", self, "on_avatar_color_changed")
+	error = CurrentLogIn.connect("avatar_wing_color_changed", self, "on_avatar_wing_color_changed")
+	error = CurrentLogIn.connect("avatar_stripe_changed", self, "on_avatar_stripe_changed")
+	error = CurrentLogIn.connect("avatar_stripe_color_changed", self, "on_avatar_stripe_color_changed")
+	error = CurrentLogIn.connect("avatar_antennae_changed", self, "on_avatar_antennae_changed")
+	error = CurrentLogIn.connect("avatar_stinger_changed", self, "on_avatar_stinger_changed")
+	
+	if error != OK:
+		push_warning("One or more 'avatar changed' signals could not connect.")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	# Check the value of the `color` variable
-	if CurrentLogIn.avatar_color <= 0:
-		# Set the color of the `Base` node to white
-		$Collums/AvatarHolder/Base.modulate = Color(1, 1, 1)
-	elif CurrentLogIn.avatar_color == 1:
-		# Set the color of the `Base` node to red
-		$Collums/AvatarHolder/Base.modulate = Color(1, 0, 0)
-	elif CurrentLogIn.avatar_color == 2:
-		# Set the color of the `Base` node to orange
-		$Collums/AvatarHolder/Base.modulate = Color(1, 0.5, 0)
-	elif CurrentLogIn.avatar_color == 3:
-		# Set the color of the `Base` node to yellow
-		$Collums/AvatarHolder/Base.modulate = Color(1, 1, 0)
-	elif CurrentLogIn.avatar_color == 4:
-		# Set the color of the `Base` node to green
-		$Collums/AvatarHolder/Base.modulate = Color(0, 1, 0)
-	elif CurrentLogIn.avatar_color == 5:
-		# Set the color of the `Base` node to teal
-		$Collums/AvatarHolder/Base.modulate = Color(0, 1, 1)
-	elif CurrentLogIn.avatar_color == 6:
-		# Set the color of the `Base` node to cyan
-		$Collums/AvatarHolder/Base.modulate = Color(0, 0.5, 1)
-	elif CurrentLogIn.avatar_color == 7:
-		# Set the color of the `Base` node to blue
-		$Collums/AvatarHolder/Base.modulate = Color(0, 0, 1)
-	elif CurrentLogIn.avatar_color == 8:
-		# Set the color of the `Base` node to indigo
-		$Collums/AvatarHolder/Base.modulate = Color(0.29, 0, 0.51)
-	elif CurrentLogIn.avatar_color == 9:
-		# Set the color of the `Base` node to magenta
-		$Collums/AvatarHolder/Base.modulate = Color(1, 0, 1)
-	elif CurrentLogIn.avatar_color == 10:
-		# Set the color of the `Base` node to black
-		$Collums/AvatarHolder/Base.modulate = Color(0, 0, 0)
-	elif CurrentLogIn.avatar_color == 11:
-		# Set the color of the `Base` node to dark grey
-		$Collums/AvatarHolder/Base.modulate = Color(0.25, 0.25, 0.25)
-	elif CurrentLogIn.avatar_color >= 12:
-		# Set the color of the `Base` node to brown
-		$Collums/AvatarHolder/Base.modulate = Color(0.6, 0.4, 0.2)
-		CurrentLogIn.avatar_color = 12
-		
-	if CurrentLogIn.avatar_eyes == 0:
-		$Collums/AvatarHolder/Eyes/Eyes.visible = true
-		$Collums/AvatarHolder/Eyes/Eyes2.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes3.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes4.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes5.visible = false
-	elif CurrentLogIn.avatar_eyes == 1:
-		$Collums/AvatarHolder/Eyes/Eyes.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes2.visible = true
-		$Collums/AvatarHolder/Eyes/Eyes3.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes4.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes5.visible = false
-	elif CurrentLogIn.avatar_eyes == 2:
-		$Collums/AvatarHolder/Eyes/Eyes.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes2.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes3.visible = true
-		$Collums/AvatarHolder/Eyes/Eyes4.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes5.visible = false
-	elif CurrentLogIn.avatar_eyes == 3:
-		$Collums/AvatarHolder/Eyes/Eyes.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes2.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes3.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes4.visible = true
-		$Collums/AvatarHolder/Eyes/Eyes5.visible = false
-	elif CurrentLogIn.avatar_eyes >= 4:
-		$Collums/AvatarHolder/Eyes/Eyes.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes2.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes3.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes4.visible = false
-		$Collums/AvatarHolder/Eyes/Eyes5.visible = true
-		CurrentLogIn.avatar_eyes = 4
+func on_avatar_color_changed():
+	change_color(CurrentLogIn.avatar_color, avatar_colors, $Collums/AvatarHolder/Base)
 
-	if CurrentLogIn.avatar_eye_color == 0:
-		$Collums/AvatarHolder/Eyes.modulate = Color(1, 1, 1)
-	elif CurrentLogIn.avatar_eye_color == 1:
-		$Collums/AvatarHolder/Eyes.modulate = Color(1, 0, 0)
-	elif CurrentLogIn.avatar_eye_color == 2:
-		$Collums/AvatarHolder/Eyes.modulate = Color(1, 0.5, 0)
-	elif CurrentLogIn.avatar_eye_color == 3:
-		$Collums/AvatarHolder/Eyes.modulate = Color(1, 1, 0)
-	elif CurrentLogIn.avatar_eye_color == 4:
-		$Collums/AvatarHolder/Eyes.modulate = Color(0, 1, 0)
-	elif CurrentLogIn.avatar_eye_color == 5:
-		$Collums/AvatarHolder/Eyes.modulate = Color(0, 1, 1)
-	elif CurrentLogIn.avatar_eye_color == 6:
-		$Collums/AvatarHolder/Eyes.modulate = Color(0, 0, 1)
-	elif CurrentLogIn.avatar_eye_color == 7:
-		$Collums/AvatarHolder/Eyes.modulate = Color(0.3, 0, 0.5)
-	elif CurrentLogIn.avatar_eye_color == 8:
-		$Collums/AvatarHolder/Eyes.modulate = Color(1, 0, 1)
-	elif CurrentLogIn.avatar_eye_color == 9:
-		$Collums/AvatarHolder/Eyes.modulate = Color(0, 0, 0)
-	elif CurrentLogIn.avatar_eye_color == 10:
-		$Collums/AvatarHolder/Eyes.modulate = Color(0.2, 0.2, 0.2)
-	elif CurrentLogIn.avatar_eye_color == 11:
-		$Collums/AvatarHolder/Eyes.modulate = Color(0.6, 0.3, 0.1)
-		CurrentLogIn.avatar_eye_color = 11
+
+func on_avatar_eyes_changed():
+	change_type(CurrentLogIn.avatar_eyes, avatar_eye_types)
+
+
+func on_avatar_eye_color_changed():
+	change_color(CurrentLogIn.avatar_eye_color, avatar_eye_colors, $Collums/AvatarHolder/Eyes)
 	
 	
-	if CurrentLogIn.avatar_wing_color == 0:
-		$Collums/AvatarHolder/Wings.modulate = Color(1, 1, 1)
-	elif CurrentLogIn.avatar_wing_color == 1:
-		$Collums/AvatarHolder/Wings.modulate = Color(1, 0, 0)
-	elif CurrentLogIn.avatar_wing_color == 2:
-		$Collums/AvatarHolder/Wings.modulate = Color(1, 0.5, 0)
-	elif CurrentLogIn.avatar_wing_color == 3:
-		$Collums/AvatarHolder/Wings.modulate = Color(1, 1, 0)
-	elif CurrentLogIn.avatar_wing_color == 4:
-		$Collums/AvatarHolder/Wings.modulate = Color(0, 1, 0)
-	elif CurrentLogIn.avatar_wing_color == 5:
-		$Collums/AvatarHolder/Wings.modulate = Color(0, 1, 1)
-	elif CurrentLogIn.avatar_wing_color == 6:
-		$Collums/AvatarHolder/Wings.modulate = Color(0, 0, 1)
-	elif CurrentLogIn.avatar_wing_color == 7:
-		$Collums/AvatarHolder/Wings.modulate = Color(0.29, 0, 0.51)
-	elif CurrentLogIn.avatar_wing_color == 8:
-		$Collums/AvatarHolder/Wings.modulate = Color(1, 0, 1)
-	elif CurrentLogIn.avatar_wing_color == 9:
-		$Collums/AvatarHolder/Wings.modulate = Color(0, 0, 0)
-	elif CurrentLogIn.avatar_wing_color == 10:
-		$Collums/AvatarHolder/Wings.modulate = Color(0.5, 0.5, 0.5)
-	elif CurrentLogIn.avatar_wing_color == 11:
-		$Collums/AvatarHolder/Wings.modulate = Color(0.55, 0.27, 0.07)
-		CurrentLogIn.avatar_wing_color = 11
-		
+func on_avatar_wing_color_changed():
+	change_color(CurrentLogIn.avatar_wing_color, avatar_wing_colors, $Collums/AvatarHolder/Wings)
 	
-	if CurrentLogIn.avatar_stripe == 0:
-		$Collums/AvatarHolder/Stripes/Stripes1.visible = true
-		$Collums/AvatarHolder/Stripes/Stripes2.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes3.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes4.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes5.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes6.visible = false
-	elif CurrentLogIn.avatar_stripe == 1:
-		$Collums/AvatarHolder/Stripes/Stripes1.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes2.visible = true
-		$Collums/AvatarHolder/Stripes/Stripes3.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes4.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes5.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes6.visible = false
-	elif CurrentLogIn.avatar_stripe == 2:
-		$Collums/AvatarHolder/Stripes/Stripes1.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes2.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes3.visible = true
-		$Collums/AvatarHolder/Stripes/Stripes4.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes5.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes6.visible = false
-	elif CurrentLogIn.avatar_stripe == 3:
-		$Collums/AvatarHolder/Stripes/Stripes1.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes2.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes3.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes4.visible = true
-		$Collums/AvatarHolder/Stripes/Stripes5.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes6.visible = false
-	elif CurrentLogIn.avatar_stripe == 4:
-		$Collums/AvatarHolder/Stripes/Stripes1.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes2.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes3.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes4.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes5.visible = true
-		$Collums/AvatarHolder/Stripes/Stripes6.visible = false
-	elif CurrentLogIn.avatar_stripe >= 5:
-		$Collums/AvatarHolder/Stripes/Stripes1.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes2.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes3.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes4.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes5.visible = false
-		$Collums/AvatarHolder/Stripes/Stripes6.visible = true
-		CurrentLogIn.avatar_stripe = 5
-			
-	if CurrentLogIn.avatar_stripe_color == 0:
-		$Collums/AvatarHolder/Stripes.modulate = Color(1, 1, 1)
-	elif CurrentLogIn.avatar_stripe_color == 1:
-		$Collums/AvatarHolder/Stripes.modulate = Color(1, 0, 0)
-	elif CurrentLogIn.avatar_stripe_color == 2:
-		$Collums/AvatarHolder/Stripes.modulate = Color(1, 0.5, 0)
-	elif CurrentLogIn.avatar_stripe_color == 3:
-		$Collums/AvatarHolder/Stripes.modulate = Color(1, 1, 0)
-	elif CurrentLogIn.avatar_stripe_color == 4:
-		$Collums/AvatarHolder/Stripes.modulate = Color(0, 1, 0)
-	elif CurrentLogIn.avatar_stripe_color == 5:
-		$Collums/AvatarHolder/Stripes.modulate = Color(0, 1, 1)
-	elif CurrentLogIn.avatar_stripe_color == 6:
-		$Collums/AvatarHolder/Stripes.modulate = Color(0, 0, 1)
-	elif CurrentLogIn.avatar_stripe_color == 7:
-		$Collums/AvatarHolder/Stripes.modulate = Color(0.29, 0, 0.51)
-	elif CurrentLogIn.avatar_stripe_color == 8:
-		$Collums/AvatarHolder/Stripes.modulate = Color(1, 0, 1)
-	elif CurrentLogIn.avatar_stripe_color == 9:
-		$Collums/AvatarHolder/Stripes.modulate = Color(0, 0, 0)
-	elif CurrentLogIn.avatar_stripe_color == 10:
-		$Collums/AvatarHolder/Stripes.modulate = Color(0.5, 0.5, 0.5)
-	elif CurrentLogIn.avatar_stripe_color >= 11:
-		$Collums/AvatarHolder/Stripes.modulate = Color(0.55, 0.27, 0.07)
-		CurrentLogIn.avatar_stripe_color = 11
+
+func on_avatar_stripe_changed():
+	change_type(CurrentLogIn.avatar_stripe, avatar_stripe_types)
 	
-	if CurrentLogIn.avatar_antennae == 0:
-		$Collums/AvatarHolder/Antannae/Antannae1.visible = true
-		$Collums/AvatarHolder/Antannae/Antannae2.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae3.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae4.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae5.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae6.visible = false
+	
+func on_avatar_stripe_color_changed():
+	change_color(CurrentLogIn.avatar_stripe_color, avatar_stripe_colors, $Collums/AvatarHolder/Stripes)
+	
 
-	elif CurrentLogIn.avatar_antennae == 1:
-		$Collums/AvatarHolder/Antannae/Antannae1.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae2.visible = true
-		$Collums/AvatarHolder/Antannae/Antannae3.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae4.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae5.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae6.visible = false
+func on_avatar_antennae_changed():
+	change_type(CurrentLogIn.avatar_antennae, avatar_antennar_types)
 
-	elif CurrentLogIn.avatar_antennae == 2:
-		$Collums/AvatarHolder/Antannae/Antannae1.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae2.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae3.visible = true
-		$Collums/AvatarHolder/Antannae/Antannae4.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae5.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae6.visible = false
 
-	elif CurrentLogIn.avatar_antennae == 3:
-		$Collums/AvatarHolder/Antannae/Antannae1.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae2.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae3.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae4.visible = true
-		$Collums/AvatarHolder/Antannae/Antannae5.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae6.visible = false
+func on_avatar_stinger_changed():
+	change_type(CurrentLogIn.avatar_stinger, avatar_stinger_types)
 
-	elif CurrentLogIn.avatar_antennae == 4:
-		$Collums/AvatarHolder/Antannae/Antannae1.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae2.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae3.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae4.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae5.visible = true
-		$Collums/AvatarHolder/Antannae/Antannae6.visible = false
 
-	elif CurrentLogIn.avatar_antennae == 5:
-		$Collums/AvatarHolder/Antannae/Antannae1.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae2.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae3.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae4.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae5.visible = false
-		$Collums/AvatarHolder/Antannae/Antannae6.visible = true
-		CurrentLogIn.avatar_antennae = 5
-		
-	if CurrentLogIn.avatar_stinger == 0:
-		$Collums/AvatarHolder/Stinger/Stinger1.visible = true
-		$Collums/AvatarHolder/Stinger/Stinger2.visible = false
-		$Collums/AvatarHolder/Stinger/Stinger3.visible = false
-		$Collums/AvatarHolder/Stinger/Stinger4.visible = false
-	elif CurrentLogIn.avatar_stinger == 1:
-		$Collums/AvatarHolder/Stinger/Stinger1.visible = false
-		$Collums/AvatarHolder/Stinger/Stinger2.visible = true
-		$Collums/AvatarHolder/Stinger/Stinger3.visible = false
-		$Collums/AvatarHolder/Stinger/Stinger4.visible = false
-	elif CurrentLogIn.avatar_stinger == 2:
-		$Collums/AvatarHolder/Stinger/Stinger1.visible = false
-		$Collums/AvatarHolder/Stinger/Stinger2.visible = false
-		$Collums/AvatarHolder/Stinger/Stinger3.visible = true
-		$Collums/AvatarHolder/Stinger/Stinger4.visible = false
-	elif CurrentLogIn.avatar_stinger == 3:
-		$Collums/AvatarHolder/Stinger/Stinger1.visible = false
-		$Collums/AvatarHolder/Stinger/Stinger2.visible = false
-		$Collums/AvatarHolder/Stinger/Stinger3.visible = false
-		$Collums/AvatarHolder/Stinger/Stinger4.visible = true
-		CurrentLogIn.avatar_stinger = 3
+# Usage example -> change_color(CurrentLogIn.avatar_stripe_color, avatar_stripe_colors, $Stripes)
+func change_color(index, color_references, node):
+	if index >= 0 and index < color_references.size():
+		node.modulate = color_references[index]
+
+
+# Usage example -> change_type(CurrentLogIn.avatar_stinger, avatar_stinger_types)
+func change_type(index, type_references):
+	if index >= 0 and index < type_references.size():
+		for i in range(0, type_references.size()-1):
+			type_references[i].visible = true if index == i else false
+
 
 func _on_BackColor_pressed():
 	if CurrentLogIn.avatar_color > 0:
