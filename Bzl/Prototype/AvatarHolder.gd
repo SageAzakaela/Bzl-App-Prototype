@@ -28,8 +28,7 @@ func _ready():
 
 
 func on_avatar_color_changed():
-	if CurrentLogIn.avatar_color >= 0 and CurrentLogIn.avatar_color < avatar_colors.size():
-		$Base.modulate = avatar_colors[CurrentLogIn.avatar_color]
+	change_color(CurrentLogIn.avatar_color, avatar_colors, $Base)
 
 
 func on_avatar_eyes_changed():
@@ -37,13 +36,11 @@ func on_avatar_eyes_changed():
 
 
 func on_avatar_eye_color_changed():
-	if CurrentLogIn.avatar_eye_color >= 0 and CurrentLogIn.avatar_eye_color < avatar_eye_colors.size():
-		$Eyes.modulate = avatar_eye_colors[CurrentLogIn.avatar_eye_color]
+	change_color(CurrentLogIn.avatar_eye_color, avatar_eye_colors, $Eyes)
 	
 	
 func on_avatar_wing_color_changed():
-	if CurrentLogIn.avatar_wing_color >= 0 and CurrentLogIn.avatar_wing_color < avatar_wing_colors.size():
-		$Wings.modulate = avatar_wing_colors[CurrentLogIn.avatar_wing_color]
+	change_color(CurrentLogIn.avatar_wing_color, avatar_wing_colors, $Wings)
 	
 
 func on_avatar_stripe_changed():
@@ -51,8 +48,7 @@ func on_avatar_stripe_changed():
 	
 	
 func on_avatar_stripe_color_changed():
-	if CurrentLogIn.avatar_stripe_color >= 0 and CurrentLogIn.avatar_stripe_color < avatar_stripe_colors.size():
-		$Wings.modulate = avatar_stripe_colors[CurrentLogIn.avatar_stripe_color]
+	change_color(CurrentLogIn.avatar_stripe_color, avatar_stripe_colors, $Stripes)
 	
 
 func on_avatar_antennae_changed():
@@ -63,8 +59,14 @@ func on_avatar_stinger_changed():
 	change_type(CurrentLogIn.avatar_stinger, avatar_stinger_types)
 
 
-func change_type(type, type_references):
-	if type >= 0 and type < type_references.size():
-		for i in range(0, type_references.size()-1):
-			type_references[i].visible = true if type == i else false
+# Usage example -> change_color(CurrentLogIn.avatar_stripe_color, avatar_stripe_colors, $Stripes)
+func change_color(index, color_references, node):
+	if index >= 0 and index < color_references.size():
+		node.modulate = color_references[index]
 
+
+# Usage example -> change_type(CurrentLogIn.avatar_stinger, avatar_stinger_types)
+func change_type(index, type_references):
+	if index >= 0 and index < type_references.size():
+		for i in range(0, type_references.size()-1):
+			type_references[i].visible = true if index == i else false
