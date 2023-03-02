@@ -579,15 +579,30 @@ custom_fonts/font = ExtResource( 37 )
 align = 1
 placeholder_text = "Enter Username"
 
+[node name="EnterEmail" type="LineEdit" parent="LogInScreen/LogInScreenPanel/MakeANewAccount"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.0
+margin_top = 46.0
+margin_right = 308.0
+margin_bottom = 70.0
+rect_rotation = 0.249617
+theme = ExtResource( 39 )
+custom_fonts/font = ExtResource( 37 )
+align = 1
+placeholder_text = "Enter Email"
+
 [node name="EnterPassword" type="LineEdit" parent="LogInScreen/LogInScreenPanel/MakeANewAccount"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -12.0
-margin_top = 54.0
+margin_top = 85.0
 margin_right = 308.0
-margin_bottom = 78.0
+margin_bottom = 109.0
 rect_rotation = 0.249617
 theme = ExtResource( 39 )
 custom_fonts/font = ExtResource( 37 )
@@ -601,9 +616,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -12.0
-margin_top = 92.0
+margin_top = 123.0
 margin_right = 308.0
-margin_bottom = 116.0
+margin_bottom = 147.0
 rect_rotation = 0.249617
 theme = ExtResource( 39 )
 custom_fonts/font = ExtResource( 37 )
@@ -613,9 +628,9 @@ placeholder_text = "Confrim Password"
 
 [node name="CreateUserButton" type="Button" parent="LogInScreen/LogInScreenPanel/MakeANewAccount"]
 margin_left = 8.0
-margin_top = 162.0
+margin_top = 190.0
 margin_right = 326.0
-margin_bottom = 182.0
+margin_bottom = 210.0
 rect_rotation = 0.249617
 theme = ExtResource( 39 )
 custom_fonts/font = ExtResource( 37 )
@@ -643,7 +658,7 @@ custom_fonts/font = ExtResource( 38 )
 text = "Log In"
 align = 1
 
-[node name="EnterUsername" type="LineEdit" parent="LogInScreen/LogInScreenPanel/ReturningUser"]
+[node name="EnterEmail" type="LineEdit" parent="LogInScreen/LogInScreenPanel/ReturningUser"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -656,7 +671,7 @@ rect_rotation = 0.249617
 theme = ExtResource( 39 )
 custom_fonts/font = ExtResource( 37 )
 align = 1
-placeholder_text = "Enter Username"
+placeholder_text = "Enter Email"
 
 [node name="EnterPassword" type="LineEdit" parent="LogInScreen/LogInScreenPanel/ReturningUser"]
 anchor_left = 0.5

@@ -1,7 +1,14 @@
 extends Button
 
+
+func _ready():
+	# Connect to the signup_succeeded signal
+	Firebase.Auth.connect("signup_succeeded", self, "_on_signup_succeeded")
+
+
 func _on_CreateUserButton_pressed():
-	# Get the username, password, and password confirmation from the input fields
+	# Get the email, username, and password from the input fields
+	var email = get_node("../EnterEmail").text as String
 	var username = get_node("../EnterUsername").text as String
 	var password = get_node("../EnterPassword").text as String
 	var password_confirmation = get_node("../EnterPasswordConfirmation").text
@@ -12,17 +19,20 @@ func _on_CreateUserButton_pressed():
 		get_node("../../UserDataMessagePanel/Message").text = "Passwords do not match"
 		get_node("../../UserDataMessagePanel/Message").visible = true
 		return
-	
-	# Check if the username is already taken
-	if UserData.check_user(username, password):
-		# Show an error message if the username is already taken
-		get_node("../../UserDataMessagePanel/Message").text = "Username is already taken"
-		get_node("../../UserDataMessagePanel/Message").visible = true
-		return
 
-	# Add the new user to the UserData script
-	UserData.add_user(username, password)
+	# Create the user with Firebase Authentication
+	Firebase.Auth.signup_with_email_and_password(email, password)
+	
+func _on_signup_succeeded(auth_info: Dictionary):
+	# Get the email and username from the Firebase Authentication result
+	var email = auth_info["email"]
+	var username = get_node("../EnterUsername").text as String
+
+	# Create a new user in the database
+	UserData.CreateUser(email, username)
 
 	# Show a success message
 	get_node("../../UserDataMessagePanel/Message").text = "Account created successfully"
 	get_node("../../UserDataMessagePanel/Message").visible = true
+
+
