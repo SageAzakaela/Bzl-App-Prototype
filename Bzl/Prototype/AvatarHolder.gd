@@ -1,14 +1,16 @@
 extends PanelContainer
 
 
-var avatar_colors: Array = [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0.5, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.25, 0.25, 0.25), Color(0.6, 0.4, 0.2)]
-var avatar_eye_colors: Array = [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.3, 0, 0.5), Color(1, 0, 1), Color(0, 0, 0), Color(0.2, 0.2, 0.2), Color(0.6, 0.3, 0.1)]
-var avatar_wing_colors: Array = [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.5, 0.5, 0.5), Color(0.55, 0.27, 0.07)]
-var avatar_stripe_colors: Array = [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.5, 0.5, 0.5), Color(0.55, 0.27, 0.07)]
-var avatar_eye_types: Array = [[true,false,false,false,false], [false,true,false,false,false], [false,false,true,false,false], [false,false,false,true,false], [false,false,false,false,true]]
-var avatar_stripe_types: Array = [[true,false,false,false,false,false], [false,true,false,false,false,false], [false,false,true,false,false,false], [false,false,false,true,false,false], [false,false,false,false,true,false], [false,false,false,false,false,true]]
-var avatar_antennar_types: Array = [[true,false,false,false,false,false], [false,true,false,false,false,false], [false,false,true,false,false,false], [false,false,false,true,false,false], [false,false,false,false,true,false], [false,false,false,false,false,true]]
-var avatar_stinger_types: Array = [[true,false,false,false,false], [false,true,false,false,false], [false,false,true,false,false], [false,false,false,true,false], [false,false,false,false,true]]
+var avatar_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0.5, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.25, 0.25, 0.25), Color(0.6, 0.4, 0.2)]
+var avatar_eye_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.3, 0, 0.5), Color(1, 0, 1), Color(0, 0, 0), Color(0.2, 0.2, 0.2), Color(0.6, 0.3, 0.1)]
+var avatar_wing_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.5, 0.5, 0.5), Color(0.55, 0.27, 0.07)]
+var avatar_stripe_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.5, 0.5, 0.5), Color(0.55, 0.27, 0.07)]
+
+onready var avatar_eye_types := [$Eyes/Eyes, $Eyes/Eyes2, $Eyes/Eyes3, $Eyes/Eyes4, $Eyes/Eyes5]
+onready var avatar_stripe_types := [$Stripes/Stripes1, $Stripes/Stripes2, $Stripes/Stripes3, $Stripes/Stripes4, $Stripes/Stripes5, $Stripes/Stripes6]
+onready var avatar_antennar_types := [$Antannae/Antannae1, $Antannae/Antannae2, $Antannae/Antannae3, $Antannae/Antannae4, $Antannae/Antannae5, $Antannae/Antannae6]
+onready var avatar_stinger_types := [$Stinger/Stinger1, $Stinger/Stinger2, $Stinger/Stinger3, $Stinger/Stinger4]
+
 
 func _ready():
 	var error
@@ -31,12 +33,7 @@ func on_avatar_color_changed():
 
 
 func on_avatar_eyes_changed():
-	if CurrentLogIn.avatar_eyes >= 0 and CurrentLogIn.avatar_eyes < avatar_eye_types.size():
-		$Eyes/Eyes.visible = avatar_eye_types[CurrentLogIn.avatar_eyes][0]
-		$Eyes/Eyes2.visible = avatar_eye_types[CurrentLogIn.avatar_eyes][1]
-		$Eyes/Eyes3.visible = avatar_eye_types[CurrentLogIn.avatar_eyes][2]
-		$Eyes/Eyes4.visible = avatar_eye_types[CurrentLogIn.avatar_eyes][3]
-		$Eyes/Eyes5.visible = avatar_eye_types[CurrentLogIn.avatar_eyes][4]
+	change_type(CurrentLogIn.avatar_eyes, avatar_eye_types)
 
 
 func on_avatar_eye_color_changed():
@@ -50,14 +47,8 @@ func on_avatar_wing_color_changed():
 	
 
 func on_avatar_stripe_changed():
-	if CurrentLogIn.avatar_stripe >= 0 and CurrentLogIn.avatar_stripe < avatar_stripe_types.size():
-		$Stripes/Stripes1.visible = avatar_stripe_types[CurrentLogIn.avatar_stripe][0]
-		$Stripes/Stripes2.visible = avatar_stripe_types[CurrentLogIn.avatar_stripe][1]
-		$Stripes/Stripes3.visible = avatar_stripe_types[CurrentLogIn.avatar_stripe][2]
-		$Stripes/Stripes4.visible = avatar_stripe_types[CurrentLogIn.avatar_stripe][3]
-		$Stripes/Stripes5.visible = avatar_stripe_types[CurrentLogIn.avatar_stripe][4]
-		$Stripes/Stripes6.visible = avatar_stripe_types[CurrentLogIn.avatar_stripe][5]
-			
+	change_type(CurrentLogIn.avatar_stripe, avatar_stripe_types)
+	
 	
 func on_avatar_stripe_color_changed():
 	if CurrentLogIn.avatar_stripe_color >= 0 and CurrentLogIn.avatar_stripe_color < avatar_stripe_colors.size():
@@ -65,18 +56,15 @@ func on_avatar_stripe_color_changed():
 	
 
 func on_avatar_antennae_changed():
-	if CurrentLogIn.avatar_antennae >= 0 and CurrentLogIn.avatar_antennae < avatar_antennar_types.size():
-		$Antannae/Antannae1.visible = avatar_antennar_types[CurrentLogIn.avatar_antennae][0]
-		$Antannae/Antannae2.visible = avatar_antennar_types[CurrentLogIn.avatar_antennae][1]
-		$Antannae/Antannae3.visible = avatar_antennar_types[CurrentLogIn.avatar_antennae][2]
-		$Antannae/Antannae4.visible = avatar_antennar_types[CurrentLogIn.avatar_antennae][3]
-		$Antannae/Antannae5.visible = avatar_antennar_types[CurrentLogIn.avatar_antennae][4]
-		$Antannae/Antannae6.visible = avatar_antennar_types[CurrentLogIn.avatar_antennae][5]
+	change_type(CurrentLogIn.avatar_antennae, avatar_antennar_types)
 
 
 func on_avatar_stinger_changed():
-	if CurrentLogIn.avatar_stinger >= 0 and CurrentLogIn.avatar_stinger < avatar_stinger_types.size():
-		$Stinger/Stinger1.visible = avatar_stinger_types[CurrentLogIn.avatar_stinger][0]
-		$Stinger/Stinger2.visible = avatar_stinger_types[CurrentLogIn.avatar_stinger][1]
-		$Stinger/Stinger3.visible = avatar_stinger_types[CurrentLogIn.avatar_stinger][2]
-		$Stinger/Stinger4.visible = avatar_stinger_types[CurrentLogIn.avatar_stinger][3]
+	change_type(CurrentLogIn.avatar_stinger, avatar_stinger_types)
+
+
+func change_type(type, type_references):
+	if type >= 0 and type < type_references.size():
+		for i in range(0, type_references.size()-1):
+			type_references[i].visible = true if type == i else false
+
