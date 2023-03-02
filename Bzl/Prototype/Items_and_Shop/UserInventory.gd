@@ -17,7 +17,7 @@ func _on_Inventory_pressed():
 	
 	# create dictionaries for each item and append to the items list
 	for item in CurrentLogIn.logged_in_inventory:
-		var item_instance = load("res://Prototype/Items_And_Shop/Item.tscn").instance()
+		var item_instance = load("res://Prototype/Items_and_Shop/Item.tscn").instance()
 		item_instance.item_name = item["item_name"]
 		item_instance.item_description = item["item_description"]
 		item_container.add_child(item_instance)
