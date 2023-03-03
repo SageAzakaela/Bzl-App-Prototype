@@ -90,8 +90,6 @@ func _add_to_hovered(drawable):
 	
 	hovered_drawables.push_back(drawable)
 	_sort_by_z_index(hovered_drawables)
-	
-	print(hovered_drawables)
 
 
 func _remove_from_hovered(drawable):
