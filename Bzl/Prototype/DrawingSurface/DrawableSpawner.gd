@@ -13,6 +13,11 @@ var active_drawable
 
 onready var drawable_square = preload("res://Prototype/DrawingSurface/Drawable/DrawableSquare.tscn")
 onready var drawable_circle = preload("res://Prototype/DrawingSurface/Drawable/DrawableCircle.tscn")
+onready var drawable_triangle = preload("res://Prototype/DrawingSurface/Drawable/DrawableTriangle.tscn")
+onready var drawable_bolt = preload("res://Prototype/DrawingSurface/Drawable/DrawableBolt.tscn")
+onready var drawable_heart = preload("res://Prototype/DrawingSurface/Drawable/DrawableHeart.tscn")
+onready var drawable_moon = preload("res://Prototype/DrawingSurface/Drawable/DrawableMoon.tscn")
+onready var drawable_star = preload("res://Prototype/DrawingSurface/Drawable/DrawableStar.tscn")
 
 
 func spawn_drawable(drawable):
@@ -131,3 +136,18 @@ func _on_spawn_square_buttom_pressed():
 
 func _on_spawn_cirlce_buttom_pressed():
 	spawn_drawable(drawable_circle)
+
+func _on_spawn_triangle_buttom_pressed():
+	spawn_drawable(drawable_triangle)
+	
+func _on_spawn_bolt_buttom_pressed():
+	spawn_drawable(drawable_bolt)
+	
+func _on_spawn_heart_buttom_pressed():
+	spawn_drawable(drawable_heart)
+	
+func _on_spawn_moon_buttom_pressed():
+	spawn_drawable(drawable_moon)
+	
+func _on_spawn_star_buttom_pressed():
+	spawn_drawable(drawable_star)

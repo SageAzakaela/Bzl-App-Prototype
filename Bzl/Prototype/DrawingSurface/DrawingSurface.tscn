@@ -13,15 +13,56 @@ anchor_right = 1.0
 
 [node name="SpawnSquare" type="Button" parent="Selector"]
 anchor_right = 1.0
+margin_right = 106.0
 margin_bottom = 20.0
 text = "Spawn Square"
 
-[node name="SpawnCirlce" type="Button" parent="Selector"]
+[node name="SpawnCircle" type="Button" parent="Selector"]
 anchor_right = 1.0
 margin_top = 20.0
-margin_right = 99.0
+margin_right = 106.0
 margin_bottom = 40.0
 text = "Spawn Circle"
 
+[node name="SpawnTriangle" type="Button" parent="Selector"]
+anchor_right = 1.0
+margin_top = 40.0
+margin_right = 106.0
+margin_bottom = 60.0
+text = "Spawn Triangle"
+
+[node name="SpawnBolt" type="Button" parent="Selector"]
+anchor_right = 1.0
+margin_top = 60.0
+margin_right = 106.0
+margin_bottom = 80.0
+text = "Spawn Bolt"
+
+[node name="SpawnHeart" type="Button" parent="Selector"]
+anchor_right = 1.0
+margin_top = 80.0
+margin_right = 104.0
+margin_bottom = 100.0
+text = "Spawn Heart"
+
+[node name="SpawnMoon" type="Button" parent="Selector"]
+anchor_right = 1.0
+margin_top = 100.0
+margin_right = 106.0
+margin_bottom = 120.0
+text = "Spawn Moon"
+
+[node name="SpawnStar" type="Button" parent="Selector"]
+anchor_right = 1.0
+margin_top = 120.0
+margin_right = 106.0
+margin_bottom = 140.0
+text = "Spawn Star"
+
 [connection signal="pressed" from="Selector/SpawnSquare" to="DrawableSpawner" method="_on_spawn_square_buttom_pressed"]
-[connection signal="pressed" from="Selector/SpawnCirlce" to="DrawableSpawner" method="_on_spawn_cirlce_buttom_pressed"]
+[connection signal="pressed" from="Selector/SpawnCircle" to="DrawableSpawner" method="_on_spawn_cirlce_buttom_pressed"]
+[connection signal="pressed" from="Selector/SpawnTriangle" to="DrawableSpawner" method="_on_spawn_triangle_buttom_pressed"]
+[connection signal="pressed" from="Selector/SpawnBolt" to="DrawableSpawner" method="_on_spawn_bolt_buttom_pressed"]
+[connection signal="pressed" from="Selector/SpawnHeart" to="DrawableSpawner" method="_on_spawn_heart_buttom_pressed"]
+[connection signal="pressed" from="Selector/SpawnMoon" to="DrawableSpawner" method="_on_spawn_moon_buttom_pressed"]
+[connection signal="pressed" from="Selector/SpawnStar" to="DrawableSpawner" method="_on_spawn_star_buttom_pressed"]
