@@ -19,7 +19,7 @@ func spawn_drawable(drawable):
 	var instance = drawable.instance()
 	instance.disable()
 	instance.drawable_spawner = self
-	drawables.push_back(instance)
+	_push_to_back(drawables, instance)
 	_update_z_index(drawables, instance)
 	add_child(instance)
 
@@ -33,6 +33,9 @@ func _input(event):
 		
 		if active_drawable == null:
 			return
+			
+		_push_to_back(drawables, active_drawable)
+		_update_z_indecies(drawables)
 		
 		active_drawable.enable()
 		
@@ -42,12 +45,25 @@ func _input(event):
 			
 		active_drawable.disable()
 		active_drawable = null
+		
+	if event.is_action_released("right_click"):
+		if active_drawable != null:
+			return
+			
+		var drawable = _get_last(hovered_drawables)
+		
+		if drawable == null:
+			return
+			
+		_remove_from_hovered(drawable)
+		_remove_from_drawables(drawable)
+		drawable.queue_free()
 
 
 func _update_z_index(array: Array, drawable):
 	drawable.z_index = array.find(drawable)
 
-	
+
 func _update_z_indecies(array: Array):
 	for i in range(0, array.size()):
 		array[i].z_index = i
@@ -55,8 +71,8 @@ func _update_z_indecies(array: Array):
 
 func _sort_by_z_index(array: Array):
 	array.sort_custom(self, "_sort_by_z_index_ascent")
-	
-	
+
+
 func _sort_by_z_index_ascent(a, b):
 	if a.z_index < b.z_index:
 		return true
@@ -81,13 +97,32 @@ func _remove_from_hovered(drawable):
 
 	hovered_drawables.remove(index)
 	_sort_by_z_index(hovered_drawables)
+
+
+func _remove_from_drawables(drawable):
+	var index = drawables.find(drawable)
 	
-	
+	if index < 0:
+		return
+
+	drawables.remove(index)
+	_sort_by_z_index(drawables)
+
+
 func _get_last(array: Array):
 	if array.size() == 0:
 		return
 		
 	return array[array.size() - 1]
+
+
+func _push_to_back(array: Array, drawable):
+	var index = array.find(drawable)
+	
+	if index >= 0:
+		array.remove(index)
+	
+	array.push_back(drawable)
 
 
 func _on_spawn_square_buttom_pressed():
