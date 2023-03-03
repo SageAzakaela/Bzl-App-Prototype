@@ -135,17 +135,22 @@ func _on_spawn_square_buttom_pressed():
 func _on_spawn_cirlce_buttom_pressed():
 	spawn_drawable(drawable_circle)
 
+
 func _on_spawn_triangle_buttom_pressed():
 	spawn_drawable(drawable_triangle)
+
 	
 func _on_spawn_bolt_buttom_pressed():
 	spawn_drawable(drawable_bolt)
+
 	
 func _on_spawn_heart_buttom_pressed():
 	spawn_drawable(drawable_heart)
+
 	
 func _on_spawn_moon_buttom_pressed():
 	spawn_drawable(drawable_moon)
+
 	
 func _on_spawn_star_buttom_pressed():
 	spawn_drawable(drawable_star)
