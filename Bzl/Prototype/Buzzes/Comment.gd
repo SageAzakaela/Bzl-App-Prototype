@@ -5,7 +5,6 @@ extends HBoxContainer
 # var a = 2
 # var b = "text"
 export var comment_text = ""
-export var comment_rating = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$CommentPanel/CommentLabel.text = comment_text

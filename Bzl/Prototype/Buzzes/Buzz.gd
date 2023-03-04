@@ -8,20 +8,21 @@ export var Time_Remaining = 0
 export var User = ""
 export var User_Type = ""
 
-var post_id = 0
-var user_id = ""
+
+export var buzz_key = ""
+
 var buzz_content = ""
 var keywords = []
 var time_created = 0
-var duration = 0 #duration in seconds
+var duration = 120 #duration in seconds
 var boosters = []
 var comments = {} #contains user ID and content of the comment made
 var username = ""
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	print(buzz_key)
+	#set the buzz stuff
 	Buzz_Text = buzz_content
 	Keywords = keywords
 	Time_Remaining = duration
@@ -104,18 +105,20 @@ func _on_BuzzBack_pressed():
 	$VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment.visible = true
 
 func _on_Submit_pressed():
+	print("new comment")
+	var comment_text = $VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment/CommentTextEntry.text
+	var user_id = CurrentLogIn.logged_in_username
+	var comment_data = {
+		"content": comment_text,
+		"user_id": user_id
+	}
+	
+	# Add the comment to the database
+	var db_ref = Firebase.Database.get_database_reference("/feed/" + buzz_key + "/comments")
+	db_ref.push(comment_data)
+
 	$VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment.visible = false
-	var comment = load("res://Prototype/Buzzes/Comment.tscn").instance()
-	comment.comment_text = $VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment/CommentTextEntry.text
-	$VBoxContainer/CommentsSection/VBoxContainer.add_child(comment)
-	#add points for making a comment!
-	var user = CurrentLogIn.logged_in_username
-#	UserData.add_user_points(user, 5)
-	# extend the lifespan per comment
-	Time_Remaining += 60
+	$VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment/CommentTextEntry.clear()
 
 func _on_Cancel_pressed():
 	$VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment.visible = false
-
-
-

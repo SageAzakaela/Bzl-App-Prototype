@@ -25,19 +25,20 @@ func _process(_delta):
 	Pronouns.text = str(CurrentLogIn.logged_in_pronouns)
 	Bio.text = str(CurrentLogIn.logged_in_bio)
 
-
 func _on_EditBioButton_toggled(button_pressed):
-
 	if button_pressed == true:
 		edit_bio_panel.visible = true
 		edit_bio_text_entry.visible = true
 		bio_button.text = "Save Bio"
-		UserData.set_user_bio(CurrentLogIn.logged_in_username, edit_bio_text_entry.text)
 	else:
 		edit_bio_panel.visible = false
 		edit_bio_text_entry.visible = false
 		bio_button.text = "Edit Bio"
-		UserData.set_user_bio(CurrentLogIn.logged_in_username, edit_bio_text_entry.text)
+		# Get the updated bio text
+		var updated_bio = {"bio": edit_bio_text_entry.text}
+		CurrentLogIn.logged_in_bio = edit_bio_text_entry.text
+		# Update the user's bio in the database
+		UserData.UpdateUserData(CurrentLogIn.logged_in_email, updated_bio)
 
 
 func _on_EditPronouns_toggled(button_pressed):
@@ -45,11 +46,15 @@ func _on_EditPronouns_toggled(button_pressed):
 	if button_pressed == true:
 		edit_prnouns_field.visible = true
 		edit_pronouns_button.text = "Save Pronouns"
-		UserData.set_user_pronouns(CurrentLogIn.logged_in_username, new_text)
 	else:
 		edit_prnouns_field.visible = false
 		edit_pronouns_button.text = "Edit Pronouns"
-		UserData.set_user_pronouns(CurrentLogIn.logged_in_username, new_text)
+		# Get the updated pronouns text
+		var updated_pronouns = {"pronouns": new_text}
+		CurrentLogIn.logged_in_pronouns = new_text
+		# Update the user's pronouns in the database
+		UserData.UpdateUserData(CurrentLogIn.logged_in_email, updated_pronouns)
+
 		
 
 

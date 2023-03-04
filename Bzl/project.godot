@@ -152,10 +152,10 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 UserData="*res://Prototype/globals/UserData.gd"
 Feed="*res://Prototype/globals/Feed.gd"
 CurrentLogIn="*res://Prototype/globals/CurrentLogIn.gd"
+Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 
 [editor_plugins]
 

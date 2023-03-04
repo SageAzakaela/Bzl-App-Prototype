@@ -1,8 +1,7 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Prototype/Buzzes_1st_Attempt/Station_505_Intensity1.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Prototype/Buzzes_1st_Attempt/black-and-purple-hexagon-grid.jpg" type="Texture" id=2]
-[ext_resource path="res://Prototype/Buzzes/NewBuzz.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prototype/Main.gd" type="Script" id=4]
 [ext_resource path="res://Prototype/Buzzes/Blip_Select18.wav" type="AudioStream" id=5]
 [ext_resource path="res://Prototype/CreateUserButton.gd" type="Script" id=6]
@@ -35,12 +34,12 @@
 [ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0012_Stinger4.png" type="Texture" id=33]
 [ext_resource path="res://Prototype/CharacterCreator.gd" type="Script" id=34]
 [ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0000_Wings1.png" type="Texture" id=35]
-[ext_resource path="res://Prototype/NPC_Manager.gd" type="Script" id=36]
 [ext_resource path="res://Prototype/fonts/FontNormal.tres" type="DynamicFont" id=37]
 [ext_resource path="res://Prototype/fonts/FontBold.tres" type="DynamicFont" id=38]
 [ext_resource path="res://Prototype/BZL_Default_Theme.tres" type="Theme" id=39]
 [ext_resource path="res://Prototype/Items_and_Shop/UserInventory.gd" type="Script" id=40]
 [ext_resource path="res://Prototype/Items_and_Shop/Shop.gd" type="Script" id=41]
+[ext_resource path="res://Prototype/BuzzContainer.gd" type="Script" id=42]
 
 [sub_resource type="StyleBoxTexture" id=31]
 texture = ExtResource( 2 )
@@ -381,17 +380,7 @@ margin_bottom = 493.0
 focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="NPC_Manager" type="Control" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer"]
-margin_right = 820.0
-script = ExtResource( 36 )
-
-[node name="Buzz" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 4.0
-margin_right = 820.0
-margin_bottom = 229.0
+script = ExtResource( 42 )
 
 [node name="RecentTags" type="ScrollContainer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground"]
 visible = false
@@ -1489,7 +1478,6 @@ text = "Exit Shop"
 [connection signal="pressed" from="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/Inventory" to="UserInventory" method="_on_Inventory_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/UserPanelAccessButtom" to="." method="_on_UserPanelAccessButtom_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/HBoxContainer/SubmitBuzz" to="." method="_on_SubmitBuzz_pressed"]
-[connection signal="pressed" from="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/HBoxContainer/SubmitBuzz" to="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer/NPC_Manager" method="_on_SubmitBuzz_pressed"]
 [connection signal="pressed" from="LogInScreen/LogInScreenPanel/MakeANewAccount/CreateUserButton" to="LogInScreen/LogInScreenPanel/MakeANewAccount/CreateUserButton" method="_on_CreateUserButton_pressed"]
 [connection signal="pressed" from="LogInScreen/LogInScreenPanel/ReturningUser/LoginButton" to="LogInScreen/LogInScreenPanel/ReturningUser/LoginButton" method="_on_LoginButton_pressed"]
 [connection signal="pressed" from="LogInScreen/LogInScreenPanel/EnterApp" to="LogInScreen/LogInScreenPanel/ReturningUser/LoginButton" method="_on_EnterApp_pressed"]
