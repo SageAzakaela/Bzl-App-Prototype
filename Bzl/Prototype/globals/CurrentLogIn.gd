@@ -1,7 +1,9 @@
 extends Node
 
+var logged_in = false
 
-var logged_in_username = ""
+var logged_in_email = ""
+var logged_in_username = "Random Bzl"
 var logged_in_pronouns = ""
 var logged_in_bio = ""
 

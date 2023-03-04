@@ -8,12 +8,24 @@ export var Time_Remaining = 0
 export var User = ""
 export var User_Type = ""
 
-
-
+var post_id = 0
+var user_id = ""
+var buzz_content = ""
+var keywords = []
+var time_created = 0
+var duration = 0 #duration in seconds
+var boosters = []
+var comments = {} #contains user ID and content of the comment made
+var username = ""
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	Buzz_Text = buzz_content
+	Keywords = keywords
+	Time_Remaining = duration
+	
 	print("Buzz Text = ", Buzz_Text)
 	print("Keywords for Buzz: ", Keywords)
 	$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzText.text = Buzz_Text
@@ -69,6 +81,7 @@ func _process(_delta):
 	if Time_Remaining <= 0:
 		queue_free()
 
+
 func _on_Timer_timeout():
 	Time_Remaining -= 1
 
@@ -78,7 +91,7 @@ func _on_ExtendButton_pressed():
 	$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer/ExtendButton.disabled = true
 
 	var user = CurrentLogIn.logged_in_username
-	UserData.add_user_points(user, 5)
+#	UserData.add_user_points(user, 5)
 
 
 func _on_Comments_toggled(button_pressed):
@@ -97,7 +110,7 @@ func _on_Submit_pressed():
 	$VBoxContainer/CommentsSection/VBoxContainer.add_child(comment)
 	#add points for making a comment!
 	var user = CurrentLogIn.logged_in_username
-	UserData.add_user_points(user, 5)
+#	UserData.add_user_points(user, 5)
 	# extend the lifespan per comment
 	Time_Remaining += 60
 

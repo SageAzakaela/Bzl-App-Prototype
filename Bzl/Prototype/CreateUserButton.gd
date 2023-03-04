@@ -7,9 +7,8 @@ func _ready():
 
 
 func _on_CreateUserButton_pressed():
-	# Get the email, username, and password from the input fields
+	# Get the email, and password from the input fields
 	var email = get_node("../EnterEmail").text as String
-	var username = get_node("../EnterUsername").text as String
 	var password = get_node("../EnterPassword").text as String
 	var password_confirmation = get_node("../EnterPasswordConfirmation").text
 
@@ -26,10 +25,9 @@ func _on_CreateUserButton_pressed():
 func _on_signup_succeeded(auth_info: Dictionary):
 	# Get the email and username from the Firebase Authentication result
 	var email = auth_info["email"]
-	var username = get_node("../EnterUsername").text as String
 
 	# Create a new user in the database
-	UserData.CreateUser(email, username)
+	UserData.CreateUser(email)
 
 	# Show a success message
 	get_node("../../UserDataMessagePanel/Message").text = "Account created successfully"

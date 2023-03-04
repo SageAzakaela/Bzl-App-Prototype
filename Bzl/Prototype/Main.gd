@@ -86,15 +86,16 @@ func _on_SubmitBuzz_pressed():
 
 	# Award points to the user who made the post
 	var user = CurrentLogIn.logged_in_username
-	UserData.add_user_points(user, 10)
+#	UserData.add_user_points(user, 10)
 	
-	# Instance the Buzz
-	var buzz = load("res://Prototype/Buzzes/NewBuzz.tscn").instance()
-	buzz.Buzz_Text = buzz_text
-	buzz.Keywords = keywords
-	buzz.Time_Remaining = 120
-	buzz_container.add_child(buzz)
-
+	# Instance the Buzz (We don't need to do this anymore, since Feed creates our posts)
+#	var buzz = load("res://Prototype/Buzzes/NewBuzz.tscn").instance()
+#	buzz.Buzz_Text = buzz_text
+#	buzz.Keywords = keywords
+#	buzz.Time_Remaining = 120
+#	buzz_container.add_child(buzz)
+	
+	Feed.CreatePost(user, buzz_text, keywords, 120)
 	# Clear the text entry field and keyword fields
 	buzz_text_entry.clear()
 	buzz_key_1.clear()
@@ -103,6 +104,7 @@ func _on_SubmitBuzz_pressed():
 	buzz_key_4.clear()
 	buzz_key_5.clear()
 	buzz_key_6.clear()
+	
 
 
 
