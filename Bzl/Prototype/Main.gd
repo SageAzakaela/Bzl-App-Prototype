@@ -95,7 +95,7 @@ func _on_SubmitBuzz_pressed():
 #	buzz.Time_Remaining = 120
 #	buzz_container.add_child(buzz)
 	
-	Feed.CreatePost(user, buzz_text, keywords, 120)
+	Feed.CreatePost(user, buzz_text, keywords, 300)
 	# Clear the text entry field and keyword fields
 	buzz_text_entry.clear()
 	buzz_key_1.clear()
@@ -130,3 +130,11 @@ func _on_Shop_pressed():
 
 func _on_Inventory_pressed():
 	user_inventory.visible = true
+
+
+func _on_Okay_pressed():
+	$LogInScreen2.visible = false
+
+
+func _on_Dismiss_pressed():
+	$GreetingMessage.visible = false

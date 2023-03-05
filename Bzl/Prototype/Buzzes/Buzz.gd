@@ -31,46 +31,24 @@ func _ready():
 	print("Keywords for Buzz: ", Keywords)
 	$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzText.text = Buzz_Text
 
-	if User_Type == "NPC":
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/Username.text = User
-	else:
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/Username.text = CurrentLogIn.logged_in_username as String
+	$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/Username.text = username
 	
 	## Lets export the Keywords to Labels for future yoinking
 	if Keywords.size() > 0:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword1.text = ("#" + Keywords[0])
 		$Keyword1.text = Keywords[0]
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword2.visible = false
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword3.visible = false
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword4.visible = false
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword5.visible = false
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.visible = false
 	if Keywords.size() > 1:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword2.text = ("#" + Keywords[1])
 		$Keyword2.text = Keywords[1]
-
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword3.visible = false
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword4.visible = false
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword5.visible = false
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.visible = false
 	if Keywords.size() > 2:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword3.text = ("#" + Keywords[2])
 		$Keyword3.text = Keywords[2]
-
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword4.visible = false
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword5.visible = false
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.visible = false
 	if Keywords.size() > 3:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword4.text = ("#" + Keywords[3])
 		$Keyword4.text = Keywords[3]
-
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword5.visible = false
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.visible = false
 	if Keywords.size() > 4:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword5.text = ("#" + Keywords[4])
 		$Keyword5.text = Keywords[4]
-
-		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.visible = false
 	if Keywords.size() > 5:
 		$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzTest2/Keyword6.text = ("#" + Keywords[5])
 		$Keyword6.text = Keywords[5]
@@ -80,7 +58,7 @@ func _ready():
 func _process(_delta):
 	$VBoxContainer/Panel/HBoxContainer/PanelContainer3/TimeRemaining.text = Time_Remaining as String
 	if Time_Remaining <= 0:
-		queue_free()
+		Time_Remaining = 0
 
 
 func _on_Timer_timeout():

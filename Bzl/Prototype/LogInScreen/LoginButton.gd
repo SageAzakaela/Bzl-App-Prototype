@@ -11,8 +11,6 @@ func _on_LoginButton_pressed():
 	Firebase.Auth.login_with_email_and_password(email, password)
 	return email
 
-func _on_EnterApp_pressed():
-	get_node("../../..").visible = false
 
 # Connect to Firebase.Auth signals
 func _ready():
@@ -25,13 +23,14 @@ func _on_login_succeeded(auth_info):
 	# Show a success message
 	get_node("../../UserDataMessagePanel/Message").text = "Login successful"
 	get_node("../../UserDataMessagePanel/Message").visible = true
-	get_node("../../EnterApp").visible = true
 
 	# Call the `create_feed_ref` function in the `Feed` script
 	Feed.create_feed_ref(auth_info)
 
 	CurrentLogIn.logged_in = true
 	CurrentLogIn.logged_in_email = email
+	
+	get_node("../../..").visible = false
 
 # Handle login failure
 func _on_login_failed(code, message):

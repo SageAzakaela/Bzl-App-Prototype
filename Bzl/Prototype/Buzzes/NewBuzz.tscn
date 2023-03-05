@@ -232,6 +232,7 @@ size_flags_vertical = 3
 theme = ExtResource( 5 )
 
 [node name="Comments" type="Button" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer"]
+visible = false
 margin_right = 157.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
@@ -242,8 +243,7 @@ toggle_mode = true
 text = "Comments"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer"]
-margin_left = 161.0
-margin_right = 318.0
+margin_right = 399.0
 margin_bottom = 25.0
 mouse_filter = 1
 size_flags_horizontal = 3
@@ -251,8 +251,9 @@ size_flags_vertical = 3
 theme = ExtResource( 5 )
 
 [node name="BuzzBack" type="Button" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer"]
-margin_left = 322.0
-margin_right = 479.0
+visible = false
+margin_left = 201.0
+margin_right = 399.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -261,8 +262,8 @@ custom_fonts/font = ExtResource( 3 )
 text = "Leave a Comment"
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer"]
-margin_left = 483.0
-margin_right = 640.0
+margin_left = 403.0
+margin_right = 802.0
 margin_bottom = 25.0
 mouse_filter = 1
 size_flags_horizontal = 3
@@ -270,7 +271,8 @@ size_flags_vertical = 3
 theme = ExtResource( 5 )
 
 [node name="ExtendButton" type="Button" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer"]
-margin_left = 644.0
+visible = false
+margin_left = 537.0
 margin_right = 802.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
