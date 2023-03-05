@@ -19,6 +19,8 @@ var boosters = []
 var comments = {} #contains user ID and content of the comment made
 var username = ""
 
+
+var comments_ref
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(buzz_key)
@@ -27,11 +29,14 @@ func _ready():
 	Keywords = keywords
 	Time_Remaining = duration
 	
+	comments_ref = Firebase.Database.get_database_reference("/feed/" + buzz_key + "/comments")
+	comments_ref.connect("new_data_update", self, "_on_new_comment")
 	print("Buzz Text = ", Buzz_Text)
 	print("Keywords for Buzz: ", Keywords)
 	$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/BuzzText.text = Buzz_Text
 
 	$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/Username.text = username
+	
 	
 	## Lets export the Keywords to Labels for future yoinking
 	if Keywords.size() > 0:
@@ -100,3 +105,15 @@ func _on_Submit_pressed():
 
 func _on_Cancel_pressed():
 	$VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment.visible = false
+	
+	
+
+func _on_new_comment(resource):
+	var comment_key = resource.key
+	var comment_content = resource.data
+	var specific_comment_ref = Firebase.Database.get_database_reference("/feed/" + buzz_key + "/comments/" + comment_key)
+	
+	var comment_instance = load("res://Prototype/Buzzes/Comment.tscn").instance()
+	comment_instance.comment_text = comment_content.content
+	comment_instance.user_id = comment_content.user_id
+	$VBoxContainer/CommentsSection/VBoxContainer.add_child(comment_instance)

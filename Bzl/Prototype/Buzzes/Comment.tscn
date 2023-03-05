@@ -19,5 +19,14 @@ size_flags_horizontal = 3
 [node name="CommentLabel" type="Label" parent="CommentPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+text = "This is comment text"
+align = 1
+valign = 1
+
+[node name="UserID" type="Label" parent="CommentPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -721.0
+text = "USERID"
 align = 1
 valign = 1
