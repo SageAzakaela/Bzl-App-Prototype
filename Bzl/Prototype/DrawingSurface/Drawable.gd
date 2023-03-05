@@ -24,6 +24,7 @@ func disable():
 
 
 func _on_Drawable_mouse_entered():
+	print(name)
 	if drawable_spawner != null:
 		drawable_spawner._add_to_hovered(self)
 

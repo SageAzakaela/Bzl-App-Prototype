@@ -2,67 +2,115 @@
 
 [ext_resource path="res://Prototype/DrawingSurface/DrawableSpawner.gd" type="Script" id=4]
 
-[node name="DrawingSurface" type="Node2D"]
-
-[node name="DrawableSpawner" type="Node2D" parent="."]
-position = Vector2( 331, 245 )
-script = ExtResource( 4 )
-
-[node name="Selector" type="Control" parent="."]
+[node name="DrawingSurface" type="Control"]
 anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
 
-[node name="SpawnSquare" type="Button" parent="Selector"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
-margin_right = 106.0
-margin_bottom = 20.0
+anchor_bottom = 1.0
+
+[node name="GUI" type="Control" parent="HBoxContainer"]
+margin_right = 110.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 110, 0 )
+size_flags_vertical = 3
+
+[node name="SpawnSquare" type="Button" parent="HBoxContainer/GUI"]
+anchor_right = 1.0
+rect_min_size = Vector2( 110, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Spawn Square"
+align = 0
 
-[node name="SpawnCircle" type="Button" parent="Selector"]
+[node name="SpawnCircle" type="Button" parent="HBoxContainer/GUI"]
 anchor_right = 1.0
 margin_top = 20.0
-margin_right = 106.0
-margin_bottom = 40.0
+rect_min_size = Vector2( 110, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Spawn Circle"
+align = 0
 
-[node name="SpawnTriangle" type="Button" parent="Selector"]
+[node name="SpawnTriangle" type="Button" parent="HBoxContainer/GUI"]
 anchor_right = 1.0
 margin_top = 40.0
-margin_right = 106.0
-margin_bottom = 60.0
+rect_min_size = Vector2( 110, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Spawn Triangle"
+align = 0
 
-[node name="SpawnBolt" type="Button" parent="Selector"]
+[node name="SpawnBolt" type="Button" parent="HBoxContainer/GUI"]
 anchor_right = 1.0
 margin_top = 60.0
-margin_right = 106.0
-margin_bottom = 80.0
+rect_min_size = Vector2( 110, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Spawn Bolt"
+align = 0
 
-[node name="SpawnHeart" type="Button" parent="Selector"]
+[node name="SpawnHeart" type="Button" parent="HBoxContainer/GUI"]
 anchor_right = 1.0
 margin_top = 80.0
-margin_right = 104.0
-margin_bottom = 100.0
+rect_min_size = Vector2( 110, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Spawn Heart"
+align = 0
 
-[node name="SpawnMoon" type="Button" parent="Selector"]
+[node name="SpawnMoon" type="Button" parent="HBoxContainer/GUI"]
 anchor_right = 1.0
 margin_top = 100.0
-margin_right = 106.0
-margin_bottom = 120.0
+rect_min_size = Vector2( 110, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Spawn Moon"
+align = 0
 
-[node name="SpawnStar" type="Button" parent="Selector"]
+[node name="SpawnStar" type="Button" parent="HBoxContainer/GUI"]
 anchor_right = 1.0
 margin_top = 120.0
-margin_right = 106.0
-margin_bottom = 140.0
+rect_min_size = Vector2( 110, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Spawn Star"
+align = 0
 
-[connection signal="pressed" from="Selector/SpawnSquare" to="DrawableSpawner" method="_on_spawn_square_buttom_pressed"]
-[connection signal="pressed" from="Selector/SpawnCircle" to="DrawableSpawner" method="_on_spawn_cirlce_buttom_pressed"]
-[connection signal="pressed" from="Selector/SpawnTriangle" to="DrawableSpawner" method="_on_spawn_triangle_buttom_pressed"]
-[connection signal="pressed" from="Selector/SpawnBolt" to="DrawableSpawner" method="_on_spawn_bolt_buttom_pressed"]
-[connection signal="pressed" from="Selector/SpawnHeart" to="DrawableSpawner" method="_on_spawn_heart_buttom_pressed"]
-[connection signal="pressed" from="Selector/SpawnMoon" to="DrawableSpawner" method="_on_spawn_moon_buttom_pressed"]
-[connection signal="pressed" from="Selector/SpawnStar" to="DrawableSpawner" method="_on_spawn_star_buttom_pressed"]
+[node name="Save" type="Button" parent="HBoxContainer/GUI"]
+anchor_right = 1.0
+margin_top = 160.0
+rect_min_size = Vector2( 110, 20 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Save as png"
+align = 0
+
+[node name="ViewportContainer" type="ViewportContainer" parent="HBoxContainer"]
+margin_left = 114.0
+margin_right = 714.0
+margin_bottom = 600.0
+mouse_filter = 1
+size_flags_vertical = 3
+
+[node name="Viewport" type="Viewport" parent="HBoxContainer/ViewportContainer"]
+size = Vector2( 600, 600 )
+handle_input_locally = false
+render_target_update_mode = 3
+physics_object_picking = true
+
+[node name="DrawableSpawner" type="Node2D" parent="HBoxContainer/ViewportContainer/Viewport"]
+position = Vector2( 331, 245 )
+script = ExtResource( 4 )
+save_location = "res://drawing.png"
+
+[connection signal="pressed" from="HBoxContainer/GUI/SpawnSquare" to="HBoxContainer/ViewportContainer/Viewport/DrawableSpawner" method="_on_spawn_square_buttom_pressed"]
+[connection signal="pressed" from="HBoxContainer/GUI/SpawnCircle" to="HBoxContainer/ViewportContainer/Viewport/DrawableSpawner" method="_on_spawn_cirlce_buttom_pressed"]
+[connection signal="pressed" from="HBoxContainer/GUI/SpawnTriangle" to="HBoxContainer/ViewportContainer/Viewport/DrawableSpawner" method="_on_spawn_triangle_buttom_pressed"]
+[connection signal="pressed" from="HBoxContainer/GUI/SpawnBolt" to="HBoxContainer/ViewportContainer/Viewport/DrawableSpawner" method="_on_spawn_bolt_buttom_pressed"]
+[connection signal="pressed" from="HBoxContainer/GUI/SpawnHeart" to="HBoxContainer/ViewportContainer/Viewport/DrawableSpawner" method="_on_spawn_heart_buttom_pressed"]
+[connection signal="pressed" from="HBoxContainer/GUI/SpawnMoon" to="HBoxContainer/ViewportContainer/Viewport/DrawableSpawner" method="_on_spawn_moon_buttom_pressed"]
+[connection signal="pressed" from="HBoxContainer/GUI/SpawnStar" to="HBoxContainer/ViewportContainer/Viewport/DrawableSpawner" method="_on_spawn_star_buttom_pressed"]
+[connection signal="pressed" from="HBoxContainer/GUI/Save" to="HBoxContainer/ViewportContainer/Viewport/DrawableSpawner" method="_on_save_button_pressed"]

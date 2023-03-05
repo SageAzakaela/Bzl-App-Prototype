@@ -2,6 +2,9 @@ extends Node
 class_name DrawableSpawner
 
 
+export(String, FILE) var save_location: String
+
+
 # every drawable currently spawned
 var drawables := []
 
@@ -27,6 +30,25 @@ func spawn_drawable(drawable):
 	_push_to_back(drawables, instance)
 	_update_z_index(drawables, instance)
 	add_child(instance)
+
+
+func save_as_png():
+	yield(VisualServer, "frame_post_draw")
+	
+	var viewport = $"../"
+	
+	# move all child object into the viewport
+	for child in get_children():
+		child = child as Area2D
+		
+		var location = child.global_position
+		remove_child(child)
+		viewport.add_child(child)
+		child.global_position = location
+
+	var img = viewport.get_texture().get_data()
+	img.flip_y()
+	img.save_png(save_location)
 
 
 func _input(event):
@@ -154,3 +176,7 @@ func _on_spawn_moon_buttom_pressed():
 	
 func _on_spawn_star_buttom_pressed():
 	spawn_drawable(drawable_star)
+
+
+func _on_save_button_pressed():
+	save_as_png()
