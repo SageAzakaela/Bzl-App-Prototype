@@ -7,3 +7,7 @@ res://Prototype/Main.tscn
 res://globals/UserData.gd
 res://root/root.gd
 res://login/Login.gd
+res://globals/CurrentLogIn.gd
+res://globals/UserDataManager.gd
+res://buzzes/Buzz.tscn
+res://buzzes/Buzz.gd

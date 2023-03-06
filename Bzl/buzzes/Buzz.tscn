@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bag7h2rnkxdq7"]
+[gd_scene load_steps=3 format=3 uid="uid://bag7h2rnkxdq7"]
 
 [ext_resource type="Texture2D" uid="uid://dlbwt4iaekh7t" path="res://icon.png" id="1_jdm6m"]
+[ext_resource type="Script" path="res://buzzes/Buzz.gd" id="1_oxec7"]
 
 [node name="Buzz" type="Panel"]
 custom_minimum_size = Vector2(350, 250)
 offset_right = 350.0
 offset_bottom = 250.0
+script = ExtResource("1_oxec7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -76,7 +78,7 @@ autowrap_mode = 3
 clip_text = true
 text_overrun_behavior = 3
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Keywords" type="Label" parent="MarginContainer/VBoxContainer"]
 modulate = Color(0.247059, 0.247059, 0.247059, 1)
 layout_mode = 2
 text = "#keyword #keyword #keyword #keyword #keyword #keyword"

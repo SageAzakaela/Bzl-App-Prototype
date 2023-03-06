@@ -1,6 +1,8 @@
 extends Node
 
+
 var users = {}
+
 
 func _ready():
 	# Load the JSON file containing the usernames and passwords
@@ -25,11 +27,13 @@ func _ready():
 		if parsed_data:
 			users = parsed_data
 
+
 func save_to_file():
 	# Save the updated dictionary to the JSON file
 	var file = FileAccess.open("user://userdata.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(users))
 	file.close()
+
 
 func add_user(username, password):
 	# Add the new username and password to the dictionary
@@ -40,16 +44,18 @@ func add_user(username, password):
 	file.store_string(JSON.stringify(users))
 	file.close()
 
+
 func get_user_inventory(username):
 	if username in users:
 		return users[username].get("inventory")
 	else:
 		return 0
-		
+
+
 func add_item_to_inventory(username, item):
 	# Add the item to the user's inventory
 	users[username]["inventory"].append(item)
-#	CurrentLogIn.logged_in_inventory.append(item)
+#	CurrentLogIn.inventory.append(item)
 	# Save the updated dictionary to the JSON file
 	save_to_file()
 	
@@ -59,7 +65,7 @@ func add_item_to_inventory(username, item):
 func remove_item_from_inventory(username, item):
 	# Remove the item from the user's inventory
 	users[username]["inventory"].remove(item)
-#	CurrentLogIn.logged_in_inventory.remove(item)
+#	CurrentLogIn.inventory.remove(item)
 	# Save the updated dictionary to the JSON file
 	save_to_file()
 	
@@ -70,11 +76,12 @@ func get_user_points(username):
 	else:
 		return 0
 		
+		
 func set_user_points(username, points):
 	# Update the user's pronouns in the dictionary
 	users[username]["nectar"] = points
-	# Update the CurrentLogIn.logged_in_pronouns value
-	CurrentLogIn.logged_in_nectar = points
+	# Update the CurrentLogIn.pronouns value
+	CurrentLogIn.nectar = points
 	# Save the updated dictionary to the JSON file
 	var file = FileAccess.open("user://userdata.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(users))
@@ -84,7 +91,7 @@ func set_user_points(username, points):
 func add_user_points(username, points):
 	# Add points to the user's nectar total
 	users[username]["nectar"] += points
-	CurrentLogIn.logged_in_nectar += points
+	CurrentLogIn.nectar += points
 	# Save the updated dictionary to the JSON file
 	save_to_file()
 
@@ -92,7 +99,7 @@ func add_user_points(username, points):
 func remove_user_points(username, points):
 	# Add points to the user's nectar total
 	users[username]["nectar"] -= points
-	CurrentLogIn.logged_in_nectar -= points
+	CurrentLogIn.nectar -= points
 	# Save the updated dictionary to the JSON file
 	save_to_file()
 	
@@ -100,22 +107,24 @@ func remove_user_points(username, points):
 func set_user_pronouns(username, pronouns):
 	# Update the user's pronouns in the dictionary
 	users[username]["pronouns"] = pronouns
-	# Update the CurrentLogIn.logged_in_pronouns value
-	CurrentLogIn.logged_in_pronouns = pronouns
+	# Update the CurrentLogIn.pronouns value
+	CurrentLogIn.pronouns = pronouns
 	# Save the updated dictionary to the JSON file
 	var file = FileAccess.open("user://userdata.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(users))
 	file.close()
 
+
 func set_user_bio(username, bio):
 	# Update the user's bio in the dictionary
 	users[username]["bio"] = bio
-	# Update the CurrentLogIn.logged_in_pronouns value
-	CurrentLogIn.logged_in_bio = bio
+	# Update the CurrentLogIn.pronouns value
+	CurrentLogIn.bio = bio
 	# Save the updated dictionary to the JSON file
 	var file = FileAccess.open("user://userdata.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(users))
 	file.close()
+
 
 func check_user(username, password):
 	# Check if the username and password combination is valid
@@ -123,6 +132,7 @@ func check_user(username, password):
 		return true
 	else:
 		return false
+
 
 func get_user_pronouns(username):
 	if username in users:
@@ -136,8 +146,6 @@ func get_user_bio(username):
 		return users[username].get("bio")
 	else:
 		return "No bio written yet! :("
-		
-		
 
 
 ### AVATAR NONSENSE
@@ -160,6 +168,7 @@ func get_avatar_color(username):
 	else:
 		return 0
 
+
 func set_avatar_eyes(username, eyes):
 	# Update the user's eye value in the dictionary
 	users[username]["avatar_eyes"] = eyes
@@ -177,12 +186,14 @@ func get_avatar_eyes(username):
 	else:
 		return 0
 
+
 func set_avatar_eye_color(username, eye_color):
 	users[username]["avatar_eye_color"] = eye_color
 	CurrentLogIn.avatar_eye_color = eye_color
 	var file = FileAccess.open("user://userdata.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(users))
 	file.close()
+
 
 func get_avatar_eye_color(username):
 	if username in users:

@@ -1,14 +1,13 @@
 extends Node
 
 
-var logged_in_username = ""
-var logged_in_pronouns = ""
-var logged_in_bio = ""
+var username = ""
+var pronouns = ""
+var bio = ""
 
 #user points and inventory
-
-var logged_in_nectar = 0
-var logged_in_inventory = []
+var nectar = 0
+var inventory = []
 
 #avatar stuff
 signal avatar_color_changed
@@ -28,6 +27,7 @@ var avatar_stripe = 0 : set = set_avatar_stripe
 var avatar_stripe_color = 0 : set = set_avatar_stripe_color
 var avatar_antennae = 0 : set = set_avatar_antennae
 var avatar_stinger = 0 : set = set_avatar_stinger
+
 
 func set_avatar_color(value):
 	avatar_color = value
