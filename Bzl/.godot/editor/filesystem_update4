@@ -1,4 +1,9 @@
-res://root.tscn
-res://Root/root.tscn
-res://Buzzes/Buzz.tscn
+res://login/Login.tscn
+res://login/Login.tres
+res://Prototype/BZL_Default_Theme.tres
+res://root/root.tscn
 res://GUI/GUI.tscn
+res://Prototype/Main.tscn
+res://globals/UserData.gd
+res://root/root.gd
+res://login/Login.gd

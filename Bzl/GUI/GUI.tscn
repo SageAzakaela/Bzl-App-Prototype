@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://driphvsh844oy"]
+[gd_scene load_steps=3 format=3 uid="uid://b4q0v4l62q0b2"]
 
 [ext_resource type="Script" path="res://GUI/ContentContainer.gd" id="1_75rkm"]
-[ext_resource type="PackedScene" uid="uid://bag7h2rnkxdq7" path="res://Buzzes/Buzz.tscn" id="2_81lxv"]
+[ext_resource type="PackedScene" uid="uid://bag7h2rnkxdq7" path="res://buzzes/Buzz.tscn" id="2_81lxv"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3

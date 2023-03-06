@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://damceadvuc61f"]
+
+[ext_resource type="Script" path="res://root/root.gd" id="1_hoc70"]
+[ext_resource type="PackedScene" uid="uid://b4q0v4l62q0b2" path="res://GUI/GUI.tscn" id="2_hbhb8"]
+[ext_resource type="PackedScene" uid="uid://dinyt3g430uc8" path="res://login/Login.tscn" id="3_1g8jj"]
+
+[node name="root" type="Node"]
+script = ExtResource("1_hoc70")
+min_window_size = Vector2(1042, 600)
+max_window_size = Vector2(9.22337e+18, 9.22337e+18)
+
+[node name="GUI" parent="." instance=ExtResource("2_hbhb8")]
+visible = false
+
+[node name="Login" parent="." instance=ExtResource("3_1g8jj")]
+
+[connection signal="successfully_authenticated" from="Login" to="." method="_on_login_successfully_authenticated"]

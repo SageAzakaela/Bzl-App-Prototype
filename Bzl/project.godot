@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Bzl-App-Godot-4"
-run/main_scene="res://Root/root.tscn"
+run/main_scene="res://root/root.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
+
+[autoload]
+
+UserData="*res://globals/UserData.gd"
+CurrentLogIn="*res://globals/CurrentLogIn.gd"
 
 [display]
 
