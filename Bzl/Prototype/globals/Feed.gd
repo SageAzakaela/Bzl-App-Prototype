@@ -60,12 +60,6 @@ func _on_feed_updated(update):
 		print("buzzkey is: ", update.key)
 		buzz.buzz_key = update.key
 		
-				# Check if a buzz with this key already exists
-		for child in buzz_container.get_children():
-			if "buzz_key" in child and child.buzz_key != update.key:
-				buzz = child
-				return
-		
 		# Check if the 'buzz_content' key exists in the 'post_data' dictionary
 		if "username" in post_data:
 			buzz.username = post_data["username"]
@@ -79,7 +73,7 @@ func _on_feed_updated(update):
 		if "keywords" in post_data:
 			buzz.keywords = post_data["keywords"]
 		else:
-			buzz.keywords = ""
+			buzz.keywords = []
 		
 		if "duration" in post_data:
 			buzz.duration = post_data["duration"]
@@ -95,7 +89,7 @@ func _on_feed_updated(update):
 		if "comments" in post_data:
 			buzz.comments = post_data["comments"]
 		else:
-			buzz.comments = {}
+			buzz.comments = {"content": "", "user_id": ""}
 		
 		print("Buzz instance created:", buzz)
 		print("buzz_key set to:", buzz.buzz_key)

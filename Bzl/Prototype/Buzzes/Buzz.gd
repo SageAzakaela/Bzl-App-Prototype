@@ -113,7 +113,11 @@ func _on_new_comment(resource):
 	var comment_content = resource.data
 	var specific_comment_ref = Firebase.Database.get_database_reference("/feed/" + buzz_key + "/comments/" + comment_key)
 	
-	var comment_instance = load("res://Prototype/Buzzes/Comment.tscn").instance()
-	comment_instance.comment_text = comment_content.content
-	comment_instance.user_id = comment_content.user_id
-	$VBoxContainer/CommentsSection/VBoxContainer.add_child(comment_instance)
+	if comment_content != null: # Check if comment content is not empty
+		var comment_instance = load("res://Prototype/Buzzes/Comment.tscn").instance()
+		comment_instance.comment_text = comment_content.content
+		comment_instance.user_id = comment_content.user_id
+		$VBoxContainer/CommentsSection/VBoxContainer.add_child(comment_instance)
+	else:
+		return
+
