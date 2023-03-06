@@ -80,11 +80,8 @@ func _on_Timer_timeout():
 
 func _on_ExtendButton_pressed():
 	Time_Remaining += 120
-	$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer/ExtendButton.disabled = true
-
-	var user = CurrentLogIn.logged_in_username
-#	UserData.add_user_points(user, 5)
-
+	$VBoxContainer/Panel/HBoxContainer/PanelContainer2/VBoxContainer/HBoxContainer/ExtendButton.visible = false
+	
 
 func _on_Comments_toggled(button_pressed):
 	if button_pressed == true:
@@ -103,7 +100,7 @@ func _on_Submit_pressed():
 		"content": comment_text,
 		"user_id": user_id
 	}
-	
+	Time_Remaining += 60
 	# Add the comment to the database
 	var db_ref = Firebase.Database.get_database_reference("/feed/" + buzz_key + "/comments")
 	db_ref.push(comment_data)

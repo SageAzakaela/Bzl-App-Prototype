@@ -15,6 +15,8 @@ onready var avatar_stinger_types := [$Stinger/Stinger1, $Stinger/Stinger2, $Stin
 func _ready():
 	set_avatar_elements()
 	
+func _process(delta):
+	set_avatar_elements()
 
 func set_avatar_elements():
 	var avatar_color_index = CurrentLogIn.avatar_color
