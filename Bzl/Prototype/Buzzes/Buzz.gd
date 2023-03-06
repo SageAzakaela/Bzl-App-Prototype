@@ -4,7 +4,7 @@ extends PanelContainer
 # Declare member variables here. Examples:
 export var Buzz_Text = ""
 export var Keywords = []
-export var Time_Remaining = 0
+export (int) var Time_Remaining = 0
 export var User = ""
 export var User_Type = ""
 
@@ -19,6 +19,14 @@ var boosters = []
 var comments = {} #contains user ID and content of the comment made
 var username = ""
 
+export (int) var avatar_color = 0
+export (int) var avatar_eyes = 0
+export (int) var avatar_eye_color = 0
+export (int) var avatar_wing_color = 0
+export (int) var avatar_stripe = 0
+export (int) var avatar_stripe_color = 0
+export (int) var avatar_antennae = 0
+export (int) var avatar_stinger = 0
 
 var comments_ref
 # Called when the node enters the scene tree for the first time.
@@ -62,12 +70,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$VBoxContainer/Panel/HBoxContainer/PanelContainer3/TimeRemaining.text = Time_Remaining as String
-	if Time_Remaining <= 0:
+	if int(Time_Remaining) <= 0:
 		Time_Remaining = 0
 
 
 func _on_Timer_timeout():
-	Time_Remaining -= 1
+	Time_Remaining = int(Time_Remaining) - 1
 
 
 func _on_ExtendButton_pressed():

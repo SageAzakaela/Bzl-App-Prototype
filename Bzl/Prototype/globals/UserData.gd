@@ -17,7 +17,15 @@ func CreateUser(email):
 		"pronouns": "They/Them",
 		"bio": "No Bio Defined",
 		"points": 0,
-		"inventory": []
+		"inventory": [],
+		"avatar_color": 0,
+		"avatar_eyes": 0,
+		"avatar_eye_color": 0,
+		"avatar_wing_color": 0,
+		"avatar_stripe": 0,
+		"avatar_stripe_color": 0,
+		"avatar_antennae": 0,
+		"avatar_stinger": 0
 	}
 
 	# Get a reference to the database path for this user

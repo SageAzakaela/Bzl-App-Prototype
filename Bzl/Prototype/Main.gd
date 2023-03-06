@@ -58,6 +58,9 @@ func _process(_delta):
 	# Get the list of children nodes in the Buzz Container
 	var buzz_list = buzz_container.get_children()
 	for buzz in buzz_list:
+		# Skip the Timer node
+		if buzz is Timer:
+			continue
 	# Assume that the Buzz is hidden by default
 		buzz.hide()
 		# Check if there are any Hive keywords defined

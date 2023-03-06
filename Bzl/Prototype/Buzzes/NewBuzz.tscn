@@ -1,12 +1,130 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Prototype/Buzzes/Buzz.gd" type="Script" id=1]
-[ext_resource path="res://Prototype/AvatarHolder.tscn" type="PackedScene" id=2]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0017_Antannae5.png" type="Texture" id=2]
 [ext_resource path="res://Prototype/fonts/FontBold.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Prototype/fonts/FontNormal.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Prototype/BZL_Default_Theme.tres" type="Theme" id=5]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0009_Stripes3.png" type="Texture" id=6]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0012_Stinger4.png" type="Texture" id=7]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0007_Stripes5.png" type="Texture" id=8]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0008_Stripes4.png" type="Texture" id=9]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0001_AngryEyes.png" type="Texture" id=10]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0003_OldEyes.png" type="Texture" id=11]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0015_Stinger1.png" type="Texture" id=12]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0016_Antannae6.png" type="Texture" id=13]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0013_Stinger3.png" type="Texture" id=14]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0014_Stinger2.png" type="Texture" id=15]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0010_Stripes2.png" type="Texture" id=16]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0000_Wings1.png" type="Texture" id=17]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0020_Antannae2.png" type="Texture" id=18]
+[ext_resource path="res://Prototype/Avatar.gd" type="Script" id=19]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0005_DefaultEyes.png" type="Texture" id=20]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0021_Antennae1.png" type="Texture" id=21]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0002_PrettyEyes.png" type="Texture" id=22]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0006_Stripes6.png" type="Texture" id=23]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0022_BASE.png" type="Texture" id=24]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0018_Antannae4.png" type="Texture" id=25]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0011_Stripes1.png" type="Texture" id=26]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0019_Antannae3.png" type="Texture" id=27]
+[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0004_NervousEyes.png" type="Texture" id=28]
 
 [sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.454902, 0.454902, 0.454902, 0 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 24 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 20 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 28 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 26 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 23 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 21 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 27 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 25 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=22]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=23]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=24]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=25]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=26]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=27]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
+
+[sub_resource type="StyleBoxTexture" id=29]
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 1600, 1600 )
 
 [node name="Buzz" type="PanelContainer"]
 anchor_right = 1.0
@@ -50,15 +168,172 @@ rect_min_size = Vector2( 100, 100 )
 size_flags_vertical = 0
 theme = ExtResource( 5 )
 
-[node name="AvatarHolder" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel" instance=ExtResource( 2 )]
+[node name="AvatarHolder" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 100, 100 )
+theme = ExtResource( 5 )
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 19 )
+
+[node name="Base" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder"]
+margin_right = 100.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+custom_styles/panel = SubResource( 6 )
+
+[node name="Eyes" type="Control" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Eyes" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Eyes"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 0.0
-margin_right = 0.0
-margin_bottom = 0.0
-rect_min_size = Vector2( 100, 100 )
-theme = ExtResource( 5 )
+custom_styles/panel = SubResource( 7 )
+
+[node name="Eyes2" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="Eyes3" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Eyes4" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 10 )
+
+[node name="Eyes5" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Eyes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 11 )
+
+[node name="Stripes" type="Control" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Stripes1" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 12 )
+
+[node name="Stripes2" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 13 )
+
+[node name="Stripes3" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 14 )
+
+[node name="Stripes4" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 15 )
+
+[node name="Stripes5" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 16 )
+
+[node name="Stripes6" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Stripes"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 17 )
+
+[node name="Antannae" type="Control" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Antannae1" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 18 )
+
+[node name="Antannae2" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 19 )
+
+[node name="Antannae3" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 20 )
+
+[node name="Antannae4" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+
+[node name="Antannae5" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 22 )
+
+[node name="Antannae6" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Antannae"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 23 )
+
+[node name="Stinger" type="Control" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Stinger1" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 24 )
+
+[node name="Stinger2" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 25 )
+
+[node name="Stinger3" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 26 )
+
+[node name="Stinger4" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Stinger"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 27 )
+
+[node name="Wings" type="Control" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder"]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="Wings1" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer/PanelContainer/Panel/AvatarHolder/Wings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 29 )
 
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/Panel/HBoxContainer"]
 margin_left = 104.0

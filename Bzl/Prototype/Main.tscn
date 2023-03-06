@@ -294,15 +294,14 @@ text = "USERNAME"
 align = 1
 
 [node name="AvatarHolder" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer" instance=ExtResource( 8 )]
-visible = false
 margin_top = 22.0
 margin_right = 200.0
 margin_bottom = 197.0
 
 [node name="NectarContainer" type="HBoxContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer"]
-margin_top = 22.0
+margin_top = 201.0
 margin_right = 200.0
-margin_bottom = 38.0
+margin_bottom = 201.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -337,9 +336,9 @@ margin_bottom = 40.0
 text = "Inventory"
 
 [node name="UserPanelAccessButtom" type="Button" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer"]
-margin_top = 42.0
+margin_top = 205.0
 margin_right = 200.0
-margin_bottom = 60.0
+margin_bottom = 223.0
 custom_fonts/font = ExtResource( 37 )
 text = "Access User Panel"
 
@@ -385,6 +384,10 @@ focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 42 )
+
+[node name="Timer" type="Timer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer"]
+wait_time = 10.0
+autostart = true
 
 [node name="RecentTags" type="ScrollContainer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground"]
 visible = false
@@ -855,21 +858,21 @@ size_flags_vertical = 3
 theme = ExtResource( 39 )
 
 [node name="UserInfo" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer"]
-margin_right = 300.0
+margin_right = 120.0
 margin_bottom = 196.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 theme = ExtResource( 39 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo"]
-margin_right = 300.0
+margin_right = 120.0
 margin_bottom = 196.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 39 )
 
 [node name="Username" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo/VBoxContainer"]
-margin_right = 300.0
+margin_right = 120.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
@@ -880,7 +883,7 @@ text = "Username:"
 
 [node name="Pronouns" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo/VBoxContainer"]
 margin_top = 22.0
-margin_right = 300.0
+margin_right = 120.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
@@ -891,7 +894,7 @@ text = "Pronouns:"
 
 [node name="MarginContainer" type="MarginContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo/VBoxContainer"]
 margin_top = 44.0
-margin_right = 300.0
+margin_right = 120.0
 margin_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -900,7 +903,7 @@ theme = ExtResource( 39 )
 
 [node name="Bio" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo/VBoxContainer"]
 margin_top = 103.0
-margin_right = 300.0
+margin_right = 120.0
 margin_bottom = 196.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
@@ -909,8 +912,8 @@ custom_fonts/font = ExtResource( 38 )
 text = "Bio:"
 
 [node name="UserInfo2" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer"]
-margin_left = 304.0
-margin_right = 1024.0
+margin_left = 124.0
+margin_right = 415.0
 margin_bottom = 196.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -918,13 +921,13 @@ size_flags_stretch_ratio = 0.48
 theme = ExtResource( 39 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2"]
-margin_right = 720.0
+margin_right = 291.0
 margin_bottom = 196.0
 size_flags_vertical = 3
 theme = ExtResource( 39 )
 
 [node name="Username" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
-margin_right = 720.0
+margin_right = 291.0
 margin_bottom = 18.0
 theme = ExtResource( 39 )
 custom_fonts/font = ExtResource( 37 )
@@ -939,7 +942,7 @@ theme = ExtResource( 39 )
 
 [node name="Pronouns" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
 margin_top = 22.0
-margin_right = 720.0
+margin_right = 291.0
 margin_bottom = 40.0
 theme = ExtResource( 39 )
 custom_fonts/font = ExtResource( 37 )
@@ -954,7 +957,7 @@ theme = ExtResource( 39 )
 
 [node name="EditPronouns" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
 margin_top = 44.0
-margin_right = 720.0
+margin_right = 291.0
 margin_bottom = 62.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.12
@@ -965,7 +968,7 @@ text = "Edit Name and Pronouns"
 
 [node name="MarginContainer" type="MarginContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
 margin_top = 66.0
-margin_right = 720.0
+margin_right = 291.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -974,7 +977,7 @@ theme = ExtResource( 39 )
 
 [node name="Bio" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
 margin_top = 104.0
-margin_right = 720.0
+margin_right = 291.0
 margin_bottom = 174.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
@@ -996,7 +999,7 @@ anchor_bottom = 1.0
 
 [node name="EditBioButton" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
 margin_top = 178.0
-margin_right = 720.0
+margin_right = 291.0
 margin_bottom = 196.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.12
@@ -1006,7 +1009,6 @@ toggle_mode = true
 text = "Edit Bio"
 
 [node name="CharacterCreator" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer"]
-visible = false
 margin_left = 419.0
 margin_right = 1024.0
 margin_bottom = 196.0
@@ -1596,6 +1598,7 @@ text = "Exit Shop"
 [connection signal="pressed" from="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/Inventory" to="." method="_on_Inventory_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/Inventory" to="UserInventory" method="_on_Inventory_pressed"]
 [connection signal="pressed" from="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/UserPanelAccessButtom" to="." method="_on_UserPanelAccessButtom_pressed"]
+[connection signal="timeout" from="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer/Timer" to="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/HBoxContainer/SubmitBuzz" to="." method="_on_SubmitBuzz_pressed"]
 [connection signal="pressed" from="GreetingMessage/Dismiss" to="." method="_on_Dismiss_pressed"]
 [connection signal="pressed" from="LogInScreen/LogInScreenPanel/MakeANewAccount/CreateUserButton" to="LogInScreen/LogInScreenPanel/MakeANewAccount/CreateUserButton" method="_on_CreateUserButton_pressed"]

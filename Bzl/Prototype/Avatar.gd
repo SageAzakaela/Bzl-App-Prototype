@@ -10,21 +10,21 @@ onready var avatar_eye_types := [$Eyes/Eyes, $Eyes/Eyes2, $Eyes/Eyes3, $Eyes/Eye
 onready var avatar_stripe_types := [$Stripes/Stripes1, $Stripes/Stripes2, $Stripes/Stripes3, $Stripes/Stripes4, $Stripes/Stripes5, $Stripes/Stripes6]
 onready var avatar_antennar_types := [$Antannae/Antannae1, $Antannae/Antannae2, $Antannae/Antannae3, $Antannae/Antannae4, $Antannae/Antannae5, $Antannae/Antannae6]
 onready var avatar_stinger_types := [$Stinger/Stinger1, $Stinger/Stinger2, $Stinger/Stinger3, $Stinger/Stinger4]
-
+onready var BUZZ = get_node("../../../../../..")
 
 func _ready():
 	set_avatar_elements()
 	
 
 func set_avatar_elements():
-	var avatar_color_index = CurrentLogIn.avatar_color
-	var avatar_eye_index = CurrentLogIn.avatar_eyes
-	var avatar_eye_color_index = CurrentLogIn.avatar_eye_color
-	var avatar_wing_color_index = CurrentLogIn.avatar_wing_color
-	var avatar_stripe_index = CurrentLogIn.avatar_stripe
-	var avatar_stripe_color_index = CurrentLogIn.avatar_stripe_color
-	var avatar_antennae_index = CurrentLogIn.avatar_antennae
-	var avatar_stinger_index = CurrentLogIn.avatar_stinger
+	var avatar_color_index = BUZZ.avatar_color
+	var avatar_eye_index = BUZZ.avatar_eyes
+	var avatar_eye_color_index = BUZZ.avatar_eye_color
+	var avatar_wing_color_index = BUZZ.avatar_wing_color
+	var avatar_stripe_index = BUZZ.avatar_stripe
+	var avatar_stripe_color_index = BUZZ.avatar_stripe_color
+	var avatar_antennae_index = BUZZ.avatar_antennae
+	var avatar_stinger_index = BUZZ.avatar_stinger
 
 	
 	change_color(avatar_color_index, avatar_colors, $Base)
@@ -36,36 +36,6 @@ func set_avatar_elements():
 	change_type(avatar_antennae_index, avatar_antennar_types)
 	change_type(avatar_stinger_index, avatar_stinger_types)
 
-func on_avatar_color_changed():
-	change_color(CurrentLogIn.avatar_color, avatar_colors, $Base)
-
-
-func on_avatar_eyes_changed():
-	change_type(CurrentLogIn.avatar_eyes, avatar_eye_types)
-
-
-func on_avatar_eye_color_changed():
-	change_color(CurrentLogIn.avatar_eye_color, avatar_eye_colors, $Eyes)
-	
-	
-func on_avatar_wing_color_changed():
-	change_color(CurrentLogIn.avatar_wing_color, avatar_wing_colors, $Wings)
-	
-
-func on_avatar_stripe_changed():
-	change_type(CurrentLogIn.avatar_stripe, avatar_stripe_types)
-	
-	
-func on_avatar_stripe_color_changed():
-	change_color(CurrentLogIn.avatar_stripe_color, avatar_stripe_colors, $Stripes)
-	
-
-func on_avatar_antennae_changed():
-	change_type(CurrentLogIn.avatar_antennae, avatar_antennar_types)
-
-
-func on_avatar_stinger_changed():
-	change_type(CurrentLogIn.avatar_stinger, avatar_stinger_types)
 
 
 # Usage example -> change_color(CurrentLogIn.avatar_stripe_color, avatar_stripe_colors, $Stripes)

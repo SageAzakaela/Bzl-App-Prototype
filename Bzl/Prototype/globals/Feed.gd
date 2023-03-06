@@ -38,7 +38,15 @@ func CreatePost(user_id: String, buzz_content: String, keywords: Array, duration
 		"duration": duration,
 		"boosters": {},  # Initialize with empty dictionary
 		"comments": {},
-		"username": username
+		"username": username,
+		"avatar_color": CurrentLogIn.avatar_color,
+		"avatar_eyes": CurrentLogIn.avatar_eyes,
+		"avatar_eye_color": CurrentLogIn.avatar_eye_color,
+		"avatar_wing_color": CurrentLogIn.avatar_wing_color,
+		"avatar_stripe": CurrentLogIn.avatar_stripe,
+		"avatar_stripe_color": CurrentLogIn.avatar_stripe_color,
+		"avatar_antennae": CurrentLogIn.avatar_antennae,
+		"avatar_stinger": CurrentLogIn.avatar_stinger
 	}
 
 
@@ -90,6 +98,47 @@ func _on_feed_updated(update):
 			buzz.comments = post_data["comments"]
 		else:
 			buzz.comments = {"content": "", "user_id": ""}
+		
+		if "avatar_color" in post_data:
+			 buzz.avatar_color = post_data["avatar_color"]
+		else:
+			buzz.avatar_color = 0
+			
+		if "avatar_eyes" in post_data:
+			buzz.avatar_eyes = post_data["avatar_eyes"]
+		else:
+			buzz.avatar_eyes = 0
+			
+		if "avatar_eye_color" in post_data:
+			buzz.avatar_eye_color = post_data["avatar_eye_color"]
+		else:
+			buzz.avatar_eye_color = 0
+			
+		if "avatar_wing_color" in post_data:
+			buzz.avatar_wing_color = post_data["avatar_wing_color"]
+		else:
+			buzz.avatar_wing_color = 0
+			
+		if "avatar_stripe" in post_data:
+			buzz.avatar_stripe = post_data["avatar_stripe"]
+		else:
+			buzz.avatar_stripe = 0
+			
+		if "avatar_stripe_color" in post_data:
+			buzz.avatar_stripe_color = post_data["avatar_stripe_color"]
+		else:
+			buzz.avatar_stripe_color = 0
+			
+		if "avatar_antennae" in post_data:
+			buzz.avatar_antennae = post_data["avatar_antennae"]
+		else:
+			buzz.avatar_antennae = 0
+			
+		if "avatar_stinger" in post_data:
+			buzz.avatar_stinger = post_data["avatar_stinger"]
+		else:
+			buzz.avatar_stinger = 0
+
 		
 		print("Buzz instance created:", buzz)
 		print("buzz_key set to:", buzz.buzz_key)

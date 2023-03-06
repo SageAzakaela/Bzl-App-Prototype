@@ -21,7 +21,7 @@ func _ready():
 	var error
 	error = CurrentLogIn.connect("avatar_color_changed", self, "on_avatar_color_changed")
 	error = CurrentLogIn.connect("avatar_eyes_changed", self, "on_avatar_eyes_changed")
-	error = CurrentLogIn.connect("avatar_eye_color_changed", self, "on_avatar_color_changed")
+	error = CurrentLogIn.connect("avatar_eye_color_changed", self, "on_avatar_eye_color_changed")
 	error = CurrentLogIn.connect("avatar_wing_color_changed", self, "on_avatar_wing_color_changed")
 	error = CurrentLogIn.connect("avatar_stripe_changed", self, "on_avatar_stripe_changed")
 	error = CurrentLogIn.connect("avatar_stripe_color_changed", self, "on_avatar_stripe_color_changed")
@@ -30,6 +30,28 @@ func _ready():
 	
 	if error != OK:
 		push_warning("One or more 'avatar changed' signals could not connect.")
+	set_avatar_elements()
+	
+
+func set_avatar_elements():
+	var avatar_color_index = CurrentLogIn.avatar_color
+	var avatar_eye_index = CurrentLogIn.avatar_eyes
+	var avatar_eye_color_index = CurrentLogIn.avatar_eye_color
+	var avatar_wing_color_index = CurrentLogIn.avatar_wing_color
+	var avatar_stripe_index = CurrentLogIn.avatar_stripe
+	var avatar_stripe_color_index = CurrentLogIn.avatar_stripe_color
+	var avatar_antennae_index = CurrentLogIn.avatar_antennae
+	var avatar_stinger_index = CurrentLogIn.avatar_stinger
+
+	
+	change_color(avatar_color_index, avatar_colors, $Collums/AvatarHolder/Base)
+	change_type(avatar_eye_index, avatar_eye_types)
+	change_color(avatar_eye_color_index, avatar_eye_colors, $Collums/AvatarHolder/Eyes)
+	change_color(avatar_wing_color_index, avatar_wing_colors, $Collums/AvatarHolder/Wings)
+	change_type(avatar_stripe_index, avatar_stripe_types)
+	change_color(avatar_stripe_color_index, avatar_stripe_colors, $Collums/AvatarHolder/Stripes)
+	change_type(avatar_antennae_index, avatar_antennar_types)
+	change_type(avatar_stinger_index, avatar_stinger_types)
 
 
 func on_avatar_color_changed():
@@ -73,7 +95,7 @@ func change_color(index, color_references, node):
 # Usage example -> change_type(CurrentLogIn.avatar_stinger, avatar_stinger_types)
 func change_type(index, type_references):
 	if index >= 0 and index < type_references.size():
-		for i in range(0, type_references.size()-1):
+		for i in range(0, type_references.size()):
 			type_references[i].visible = true if index == i else false
 
 
@@ -148,16 +170,15 @@ func _on_Randomize_pressed():
 
 func _on_SaveButton_pressed():
 
-	# Save the updated information to the UserData dictionary
-	UserData.users[CurrentLogIn.logged_in_username]["avatar_color"] = CurrentLogIn.avatar_color
-	UserData.users[CurrentLogIn.logged_in_username]["avatar_eyes"] = CurrentLogIn.avatar_eyes
-	UserData.users[CurrentLogIn.logged_in_username]["avatar_eye_color"] = CurrentLogIn.avatar_eye_color
-	UserData.users[CurrentLogIn.logged_in_username]["avatar_wing_color"] = CurrentLogIn.avatar_wing_color
-	UserData.users[CurrentLogIn.logged_in_username]["avatar_stripe"] = CurrentLogIn.avatar_stripe
-	UserData.users[CurrentLogIn.logged_in_username]["avatar_stripe_color"] = CurrentLogIn.avatar_stripe_color
-	UserData.users[CurrentLogIn.logged_in_username]["avatar_antennae"] = CurrentLogIn.avatar_antennae
-	UserData.users[CurrentLogIn.logged_in_username]["avatar_stinger"] = CurrentLogIn.avatar_stinger
-
-	# Save the updated dictionary to the JSON file
-	UserData.save_to_file()
+	var avatar_data = {
+	"avatar_color": CurrentLogIn.avatar_color,
+	"avatar_eyes": CurrentLogIn.avatar_eyes,
+	"avatar_eye_color": CurrentLogIn.avatar_eye_color,
+	"avatar_wing_color": CurrentLogIn.avatar_wing_color,
+	"avatar_stripe": CurrentLogIn.avatar_stripe,
+	"avatar_stripe_color": CurrentLogIn.avatar_stripe_color,
+	"avatar_antennae": CurrentLogIn.avatar_antennae,
+	"avatar_stinger": CurrentLogIn.avatar_stinger
+	}
+	UserData.UpdateUserData(CurrentLogIn.logged_in_email, avatar_data)
 
