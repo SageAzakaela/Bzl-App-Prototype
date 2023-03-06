@@ -1,7 +1,7 @@
 extends Control
 
 
-onready var buzz_container = get_node("..")
+@onready var buzz_container = get_node("..")
 
 var bzl_names = ["scout", "elder", "hivemind", "dragonseeker"]
 var Keywords = []
@@ -254,7 +254,7 @@ func _on_SubmitBuzz_pressed():
 
 
 	# Create a new buzz instance and add it to the buzz container
-	var buzz = load("res://Prototype/Buzzes/NewBuzz.tscn").instance()
+	var buzz = load("res://Prototype/Buzzes/NewBuzz.tscn").instantiate()
 	buzz.Buzz_Text = random_buzz
 	buzz.Keywords = [random_keyword]
 	buzz.Time_Remaining = 120

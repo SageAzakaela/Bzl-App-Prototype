@@ -8,10 +8,10 @@ var avatar_eye_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Colo
 var avatar_wing_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.5, 0.5, 0.5), Color(0.55, 0.27, 0.07)]
 var avatar_stripe_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.5, 0.5, 0.5), Color(0.55, 0.27, 0.07)]
 
-onready var avatar_eye_types := [$Collums/AvatarHolder/Eyes/Eyes, $Collums/AvatarHolder/Eyes/Eyes2, $Collums/AvatarHolder/Eyes/Eyes3, $Collums/AvatarHolder/Eyes/Eyes4, $Collums/AvatarHolder/Eyes/Eyes5]
-onready var avatar_stripe_types := [$Collums/AvatarHolder/Stripes/Stripes1, $Collums/AvatarHolder/Stripes/Stripes2, $Collums/AvatarHolder/Stripes/Stripes3, $Collums/AvatarHolder/Stripes/Stripes4, $Collums/AvatarHolder/Stripes/Stripes5, $Collums/AvatarHolder/Stripes/Stripes6]
-onready var avatar_antennar_types := [$Collums/AvatarHolder/Antannae/Antannae1, $Collums/AvatarHolder/Antannae/Antannae2, $Collums/AvatarHolder/Antannae/Antannae3, $Collums/AvatarHolder/Antannae/Antannae4, $Collums/AvatarHolder/Antannae/Antannae5, $Collums/AvatarHolder/Antannae/Antannae6]
-onready var avatar_stinger_types := [$Collums/AvatarHolder/Stinger/Stinger1, $Collums/AvatarHolder/Stinger/Stinger2, $Collums/AvatarHolder/Stinger/Stinger3, $Collums/AvatarHolder/Stinger/Stinger4]
+@onready var avatar_eye_types := [$Collums/AvatarHolder/Eyes/Eyes, $Collums/AvatarHolder/Eyes/Eyes2, $Collums/AvatarHolder/Eyes/Eyes3, $Collums/AvatarHolder/Eyes/Eyes4, $Collums/AvatarHolder/Eyes/Eyes5]
+@onready var avatar_stripe_types := [$Collums/AvatarHolder/Stripes/Stripes1, $Collums/AvatarHolder/Stripes/Stripes2, $Collums/AvatarHolder/Stripes/Stripes3, $Collums/AvatarHolder/Stripes/Stripes4, $Collums/AvatarHolder/Stripes/Stripes5, $Collums/AvatarHolder/Stripes/Stripes6]
+@onready var avatar_antennar_types := [$Collums/AvatarHolder/Antannae/Antannae1, $Collums/AvatarHolder/Antannae/Antannae2, $Collums/AvatarHolder/Antannae/Antannae3, $Collums/AvatarHolder/Antannae/Antannae4, $Collums/AvatarHolder/Antannae/Antannae5, $Collums/AvatarHolder/Antannae/Antannae6]
+@onready var avatar_stinger_types := [$Collums/AvatarHolder/Stinger/Stinger1, $Collums/AvatarHolder/Stinger/Stinger2, $Collums/AvatarHolder/Stinger/Stinger3, $Collums/AvatarHolder/Stinger/Stinger4]
 
 
 func _ready():
@@ -19,14 +19,14 @@ func _ready():
 	random.randomize()
 	
 	var error
-	error = CurrentLogIn.connect("avatar_color_changed", self, "on_avatar_color_changed")
-	error = CurrentLogIn.connect("avatar_eyes_changed", self, "on_avatar_eyes_changed")
-	error = CurrentLogIn.connect("avatar_eye_color_changed", self, "on_avatar_color_changed")
-	error = CurrentLogIn.connect("avatar_wing_color_changed", self, "on_avatar_wing_color_changed")
-	error = CurrentLogIn.connect("avatar_stripe_changed", self, "on_avatar_stripe_changed")
-	error = CurrentLogIn.connect("avatar_stripe_color_changed", self, "on_avatar_stripe_color_changed")
-	error = CurrentLogIn.connect("avatar_antennae_changed", self, "on_avatar_antennae_changed")
-	error = CurrentLogIn.connect("avatar_stinger_changed", self, "on_avatar_stinger_changed")
+	error = CurrentLogIn.connect("avatar_color_changed",Callable(self,"on_avatar_color_changed"))
+	error = CurrentLogIn.connect("avatar_eyes_changed",Callable(self,"on_avatar_eyes_changed"))
+	error = CurrentLogIn.connect("avatar_eye_color_changed",Callable(self,"on_avatar_color_changed"))
+	error = CurrentLogIn.connect("avatar_wing_color_changed",Callable(self,"on_avatar_wing_color_changed"))
+	error = CurrentLogIn.connect("avatar_stripe_changed",Callable(self,"on_avatar_stripe_changed"))
+	error = CurrentLogIn.connect("avatar_stripe_color_changed",Callable(self,"on_avatar_stripe_color_changed"))
+	error = CurrentLogIn.connect("avatar_antennae_changed",Callable(self,"on_avatar_antennae_changed"))
+	error = CurrentLogIn.connect("avatar_stinger_changed",Callable(self,"on_avatar_stinger_changed"))
 	
 	if error != OK:
 		push_warning("One or more 'avatar changed' signals could not connect.")

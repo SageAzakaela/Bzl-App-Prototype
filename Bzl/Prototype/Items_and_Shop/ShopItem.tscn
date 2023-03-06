@@ -11,9 +11,9 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [node name="Item" type="Panel"]
-margin_right = 924.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 0, 60 )
+offset_right = 924.0
+offset_bottom = 60.0
+custom_minimum_size = Vector2( 0, 60 )
 theme = ExtResource( 1 )
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 2 )
@@ -26,16 +26,16 @@ size_flags_vertical = 3
 theme = ExtResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
-margin_right = 15.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 15, 0 )
+offset_right = 15.0
+offset_bottom = 60.0
+custom_minimum_size = Vector2( 15, 0 )
 theme = ExtResource( 1 )
 
 [node name="ItemName" type="Label" parent="HBoxContainer"]
-margin_left = 19.0
-margin_top = 23.0
-margin_right = 128.0
-margin_bottom = 37.0
+offset_left = 19.0
+offset_top = 23.0
+offset_right = 128.0
+offset_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.2
@@ -45,17 +45,17 @@ text = "Item Name"
 valign = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
-margin_left = 132.0
-margin_right = 147.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 15, 0 )
+offset_left = 132.0
+offset_right = 147.0
+offset_bottom = 60.0
+custom_minimum_size = Vector2( 15, 0 )
 theme = ExtResource( 1 )
 
 [node name="ItemDescription" type="Label" parent="HBoxContainer"]
-margin_left = 151.0
-margin_top = 23.0
-margin_right = 697.0
-margin_bottom = 37.0
+offset_left = 151.0
+offset_top = 23.0
+offset_right = 697.0
+offset_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 theme = ExtResource( 1 )
@@ -64,10 +64,10 @@ valign = 1
 autowrap = true
 
 [node name="ItemPrice" type="Label" parent="HBoxContainer"]
-margin_left = 701.0
-margin_top = 23.0
-margin_right = 810.0
-margin_bottom = 37.0
+offset_left = 701.0
+offset_top = 23.0
+offset_right = 810.0
+offset_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.2
@@ -76,10 +76,10 @@ text = "Item Price"
 valign = 1
 
 [node name="Buy" type="Button" parent="HBoxContainer"]
-margin_left = 814.0
-margin_top = 23.0
-margin_right = 924.0
-margin_bottom = 37.0
+offset_left = 814.0
+offset_top = 23.0
+offset_right = 924.0
+offset_bottom = 37.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.2

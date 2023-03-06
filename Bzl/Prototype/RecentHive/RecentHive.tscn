@@ -3,9 +3,9 @@
 [ext_resource path="res://Prototype/RecentHive/RecentHive.gd" type="Script" id=1]
 
 [node name="RecentHive" type="Panel"]
-margin_right = 816.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 0, 30 )
+offset_right = 816.0
+offset_bottom = 30.0
+custom_minimum_size = Vector2( 0, 30 )
 script = ExtResource( 1 )
 
 [node name="RecentHiveName" type="Label" parent="."]

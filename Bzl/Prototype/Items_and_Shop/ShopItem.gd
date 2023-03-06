@@ -1,9 +1,9 @@
 extends Panel
 
 
-export var item_name = ""
-export var item_description = ""
-export var item_price = 0
+@export var item_name = ""
+@export var item_description = ""
+@export var item_price = 0
 
 func _ready():
 	$HBoxContainer/ItemName.text = item_name

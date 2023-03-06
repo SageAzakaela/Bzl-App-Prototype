@@ -6,22 +6,22 @@ var avatar_eye_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Colo
 var avatar_wing_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.5, 0.5, 0.5), Color(0.55, 0.27, 0.07)]
 var avatar_stripe_colors := [Color(1, 1, 1), Color(1, 0, 0), Color(1, 0.5, 0), Color(1, 1, 0), Color(0, 1, 0), Color(0, 1, 1), Color(0, 0, 1), Color(0.29, 0, 0.51), Color(1, 0, 1), Color(0, 0, 0), Color(0.5, 0.5, 0.5), Color(0.55, 0.27, 0.07)]
 
-onready var avatar_eye_types := [$Eyes/Eyes, $Eyes/Eyes2, $Eyes/Eyes3, $Eyes/Eyes4, $Eyes/Eyes5]
-onready var avatar_stripe_types := [$Stripes/Stripes1, $Stripes/Stripes2, $Stripes/Stripes3, $Stripes/Stripes4, $Stripes/Stripes5, $Stripes/Stripes6]
-onready var avatar_antennar_types := [$Antannae/Antannae1, $Antannae/Antannae2, $Antannae/Antannae3, $Antannae/Antannae4, $Antannae/Antannae5, $Antannae/Antannae6]
-onready var avatar_stinger_types := [$Stinger/Stinger1, $Stinger/Stinger2, $Stinger/Stinger3, $Stinger/Stinger4]
+@onready var avatar_eye_types := [$Eyes/Eyes, $Eyes/Eyes2, $Eyes/Eyes3, $Eyes/Eyes4, $Eyes/Eyes5]
+@onready var avatar_stripe_types := [$Stripes/Stripes1, $Stripes/Stripes2, $Stripes/Stripes3, $Stripes/Stripes4, $Stripes/Stripes5, $Stripes/Stripes6]
+@onready var avatar_antennar_types := [$Antannae/Antannae1, $Antannae/Antannae2, $Antannae/Antannae3, $Antannae/Antannae4, $Antannae/Antannae5, $Antannae/Antannae6]
+@onready var avatar_stinger_types := [$Stinger/Stinger1, $Stinger/Stinger2, $Stinger/Stinger3, $Stinger/Stinger4]
 
 
 func _ready():
 	var error
-	error = CurrentLogIn.connect("avatar_color_changed", self, "on_avatar_color_changed")
-	error = CurrentLogIn.connect("avatar_eyes_changed", self, "on_avatar_eyes_changed")
-	error = CurrentLogIn.connect("avatar_eye_color_changed", self, "on_avatar_color_changed")
-	error = CurrentLogIn.connect("avatar_wing_color_changed", self, "on_avatar_wing_color_changed")
-	error = CurrentLogIn.connect("avatar_stripe_changed", self, "on_avatar_stripe_changed")
-	error = CurrentLogIn.connect("avatar_stripe_color_changed", self, "on_avatar_stripe_color_changed")
-	error = CurrentLogIn.connect("avatar_antennae_changed", self, "on_avatar_antennae_changed")
-	error = CurrentLogIn.connect("avatar_stinger_changed", self, "on_avatar_stinger_changed")
+	error = CurrentLogIn.connect("avatar_color_changed",Callable(self,"on_avatar_color_changed"))
+	error = CurrentLogIn.connect("avatar_eyes_changed",Callable(self,"on_avatar_eyes_changed"))
+	error = CurrentLogIn.connect("avatar_eye_color_changed",Callable(self,"on_avatar_color_changed"))
+	error = CurrentLogIn.connect("avatar_wing_color_changed",Callable(self,"on_avatar_wing_color_changed"))
+	error = CurrentLogIn.connect("avatar_stripe_changed",Callable(self,"on_avatar_stripe_changed"))
+	error = CurrentLogIn.connect("avatar_stripe_color_changed",Callable(self,"on_avatar_stripe_color_changed"))
+	error = CurrentLogIn.connect("avatar_antennae_changed",Callable(self,"on_avatar_antennae_changed"))
+	error = CurrentLogIn.connect("avatar_stinger_changed",Callable(self,"on_avatar_stinger_changed"))
 	
 	if error != OK:
 		push_warning("One or more 'avatar changed' signals could not connect.")

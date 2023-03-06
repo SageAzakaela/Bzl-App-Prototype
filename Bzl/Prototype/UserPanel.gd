@@ -3,16 +3,16 @@ extends Panel
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var Username = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Username
-onready var Pronouns = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Pronouns
-onready var Bio = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Bio
+@onready var Username = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Username
+@onready var Pronouns = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Pronouns
+@onready var Bio = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Bio
 
-onready var edit_bio_panel = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Bio/EditBioPanel
-onready var edit_bio_text_entry = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Bio/EditBioPanel/EditBioText
-onready var bio_button = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/EditBioButton
+@onready var edit_bio_panel = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Bio/EditBioPanel
+@onready var edit_bio_text_entry = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Bio/EditBioPanel/EditBioText
+@onready var bio_button = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/EditBioButton
 
-onready var edit_pronouns_button = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/EditPronouns
-onready var edit_prnouns_field = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/EditPronounsField
+@onready var edit_pronouns_button = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/EditPronouns
+@onready var edit_prnouns_field = $UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/EditPronounsField
 
 
 

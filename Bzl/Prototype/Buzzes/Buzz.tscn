@@ -3,9 +3,9 @@
 [ext_resource path="res://Prototype/Buzzes/Buzz.gd" type="Script" id=1]
 
 [node name="Buzz" type="Panel"]
-margin_right = 816.0
-margin_bottom = 35.0
-rect_min_size = Vector2( 0, 35 )
+offset_right = 816.0
+offset_bottom = 35.0
+custom_minimum_size = Vector2( 0, 35 )
 focus_mode = 2
 mouse_filter = 1
 size_flags_horizontal = 3
@@ -18,8 +18,8 @@ anchor_bottom = 1.0
 focus_mode = 2
 
 [node name="User" type="Label" parent="HBoxContainer"]
-margin_right = 87.0
-margin_bottom = 35.0
+offset_right = 87.0
+offset_bottom = 35.0
 focus_mode = 2
 mouse_filter = 1
 size_flags_horizontal = 3
@@ -30,9 +30,9 @@ valign = 1
 autowrap = true
 
 [node name="BuzzText" type="Label" parent="HBoxContainer"]
-margin_left = 91.0
-margin_right = 526.0
-margin_bottom = 35.0
+offset_left = 91.0
+offset_right = 526.0
+offset_bottom = 35.0
 focus_mode = 2
 mouse_filter = 1
 size_flags_horizontal = 3
@@ -44,10 +44,10 @@ valign = 1
 autowrap = true
 
 [node name="TimeRemaining" type="Label" parent="HBoxContainer"]
-margin_left = 530.0
-margin_top = 10.0
-margin_right = 633.0
-margin_bottom = 24.0
+offset_left = 530.0
+offset_top = 10.0
+offset_right = 633.0
+offset_bottom = 24.0
 focus_mode = 2
 mouse_filter = 1
 size_flags_horizontal = 3
@@ -59,18 +59,18 @@ align = 1
 autostart = true
 
 [node name="ExtendButton" type="Button" parent="HBoxContainer"]
-margin_left = 637.0
-margin_right = 724.0
-margin_bottom = 35.0
+offset_left = 637.0
+offset_right = 724.0
+offset_bottom = 35.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Boost"
 
 [node name="Comments" type="Button" parent="HBoxContainer"]
-margin_left = 728.0
-margin_right = 816.0
-margin_bottom = 35.0
+offset_left = 728.0
+offset_right = 816.0
+offset_bottom = 35.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -80,35 +80,35 @@ text = "Comments"
 [node name="CommentsSection" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 35.0
-margin_bottom = 386.0
-rect_min_size = Vector2( 0, 35 )
+offset_top = 35.0
+offset_bottom = 386.0
+custom_minimum_size = Vector2( 0, 35 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CommentsSection"]
-margin_right = 816.0
-margin_bottom = 20.0
+offset_right = 816.0
+offset_bottom = 20.0
 size_flags_horizontal = 3
 
 [node name="BuzzBack" type="HBoxContainer" parent="CommentsSection/VBoxContainer"]
-margin_right = 816.0
-margin_bottom = 20.0
+offset_right = 816.0
+offset_bottom = 20.0
 focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="BuzzBack" type="Button" parent="CommentsSection/VBoxContainer/BuzzBack"]
-margin_right = 816.0
-margin_bottom = 20.0
+offset_right = 816.0
+offset_bottom = 20.0
 size_flags_horizontal = 3
 text = "Leave a Comment"
 
-[node name="LeaveAComment" type="WindowDialog" parent="CommentsSection/VBoxContainer"]
-margin_top = 24.0
-margin_right = 816.0
-margin_bottom = 84.0
-rect_min_size = Vector2( 0, 60 )
+[node name="LeaveAComment" type="Window" parent="CommentsSection/VBoxContainer"]
+offset_top = 24.0
+offset_right = 816.0
+offset_bottom = 84.0
+custom_minimum_size = Vector2( 0, 60 )
 size_flags_horizontal = 3
 size_flags_vertical = 0
 window_title = "Leave a Comment"
@@ -123,8 +123,8 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -101.0
-margin_bottom = 30.0
+offset_left = -101.0
+offset_bottom = 30.0
 text = "Submit"
 
 [node name="Cancel" type="Button" parent="CommentsSection/VBoxContainer/LeaveAComment"]
@@ -132,40 +132,40 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -205.0
-margin_right = -105.0
-margin_bottom = 30.0
+offset_left = -205.0
+offset_right = -105.0
+offset_bottom = 30.0
 text = "Cancel"
 
 [node name="Keyword1" type="Label" parent="."]
 visible = false
-margin_right = 40.0
-margin_bottom = 14.0
+offset_right = 40.0
+offset_bottom = 14.0
 
 [node name="Keyword2" type="Label" parent="."]
 visible = false
-margin_right = 40.0
-margin_bottom = 14.0
+offset_right = 40.0
+offset_bottom = 14.0
 
 [node name="Keyword3" type="Label" parent="."]
 visible = false
-margin_right = 40.0
-margin_bottom = 14.0
+offset_right = 40.0
+offset_bottom = 14.0
 
 [node name="Keyword4" type="Label" parent="."]
 visible = false
-margin_right = 40.0
-margin_bottom = 14.0
+offset_right = 40.0
+offset_bottom = 14.0
 
 [node name="Keyword5" type="Label" parent="."]
 visible = false
-margin_right = 40.0
-margin_bottom = 14.0
+offset_right = 40.0
+offset_bottom = 14.0
 
 [node name="Keyword6" type="Label" parent="."]
 visible = false
-margin_right = 40.0
-margin_bottom = 14.0
+offset_right = 40.0
+offset_bottom = 14.0
 
 [connection signal="timeout" from="HBoxContainer/TimeRemaining/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="HBoxContainer/ExtendButton" to="." method="_on_ExtendButton_pressed"]

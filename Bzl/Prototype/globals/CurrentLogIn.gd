@@ -20,14 +20,14 @@ signal avatar_stripe_color_changed
 signal avatar_antennae_changed
 signal avatar_stinger_changed
 
-var avatar_color = 0 setget set_avatar_color
-var avatar_eyes = 0 setget set_avatar_eyes
-var avatar_eye_color = 0 setget set_avatar_eye_color
-var avatar_wing_color = 0 setget set_avatar_wing_color
-var avatar_stripe = 0 setget set_avatar_stripe
-var avatar_stripe_color = 0 setget set_avatar_stripe_color
-var avatar_antennae = 0 setget set_avatar_antennae
-var avatar_stinger = 0 setget set_avatar_stinger
+var avatar_color = 0 : set = set_avatar_color
+var avatar_eyes = 0 : set = set_avatar_eyes
+var avatar_eye_color = 0 : set = set_avatar_eye_color
+var avatar_wing_color = 0 : set = set_avatar_wing_color
+var avatar_stripe = 0 : set = set_avatar_stripe
+var avatar_stripe_color = 0 : set = set_avatar_stripe_color
+var avatar_antennae = 0 : set = set_avatar_antennae
+var avatar_stinger = 0 : set = set_avatar_stinger
 
 func set_avatar_color(value):
 	avatar_color = value

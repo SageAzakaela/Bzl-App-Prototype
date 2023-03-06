@@ -1,8 +1,8 @@
 extends Panel
 
 
-export var item_name = ""
-export var item_description = ""
+@export var item_name = ""
+@export var item_description = ""
 
 
 func _ready():

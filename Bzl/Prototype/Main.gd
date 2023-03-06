@@ -11,36 +11,36 @@ var Hive_Key_4 = ""
 var Hive_Key_5 = ""
 var Hive_Key_6 = ""
 
-onready var hive_1 = $Background/HBoxContainer/Hives/HiveContainer/Hive1
-onready var hive_2 = $Background/HBoxContainer/Hives/HiveContainer/Hive2
-onready var hive_3 = $Background/HBoxContainer/Hives/HiveContainer/Hive3
-onready var hive_4 = $Background/HBoxContainer/Hives/HiveContainer/Hive4
-onready var hive_5 = $Background/HBoxContainer/Hives/HiveContainer/Hive5
-onready var hive_6 = $Background/HBoxContainer/Hives/HiveContainer/Hive6
+@onready var hive_1 = $Background/HBoxContainer/Hives/HiveContainer/Hive1
+@onready var hive_2 = $Background/HBoxContainer/Hives/HiveContainer/Hive2
+@onready var hive_3 = $Background/HBoxContainer/Hives/HiveContainer/Hive3
+@onready var hive_4 = $Background/HBoxContainer/Hives/HiveContainer/Hive4
+@onready var hive_5 = $Background/HBoxContainer/Hives/HiveContainer/Hive5
+@onready var hive_6 = $Background/HBoxContainer/Hives/HiveContainer/Hive6
 
 
-onready var buzz_key_1 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry1
-onready var buzz_key_2 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry2
-onready var buzz_key_3 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry3
-onready var buzz_key_4 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry4
-onready var buzz_key_5 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry5
-onready var buzz_key_6 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry6
+@onready var buzz_key_1 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry1
+@onready var buzz_key_2 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry2
+@onready var buzz_key_3 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry3
+@onready var buzz_key_4 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry4
+@onready var buzz_key_5 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry5
+@onready var buzz_key_6 = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer/KeywordEntry6
 
-onready var buzz_text_entry = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/HBoxContainer/BuzzEntryField
+@onready var buzz_text_entry = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/HBoxContainer/BuzzEntryField
 
-onready var buzz_container = $Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer
+@onready var buzz_container = $Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer
 
-onready var current_user_label = $Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/Username
-onready var user_nectar = $Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/NectarContainer/UserNectar
+@onready var current_user_label = $Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/Username
+@onready var user_nectar = $Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/NectarContainer/UserNectar
 
-onready var UserPanel = $UserPanel
-onready var UserPanelExit = $UserPanel/ExitUserPanel
-onready var user_inventory = $UserInventory
-onready var shop = $Shop
+@onready var UserPanel = $UserPanel
+@onready var UserPanelExit = $UserPanel/ExitUserPanel
+@onready var user_inventory = $UserInventory
+@onready var shop = $Shop
 
 
 
-onready var blip = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/Blip
+@onready var blip = $Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/Blip
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -79,7 +79,7 @@ func _on_SubmitBuzz_pressed():
 	blip.play()
 	var buzz_text = buzz_text_entry.text.strip_edges()
 	var keywords = [buzz_key_1.text.to_lower(), buzz_key_2.text.to_lower(), buzz_key_3.text.to_lower(), buzz_key_4.text.to_lower(), buzz_key_5.text.to_lower(), buzz_key_6.text.to_lower()]
-	if buzz_text.empty() or keywords.empty():
+	if buzz_text.is_empty() or keywords.is_empty():
 		# Either the buzz text or keywords are empty, don't create a new buzz
 		print("Error: No Keyword or Post entered")
 		return
@@ -89,7 +89,7 @@ func _on_SubmitBuzz_pressed():
 	UserData.add_user_points(user, 10)
 	
 	# Instance the Buzz
-	var buzz = load("res://Prototype/Buzzes/NewBuzz.tscn").instance()
+	var buzz = load("res://Prototype/Buzzes/NewBuzz.tscn").instantiate()
 	buzz.Buzz_Text = buzz_text
 	buzz.Keywords = keywords
 	buzz.Time_Remaining = 120

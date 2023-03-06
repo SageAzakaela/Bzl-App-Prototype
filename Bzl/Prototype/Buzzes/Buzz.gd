@@ -2,11 +2,11 @@ extends PanelContainer
 
 
 # Declare member variables here. Examples:
-export var Buzz_Text = ""
-export var Keywords = []
-export var Time_Remaining = 0
-export var User = ""
-export var User_Type = ""
+@export var Buzz_Text = ""
+@export var Keywords = []
+@export var Time_Remaining = 0
+@export var User = ""
+@export var User_Type = ""
 
 
 
@@ -92,7 +92,7 @@ func _on_BuzzBack_pressed():
 
 func _on_Submit_pressed():
 	$VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment.visible = false
-	var comment = load("res://Prototype/Buzzes/Comment.tscn").instance()
+	var comment = load("res://Prototype/Buzzes/Comment.tscn").instantiate()
 	comment.comment_text = $VBoxContainer/CommentsSection/VBoxContainer/LeaveAComment/CommentTextEntry.text
 	$VBoxContainer/CommentsSection/VBoxContainer.add_child(comment)
 	#add points for making a comment!

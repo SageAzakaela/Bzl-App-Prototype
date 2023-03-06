@@ -1,0 +1,159 @@
+[gd_scene load_steps=3 format=3 uid="uid://driphvsh844oy"]
+
+[ext_resource type="Script" path="res://GUI/ContentContainer.gd" id="1_75rkm"]
+[ext_resource type="PackedScene" uid="uid://bag7h2rnkxdq7" path="res://Buzzes/Buzz.tscn" id="2_81lxv"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Topbar" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Topbar"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Topbar"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Topbar/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Keyword1" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"
+
+[node name="Keyword2" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"
+
+[node name="Keyword3" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"
+
+[node name="Keyword4" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"
+
+[node name="Keyword5" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"
+
+[node name="Keyword6" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"
+
+[node name="Main" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Sidebar" type="Panel" parent="VBoxContainer/Main"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Main/Sidebar"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+
+[node name="Content" type="Panel" parent="VBoxContainer/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Main/Content"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Main/Content"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Main/Content/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="ContentContainer" type="GridContainer" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer"]
+layout_mode = 2
+columns = 2
+script = ExtResource("1_75rkm")
+container_path = NodePath("../..")
+
+[node name="Buzz1" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
+layout_mode = 2
+
+[node name="Buzz2" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
+layout_mode = 2
+
+[node name="Buzz3" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
+layout_mode = 2
+
+[node name="Buzz4" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
+layout_mode = 2
+
+[node name="Buzz5" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
+layout_mode = 2
+
+[node name="Buzz6" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
+layout_mode = 2
+
+[node name="Buzz7" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
+layout_mode = 2
+
+[node name="Buzz8" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
+layout_mode = 2
+
+[node name="Buzz9" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
+layout_mode = 2
+
+[node name="Buzz10" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
+layout_mode = 2
+
+[connection signal="resized" from="VBoxContainer/Main/Content/MarginContainer" to="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" method="_on_margin_container_resized"]

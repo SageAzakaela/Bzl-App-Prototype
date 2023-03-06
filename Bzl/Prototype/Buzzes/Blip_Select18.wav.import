@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/Blip_Select18.wav-67294b215873ea21d897ef8968f49ebe.sample"
+type="AudioStreamWAV"
+uid="uid://ck3xh4ag5mgf3"
+path="res://.godot/imported/Blip_Select18.wav-67294b215873ea21d897ef8968f49ebe.sample"
 
 [deps]
 
 source_file="res://Prototype/Buzzes/Blip_Select18.wav"
-dest_files=[ "res://.import/Blip_Select18.wav-67294b215873ea21d897ef8968f49ebe.sample" ]
+dest_files=["res://.godot/imported/Blip_Select18.wav-67294b215873ea21d897ef8968f49ebe.sample"]
 
 [params]
 

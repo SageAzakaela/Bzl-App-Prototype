@@ -5,8 +5,8 @@ extends ScrollContainer
 # var b = "text"
 
 # Buzz feed
-onready var Buzz_Feed = get_node("../ScrollContainer/BuzzContainer")
-onready var RecentHiveContainer = $RecentHiveContainer
+@onready var Buzz_Feed = get_node("../ScrollContainer/BuzzContainer")
+@onready var RecentHiveContainer = $RecentHiveContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -74,7 +74,7 @@ func update_recent_hives():
 	# Loop through each keyword in the keyword_counts dictionary
 	for keyword in keyword_counts:
 		# Create a new RecentHive node for each keyword
-		var new_hive = load("res://Prototype/RecentHive/RecentHive.tscn").instance()
+		var new_hive = load("res://Prototype/RecentHive/RecentHive.tscn").instantiate()
 		RecentHiveContainer.add_child(new_hive)
 
 		# Set the text of each RecentHive node to the corresponding keyword

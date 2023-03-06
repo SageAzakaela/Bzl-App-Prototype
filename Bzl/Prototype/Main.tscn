@@ -1,1485 +1,1149 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=19 format=3 uid="uid://ctqng78a2fkk8"]
 
-[ext_resource path="res://Prototype/Buzzes_1st_Attempt/Station_505_Intensity1.mp3" type="AudioStream" id=1]
-[ext_resource path="res://Prototype/Buzzes_1st_Attempt/black-and-purple-hexagon-grid.jpg" type="Texture" id=2]
-[ext_resource path="res://Prototype/Buzzes/NewBuzz.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Prototype/Main.gd" type="Script" id=4]
-[ext_resource path="res://Prototype/Buzzes/Blip_Select18.wav" type="AudioStream" id=5]
-[ext_resource path="res://Prototype/CreateUserButton.gd" type="Script" id=6]
-[ext_resource path="res://Prototype/LogInScreen/LoginButton.gd" type="Script" id=7]
-[ext_resource path="res://Prototype/AvatarHolder.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Prototype/UserPanel.gd" type="Script" id=9]
-[ext_resource path="res://Prototype/RecentHive/RecentTags.gd" type="Script" id=10]
-[ext_resource path="res://Prototype/RecentHive/RecentHive.tscn" type="PackedScene" id=11]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0005_DefaultEyes.png" type="Texture" id=12]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0022_BASE.png" type="Texture" id=13]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0011_Stripes1.png" type="Texture" id=14]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0019_Antannae3.png" type="Texture" id=15]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0021_Antennae1.png" type="Texture" id=16]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0002_PrettyEyes.png" type="Texture" id=17]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0018_Antannae4.png" type="Texture" id=18]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0004_NervousEyes.png" type="Texture" id=19]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0006_Stripes6.png" type="Texture" id=20]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0007_Stripes5.png" type="Texture" id=21]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0008_Stripes4.png" type="Texture" id=22]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0001_AngryEyes.png" type="Texture" id=23]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0003_OldEyes.png" type="Texture" id=24]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0020_Antannae2.png" type="Texture" id=25]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0017_Antannae5.png" type="Texture" id=26]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0009_Stripes3.png" type="Texture" id=27]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0010_Stripes2.png" type="Texture" id=28]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0016_Antannae6.png" type="Texture" id=29]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0013_Stinger3.png" type="Texture" id=30]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0014_Stinger2.png" type="Texture" id=31]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0015_Stinger1.png" type="Texture" id=32]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0012_Stinger4.png" type="Texture" id=33]
-[ext_resource path="res://Prototype/CharacterCreator.gd" type="Script" id=34]
-[ext_resource path="res://images/BZLAVATAR/BzLModularAvatar_0000_Wings1.png" type="Texture" id=35]
-[ext_resource path="res://Prototype/NPC_Manager.gd" type="Script" id=36]
-[ext_resource path="res://Prototype/fonts/FontNormal.tres" type="DynamicFont" id=37]
-[ext_resource path="res://Prototype/fonts/FontBold.tres" type="DynamicFont" id=38]
-[ext_resource path="res://Prototype/BZL_Default_Theme.tres" type="Theme" id=39]
-[ext_resource path="res://Prototype/Items_and_Shop/UserInventory.gd" type="Script" id=40]
-[ext_resource path="res://Prototype/Items_and_Shop/Shop.gd" type="Script" id=41]
+[ext_resource type="AudioStream" uid="uid://cy7mop2irrw01" path="res://Prototype/Buzzes_1st_Attempt/Station_505_Intensity1.mp3" id="1"]
+[ext_resource type="Texture2D" uid="uid://biohh0rd4y368" path="res://Prototype/Buzzes_1st_Attempt/black-and-purple-hexagon-grid.jpg" id="2"]
+[ext_resource type="PackedScene" path="res://Prototype/Buzzes/NewBuzz.tscn" id="3"]
+[ext_resource type="Script" path="res://Prototype/Main.gd" id="4"]
+[ext_resource type="AudioStream" uid="uid://ck3xh4ag5mgf3" path="res://Prototype/Buzzes/Blip_Select18.wav" id="5"]
+[ext_resource type="Script" path="res://Prototype/CreateUserButton.gd" id="6"]
+[ext_resource type="Script" path="res://Prototype/LogInScreen/LoginButton.gd" id="7"]
+[ext_resource type="PackedScene" path="res://Prototype/AvatarHolder.tscn" id="8"]
+[ext_resource type="Script" path="res://Prototype/UserPanel.gd" id="9"]
+[ext_resource type="Script" path="res://Prototype/RecentHive/RecentTags.gd" id="10"]
+[ext_resource type="PackedScene" path="res://Prototype/RecentHive/RecentHive.tscn" id="11"]
+[ext_resource type="Script" path="res://Prototype/CharacterCreator.gd" id="34"]
+[ext_resource type="Script" path="res://Prototype/NPC_Manager.gd" id="36"]
+[ext_resource type="Theme" uid="uid://oi56qfe71k4g" path="res://Prototype/BZL_Default_Theme.tres" id="39"]
+[ext_resource type="Script" path="res://Prototype/Items_and_Shop/UserInventory.gd" id="40"]
+[ext_resource type="Script" path="res://Prototype/Items_and_Shop/Shop.gd" id="41"]
 
-[sub_resource type="StyleBoxTexture" id=31]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 1920, 1080 )
+[sub_resource type="StyleBoxTexture" id="1"]
+texture = ExtResource("2")
+region_rect = Rect2(0, 0, 1920, 1080)
 
-[sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 1920, 1080 )
-
-[sub_resource type="Theme" id=2]
-PanelContainer/styles/panel = SubResource( 1 )
-
-[sub_resource type="StyleBoxTexture" id=32]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 1920, 1080 )
-
-[sub_resource type="StyleBoxTexture" id=30]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 1920, 1080 )
-
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 1920, 1080 )
-
-[sub_resource type="StyleBoxEmpty" id=28]
-
-[sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 13 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 12 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 19 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 24 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=10]
-texture = ExtResource( 17 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=11]
-texture = ExtResource( 23 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=12]
-texture = ExtResource( 14 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=13]
-texture = ExtResource( 28 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=14]
-texture = ExtResource( 27 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=15]
-texture = ExtResource( 22 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=16]
-texture = ExtResource( 21 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=17]
-texture = ExtResource( 20 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=18]
-texture = ExtResource( 16 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=19]
-texture = ExtResource( 25 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=20]
-texture = ExtResource( 15 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=21]
-texture = ExtResource( 18 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=22]
-texture = ExtResource( 26 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=23]
-texture = ExtResource( 29 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=24]
-texture = ExtResource( 32 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=25]
-texture = ExtResource( 31 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=26]
-texture = ExtResource( 30 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=27]
-texture = ExtResource( 33 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
-
-[sub_resource type="StyleBoxTexture" id=29]
-texture = ExtResource( 35 )
-region_rect = Rect2( 0, 0, 1600, 1600 )
+[sub_resource type="Theme" id="2"]
+PanelContainer/styles/panel = SubResource("1")
 
 [node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 focus_mode = 2
 mouse_filter = 1
-script = ExtResource( 4 )
+script = ExtResource("4")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 31 )
 
 [node name="Background" type="PanelContainer" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( -310, 19 )
-focus_mode = 2
-mouse_filter = 1
+pivot_offset = Vector2(-310, 19)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 2 )
-custom_styles/panel = SubResource( 32 )
+focus_mode = 2
+mouse_filter = 1
+theme = SubResource("2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Background"]
-margin_right = 1024.0
-margin_bottom = 600.0
-focus_mode = 2
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+focus_mode = 2
 
 [node name="Hives" type="Panel" parent="Background/HBoxContainer"]
-margin_right = 200.0
-margin_bottom = 600.0
-rect_min_size = Vector2( 200, 0 )
-focus_mode = 2
-mouse_filter = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
-theme = ExtResource( 39 )
+focus_mode = 2
+mouse_filter = 1
+theme = ExtResource("39")
 
 [node name="HiveContainer" type="VBoxContainer" parent="Background/HBoxContainer/Hives"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -4.0
-rect_min_size = Vector2( 200, 200 )
-focus_mode = 2
+offset_right = -4.0
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+focus_mode = 2
+theme = ExtResource("39")
 
 [node name="HivesLabel" type="Label" parent="Background/HBoxContainer/Hives/HiveContainer"]
-margin_right = 200.0
-margin_bottom = 18.0
-custom_fonts/font = ExtResource( 38 )
+layout_mode = 2
 text = "HIVES"
-align = 1
 
 [node name="Hive1" type="LineEdit" parent="Background/HBoxContainer/Hives/HiveContainer"]
-margin_top = 22.0
-margin_right = 200.0
-margin_bottom = 40.0
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
-align = 1
+layout_mode = 2
+theme = ExtResource("39")
 placeholder_text = "Hive Keywords"
 
 [node name="Hive2" type="LineEdit" parent="Background/HBoxContainer/Hives/HiveContainer"]
-margin_top = 44.0
-margin_right = 200.0
-margin_bottom = 62.0
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
-align = 1
+layout_mode = 2
+theme = ExtResource("39")
 placeholder_text = "Hive Keywords"
 
 [node name="Hive3" type="LineEdit" parent="Background/HBoxContainer/Hives/HiveContainer"]
-margin_top = 66.0
-margin_right = 200.0
-margin_bottom = 84.0
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
-align = 1
+layout_mode = 2
+theme = ExtResource("39")
 placeholder_text = "Hive Keywords"
 
 [node name="Hive4" type="LineEdit" parent="Background/HBoxContainer/Hives/HiveContainer"]
-margin_top = 88.0
-margin_right = 200.0
-margin_bottom = 106.0
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
-align = 1
+layout_mode = 2
+theme = ExtResource("39")
 placeholder_text = "Hive Keywords"
 
 [node name="Hive5" type="LineEdit" parent="Background/HBoxContainer/Hives/HiveContainer"]
-margin_top = 110.0
-margin_right = 200.0
-margin_bottom = 128.0
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
-align = 1
+layout_mode = 2
+theme = ExtResource("39")
 placeholder_text = "Hive Keywords"
 
 [node name="Hive6" type="LineEdit" parent="Background/HBoxContainer/Hives/HiveContainer"]
-margin_top = 132.0
-margin_right = 200.0
-margin_bottom = 150.0
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
-align = 1
+layout_mode = 2
+theme = ExtResource("39")
 placeholder_text = "Hive Keywords"
 
 [node name="BrowseRecent" type="Button" parent="Background/HBoxContainer/Hives/HiveContainer"]
-margin_top = 154.0
-margin_right = 200.0
-margin_bottom = 172.0
-custom_fonts/font = ExtResource( 37 )
+layout_mode = 2
 toggle_mode = true
 text = "Browse Most Recent Hives"
 
 [node name="UserPanel" type="Panel" parent="Background/HBoxContainer/Hives/HiveContainer"]
-margin_top = 176.0
-margin_right = 200.0
-margin_bottom = 236.0
-rect_min_size = Vector2( 0, 60 )
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Username" type="Label" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer"]
-margin_right = 200.0
-margin_bottom = 18.0
-custom_fonts/font = ExtResource( 38 )
+layout_mode = 2
 text = "USERNAME"
-align = 1
 
-[node name="AvatarHolder" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer" instance=ExtResource( 8 )]
-margin_top = 22.0
-margin_right = 200.0
-margin_bottom = 197.0
+[node name="AvatarHolder" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer" instance=ExtResource("8")]
+layout_mode = 2
 
 [node name="NectarContainer" type="HBoxContainer" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer"]
-margin_top = 201.0
-margin_right = 200.0
-margin_bottom = 215.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Nectar" type="Label" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/NectarContainer"]
-margin_right = 98.0
-margin_bottom = 14.0
+layout_mode = 2
 size_flags_horizontal = 3
 text = "Nectar:"
-align = 1
 
 [node name="UserNectar" type="Label" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer/NectarContainer"]
-margin_left = 102.0
-margin_right = 200.0
-margin_bottom = 14.0
+layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
-align = 1
 
 [node name="Shop" type="Button" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer"]
-margin_top = 219.0
-margin_right = 200.0
-margin_bottom = 233.0
+layout_mode = 2
 text = "Shop"
 
 [node name="Inventory" type="Button" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer"]
-margin_top = 237.0
-margin_right = 200.0
-margin_bottom = 251.0
+layout_mode = 2
 text = "Inventory"
 
 [node name="UserPanelAccessButtom" type="Button" parent="Background/HBoxContainer/Hives/HiveContainer/UserPanel/VBoxContainer"]
-margin_top = 255.0
-margin_right = 200.0
-margin_bottom = 273.0
-custom_fonts/font = ExtResource( 37 )
+layout_mode = 2
 text = "Access User Panel"
 
 [node name="FeedAndPost" type="Panel" parent="Background/HBoxContainer"]
-margin_left = 204.0
-margin_right = 1024.0
-margin_bottom = 600.0
-focus_mode = 2
-mouse_filter = 1
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+focus_mode = 2
+mouse_filter = 1
+theme = ExtResource("39")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Background/HBoxContainer/FeedAndPost"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+focus_mode = 2
+theme = ExtResource("39")
 
 [node name="FeedBackground" type="PanelContainer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer"]
-margin_right = 820.0
-margin_bottom = 493.0
-focus_mode = 2
-mouse_filter = 1
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 30 )
+focus_mode = 2
+mouse_filter = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground"]
-margin_right = 820.0
-margin_bottom = 493.0
-focus_mode = 2
-mouse_filter = 1
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+focus_mode = 2
 
 [node name="BuzzContainer" type="VBoxContainer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer"]
-margin_right = 820.0
-margin_bottom = 493.0
-focus_mode = 2
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+focus_mode = 2
 
 [node name="NPC_Manager" type="Control" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer"]
-margin_right = 820.0
-script = ExtResource( 36 )
+layout_mode = 2
+script = ExtResource("36")
 
-[node name="Buzz" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 4.0
-margin_right = 820.0
-margin_bottom = 229.0
+[node name="Buzz" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/ScrollContainer/BuzzContainer" instance=ExtResource("3")]
+layout_mode = 2
 
 [node name="RecentTags" type="ScrollContainer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground"]
 visible = false
-margin_right = 816.0
-margin_bottom = 493.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 10 )
+script = ExtResource("10")
 
 [node name="RecentHiveContainer" type="VBoxContainer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/RecentTags"]
-margin_right = 816.0
-margin_bottom = 493.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RecentHive" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/RecentTags/RecentHiveContainer" instance=ExtResource( 11 )]
+[node name="RecentHive" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/RecentTags/RecentHiveContainer" instance=ExtResource("11")]
+layout_mode = 2
 
 [node name="BuzzKeywords" type="Panel" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer"]
-margin_top = 497.0
-margin_right = 820.0
-margin_bottom = 546.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 
 [node name="KeywordContainer" type="HBoxContainer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="KeywordEntry1" type="LineEdit" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer"]
-margin_right = 133.0
-margin_bottom = 49.0
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 placeholder_text = "Enter a Keyword"
 caret_blink = true
 
 [node name="KeywordEntry2" type="LineEdit" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer"]
-margin_left = 137.0
-margin_right = 270.0
-margin_bottom = 49.0
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 placeholder_text = "Enter a Keyword"
 caret_blink = true
 
 [node name="KeywordEntry3" type="LineEdit" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer"]
-margin_left = 274.0
-margin_right = 407.0
-margin_bottom = 49.0
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 placeholder_text = "Enter a Keyword"
 caret_blink = true
 
 [node name="KeywordEntry4" type="LineEdit" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer"]
-margin_left = 411.0
-margin_right = 545.0
-margin_bottom = 49.0
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 placeholder_text = "Enter a Keyword"
 caret_blink = true
 
 [node name="KeywordEntry5" type="LineEdit" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer"]
-margin_left = 549.0
-margin_right = 682.0
-margin_bottom = 49.0
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 placeholder_text = "Enter a Keyword"
 caret_blink = true
 
 [node name="KeywordEntry6" type="LineEdit" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzKeywords/KeywordContainer"]
-margin_left = 686.0
-margin_right = 820.0
-margin_bottom = 49.0
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 placeholder_text = "Enter a Keyword"
 caret_blink = true
 
 [node name="BuzzEntry" type="Panel" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer"]
-margin_top = 550.0
-margin_right = 820.0
-margin_bottom = 600.0
-mouse_filter = 1
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
+mouse_filter = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="BuzzEntryField" type="LineEdit" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/HBoxContainer"]
-margin_right = 733.0
-margin_bottom = 50.0
+layout_mode = 2
+size_flags_horizontal = 3
 focus_mode = 1
 mouse_filter = 1
-size_flags_horizontal = 3
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 placeholder_text = "Type your Buzz here!"
 caret_blink = true
 
 [node name="SubmitBuzz" type="Button" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry/HBoxContainer"]
-margin_left = 737.0
-margin_right = 820.0
-margin_bottom = 50.0
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+layout_mode = 2
+theme = ExtResource("39")
 text = "Submit Buzz"
 
 [node name="Blip" type="AudioStreamPlayer" parent="Background/HBoxContainer/FeedAndPost/VBoxContainer/BuzzEntry"]
-stream = ExtResource( 5 )
+stream = ExtResource("5")
 volume_db = -6.0
 pitch_scale = 1.5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+stream = ExtResource("1")
 volume_db = -10.0
 pitch_scale = 0.9
 autoplay = true
 
 [node name="LogInScreen" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 600, 600 )
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 3 )
+theme = ExtResource("39")
 
 [node name="LogInScreenPanel" type="Panel" parent="LogInScreen"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -118.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 0, 100 )
-theme = ExtResource( 39 )
+offset_top = -118.0
+offset_bottom = 100.0
+theme = ExtResource("39")
 
 [node name="MakeANewAccount" type="Control" parent="LogInScreen/LogInScreenPanel"]
-margin_left = 186.0
-margin_right = 226.0
-margin_bottom = 40.0
-theme = ExtResource( 39 )
+anchors_preset = 0
+offset_left = 186.0
+offset_right = 226.0
+offset_bottom = 40.0
+theme = ExtResource("39")
 
 [node name="CreateNewAccount" type="Label" parent="LogInScreen/LogInScreenPanel/MakeANewAccount"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 20.0
-margin_top = -20.0
-margin_right = 252.0
-margin_bottom = 3.0
-rect_rotation = 0.249617
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 38 )
+offset_left = 20.0
+offset_top = -20.0
+offset_right = 252.0
+offset_bottom = 3.0
+rotation = 0.249617
+theme = ExtResource("39")
 text = "Create New Account"
-align = 1
 
 [node name="EnterUsername" type="LineEdit" parent="LogInScreen/LogInScreenPanel/MakeANewAccount"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -12.0
-margin_top = 14.0
-margin_right = 308.0
-margin_bottom = 38.0
-rect_rotation = 0.249617
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
-align = 1
+offset_left = -12.0
+offset_top = 14.0
+offset_right = 308.0
+offset_bottom = 38.0
+rotation = 0.249617
+theme = ExtResource("39")
 placeholder_text = "Enter Username"
 
 [node name="EnterPassword" type="LineEdit" parent="LogInScreen/LogInScreenPanel/MakeANewAccount"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -12.0
-margin_top = 54.0
-margin_right = 308.0
-margin_bottom = 78.0
-rect_rotation = 0.249617
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
-align = 1
-secret = true
+offset_left = -12.0
+offset_top = 54.0
+offset_right = 308.0
+offset_bottom = 78.0
+rotation = 0.249617
+theme = ExtResource("39")
 placeholder_text = "Enter Password"
+secret = true
 
 [node name="EnterPasswordConfirmation" type="LineEdit" parent="LogInScreen/LogInScreenPanel/MakeANewAccount"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -12.0
-margin_top = 92.0
-margin_right = 308.0
-margin_bottom = 116.0
-rect_rotation = 0.249617
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
-align = 1
-secret = true
+offset_left = -12.0
+offset_top = 92.0
+offset_right = 308.0
+offset_bottom = 116.0
+rotation = 0.249617
+theme = ExtResource("39")
 placeholder_text = "Confrim Password"
+secret = true
 
 [node name="CreateUserButton" type="Button" parent="LogInScreen/LogInScreenPanel/MakeANewAccount"]
-margin_left = 8.0
-margin_top = 162.0
-margin_right = 326.0
-margin_bottom = 182.0
-rect_rotation = 0.249617
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+layout_mode = 0
+offset_left = 8.0
+offset_top = 162.0
+offset_right = 326.0
+offset_bottom = 182.0
+rotation = 0.249617
+theme = ExtResource("39")
 text = "Submit"
-script = ExtResource( 6 )
+script = ExtResource("6")
 
 [node name="ReturningUser" type="Control" parent="LogInScreen/LogInScreenPanel"]
-margin_left = 568.0
-margin_right = 608.0
-margin_bottom = 40.0
-theme = ExtResource( 39 )
+anchors_preset = 0
+offset_left = 568.0
+offset_right = 608.0
+offset_bottom = 40.0
+theme = ExtResource("39")
 
 [node name="LogIn" type="Label" parent="LogInScreen/LogInScreenPanel/ReturningUser"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 67.0
-margin_top = -20.0
-margin_right = 196.0
-margin_bottom = -2.0
-rect_rotation = 0.249617
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 38 )
+offset_left = 67.0
+offset_top = -20.0
+offset_right = 196.0
+offset_bottom = -2.0
+rotation = 0.249617
+theme = ExtResource("39")
 text = "Log In"
-align = 1
 
 [node name="EnterUsername" type="LineEdit" parent="LogInScreen/LogInScreenPanel/ReturningUser"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -12.0
-margin_top = 14.0
-margin_right = 308.0
-margin_bottom = 38.0
-rect_rotation = 0.249617
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
-align = 1
+offset_left = -12.0
+offset_top = 14.0
+offset_right = 308.0
+offset_bottom = 38.0
+rotation = 0.249617
+theme = ExtResource("39")
 placeholder_text = "Enter Username"
 
 [node name="EnterPassword" type="LineEdit" parent="LogInScreen/LogInScreenPanel/ReturningUser"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -12.0
-margin_top = 54.0
-margin_right = 308.0
-margin_bottom = 78.0
-rect_rotation = 0.249617
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
-align = 1
-secret = true
+offset_left = -12.0
+offset_top = 54.0
+offset_right = 308.0
+offset_bottom = 78.0
+rotation = 0.249617
+theme = ExtResource("39")
 placeholder_text = "Enter Password"
+secret = true
 
 [node name="LoginButton" type="Button" parent="LogInScreen/LogInScreenPanel/ReturningUser"]
-margin_left = 8.0
-margin_top = 114.0
-margin_right = 326.0
-margin_bottom = 134.0
-rect_rotation = 0.249617
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+layout_mode = 0
+offset_left = 8.0
+offset_top = 114.0
+offset_right = 326.0
+offset_bottom = 134.0
+rotation = 0.249617
+theme = ExtResource("39")
 text = "Log In"
-script = ExtResource( 7 )
+script = ExtResource("7")
 
 [node name="UserDataMessagePanel" type="Panel" parent="LogInScreen/LogInScreenPanel"]
+layout_mode = 0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -183.0
-margin_bottom = -131.0
-theme = ExtResource( 39 )
+offset_top = -183.0
+offset_bottom = -131.0
+theme = ExtResource("39")
 
 [node name="Message" type="Label" parent="LogInScreen/LogInScreenPanel/UserDataMessagePanel"]
 visible = false
+layout_mode = 0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -7.0
-margin_bottom = 7.0
+offset_top = -7.0
+offset_bottom = 7.0
 text = "Passwords do not match"
-align = 1
-valign = 1
 uppercase = true
 
 [node name="EnterApp" type="Button" parent="LogInScreen/LogInScreenPanel"]
 visible = false
+layout_mode = 0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = 133.0
-margin_bottom = 185.0
-theme = ExtResource( 39 )
+offset_top = 133.0
+offset_bottom = 185.0
+theme = ExtResource("39")
 text = "Enter Bzl App"
 
 [node name="UserPanel" type="Panel" parent="."]
 visible = false
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 600, 600 )
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 3 )
-script = ExtResource( 9 )
+theme = ExtResource("39")
+script = ExtResource("9")
 
 [node name="UserPanelBox" type="Panel" parent="UserPanel"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -118.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 0, 100 )
-theme = ExtResource( 39 )
+offset_top = -118.0
+offset_bottom = 100.0
+theme = ExtResource("39")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserPanel/UserPanelBox"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="UserPanelTitle" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer"]
-margin_right = 1024.0
-margin_bottom = 18.0
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 38 )
+layout_mode = 2
+theme = ExtResource("39")
 text = "USER PANEL"
-align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer"]
-margin_top = 22.0
-margin_right = 1024.0
-margin_bottom = 218.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="UserInfo" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer"]
-margin_right = 120.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo"]
-margin_right = 120.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="Username" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo/VBoxContainer"]
-margin_right = 120.0
-margin_bottom = 18.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 7
 size_flags_stretch_ratio = 0.08
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 38 )
+theme = ExtResource("39")
 text = "Username:"
 
 [node name="Pronouns" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo/VBoxContainer"]
-margin_top = 22.0
-margin_right = 120.0
-margin_bottom = 40.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 7
 size_flags_stretch_ratio = 0.18
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 38 )
+theme = ExtResource("39")
 text = "Pronouns:"
 
 [node name="MarginContainer" type="MarginContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo/VBoxContainer"]
-margin_top = 44.0
-margin_right = 120.0
-margin_bottom = 99.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="Bio" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo/VBoxContainer"]
-margin_top = 103.0
-margin_right = 120.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 7
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 38 )
+theme = ExtResource("39")
 text = "Bio:"
 
 [node name="UserInfo2" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer"]
-margin_left = 124.0
-margin_right = 415.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.48
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2"]
-margin_right = 291.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="Username" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
-margin_right = 291.0
-margin_bottom = 18.0
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+layout_mode = 2
+theme = ExtResource("39")
 text = "Azakaela"
 
 [node name="Pronouns" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
-margin_top = 22.0
-margin_right = 291.0
-margin_bottom = 40.0
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+layout_mode = 2
+theme = ExtResource("39")
 text = "They/Them"
 
 [node name="EditPronounsField" type="LineEdit" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
 visible = false
-margin_top = 36.0
-margin_right = 291.0
-margin_bottom = 60.0
-theme = ExtResource( 39 )
+layout_mode = 2
+theme = ExtResource("39")
 
 [node name="EditPronouns" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
-margin_top = 44.0
-margin_right = 291.0
-margin_bottom = 62.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.12
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 toggle_mode = true
 text = "Edit Pronouns"
 
 [node name="MarginContainer" type="MarginContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
-margin_top = 66.0
-margin_right = 291.0
-margin_bottom = 100.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="Bio" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
-margin_top = 104.0
-margin_right = 291.0
-margin_bottom = 174.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 7
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 text = "A short little bio would go here"
-autowrap = true
 
 [node name="EditBioPanel" type="Panel" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Bio"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -3.0
+offset_top = -3.0
 
 [node name="EditBioText" type="TextEdit" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer/Bio/EditBioPanel"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="EditBioButton" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/UserInfo2/VBoxContainer"]
-margin_top = 178.0
-margin_right = 291.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.12
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 toggle_mode = true
 text = "Edit Bio"
 
 [node name="CharacterCreator" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer"]
-margin_left = 419.0
-margin_right = 1024.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 39 )
-script = ExtResource( 34 )
+theme = ExtResource("39")
+script = ExtResource("34")
 
 [node name="Collums" type="HBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator"]
-margin_right = 605.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="AvatarHolder" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums"]
-margin_right = 225.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 28 )
+theme = ExtResource("39")
 
 [node name="Base" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
-margin_right = 225.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 6 )
+theme = ExtResource("39")
 
 [node name="Eyes" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
-margin_right = 225.0
-margin_bottom = 196.0
-theme = ExtResource( 39 )
+layout_mode = 2
+theme = ExtResource("39")
 
 [node name="Eyes" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Eyes"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 7 )
+theme = ExtResource("39")
 
 [node name="Eyes2" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Eyes"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 8 )
+theme = ExtResource("39")
 
 [node name="Eyes3" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Eyes"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 9 )
+theme = ExtResource("39")
 
 [node name="Eyes4" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Eyes"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 10 )
+theme = ExtResource("39")
 
 [node name="Eyes5" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Eyes"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 11 )
+theme = ExtResource("39")
 
 [node name="Stripes" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
-margin_right = 225.0
-margin_bottom = 196.0
-theme = ExtResource( 39 )
+layout_mode = 2
+theme = ExtResource("39")
 
 [node name="Stripes1" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 12 )
+theme = ExtResource("39")
 
 [node name="Stripes2" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 13 )
+theme = ExtResource("39")
 
 [node name="Stripes3" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 14 )
+theme = ExtResource("39")
 
 [node name="Stripes4" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 15 )
+theme = ExtResource("39")
 
 [node name="Stripes5" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 16 )
+theme = ExtResource("39")
 
 [node name="Stripes6" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stripes"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 17 )
+theme = ExtResource("39")
 
 [node name="Antannae" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
-margin_right = 225.0
-margin_bottom = 196.0
-theme = ExtResource( 39 )
+layout_mode = 2
+theme = ExtResource("39")
 
 [node name="Antannae1" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 18 )
+theme = ExtResource("39")
 
 [node name="Antannae2" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 19 )
+theme = ExtResource("39")
 
 [node name="Antannae3" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 20 )
+theme = ExtResource("39")
 
 [node name="Antannae4" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 21 )
+theme = ExtResource("39")
 
 [node name="Antannae5" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 22 )
+theme = ExtResource("39")
 
 [node name="Antannae6" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Antannae"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 23 )
+theme = ExtResource("39")
 
 [node name="Stinger" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
-margin_right = 225.0
-margin_bottom = 196.0
-theme = ExtResource( 39 )
+layout_mode = 2
+theme = ExtResource("39")
 
 [node name="Stinger1" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stinger"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 24 )
+theme = ExtResource("39")
 
 [node name="Stinger2" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stinger"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 25 )
+theme = ExtResource("39")
 
 [node name="Stinger3" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stinger"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 26 )
+theme = ExtResource("39")
 
 [node name="Stinger4" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Stinger"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 27 )
+theme = ExtResource("39")
 
 [node name="Wings" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
-margin_right = 225.0
-margin_bottom = 196.0
-theme = ExtResource( 39 )
+layout_mode = 2
+theme = ExtResource("39")
 
 [node name="Wings1" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/Wings"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-custom_styles/panel = SubResource( 29 )
+theme = ExtResource("39")
 
 [node name="RandomizeButton" type="Control" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder"]
-margin_right = 225.0
-margin_bottom = 196.0
+layout_mode = 2
 mouse_filter = 1
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="Randomize" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/RandomizeButton"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -30.0
-margin_right = 225.0
-margin_bottom = -6.0
+offset_top = -30.0
+offset_right = 225.0
+offset_bottom = -6.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 text = "Randomize"
 
 [node name="SaveButton2" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarHolder/RandomizeButton"]
+layout_mode = 0
 anchor_right = 1.0
-margin_bottom = 20.0
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+offset_bottom = 20.0
+theme = ExtResource("39")
 text = "Save Avatar"
 
 [node name="AvatarDesigner" type="PanelContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums"]
-margin_left = 229.0
-margin_right = 605.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner"]
-margin_right = 376.0
-margin_bottom = 196.0
-theme = ExtResource( 39 )
+layout_mode = 2
+theme = ExtResource("39")
 
 [node name="Back" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer"]
-margin_right = 122.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="BackColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
-margin_right = 122.0
-margin_bottom = 21.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = "<"
 
 [node name="BackEyes" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
-margin_top = 25.0
-margin_right = 122.0
-margin_bottom = 46.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = "<"
 
 [node name="BackEyeColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
-margin_top = 50.0
-margin_right = 122.0
-margin_bottom = 71.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = "<"
 
 [node name="BackWingColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
-margin_top = 75.0
-margin_right = 122.0
-margin_bottom = 96.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = "<"
 
 [node name="BackStripes" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
-margin_top = 100.0
-margin_right = 122.0
-margin_bottom = 121.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = "<"
 
 [node name="BackStripesColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
-margin_top = 125.0
-margin_right = 122.0
-margin_bottom = 146.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = "<"
 
 [node name="BackAntennae" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
-margin_top = 150.0
-margin_right = 122.0
-margin_bottom = 171.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = "<"
 
 [node name="BackStinger" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Back"]
-margin_top = 175.0
-margin_right = 122.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = "<"
 
 [node name="Part" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer"]
-margin_left = 126.0
-margin_right = 249.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="Color" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
-margin_top = 1.0
-margin_right = 123.0
-margin_bottom = 19.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 text = "Color"
-align = 1
 
 [node name="Eyes" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
-margin_top = 26.0
-margin_right = 123.0
-margin_bottom = 44.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 text = "Eyes"
-align = 1
 
 [node name="EyeColor" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
-margin_top = 51.0
-margin_right = 123.0
-margin_bottom = 69.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 text = "Eye Color"
-align = 1
 
 [node name="WingColor" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
-margin_top = 76.0
-margin_right = 123.0
-margin_bottom = 94.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 text = "Wing Color"
-align = 1
 
 [node name="Stripes" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
-margin_top = 101.0
-margin_right = 123.0
-margin_bottom = 119.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 text = "Stripes"
-align = 1
 
 [node name="StripesColor" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
-margin_top = 126.0
-margin_right = 123.0
-margin_bottom = 144.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 text = "Stripes Color"
-align = 1
 
 [node name="Antennae" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
-margin_top = 151.0
-margin_right = 123.0
-margin_bottom = 169.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 text = "Antennae"
-align = 1
 
 [node name="Stinger" type="Label" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Part"]
-margin_top = 176.0
-margin_right = 123.0
-margin_bottom = 194.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-theme = ExtResource( 39 )
-custom_fonts/font = ExtResource( 37 )
+theme = ExtResource("39")
 text = "Stinger"
-align = 1
 
 [node name="Forward" type="VBoxContainer" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer"]
-margin_left = 253.0
-margin_right = 376.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="ForwardColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
-margin_right = 123.0
-margin_bottom = 21.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = ">"
 
 [node name="ForwardEyes" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
-margin_top = 25.0
-margin_right = 123.0
-margin_bottom = 46.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = ">"
 
 [node name="ForwardEyeColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
-margin_top = 50.0
-margin_right = 123.0
-margin_bottom = 71.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = ">"
 
 [node name="ForwardWingColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
-margin_top = 75.0
-margin_right = 123.0
-margin_bottom = 96.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = ">"
 
 [node name="ForwardStripes" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
-margin_top = 100.0
-margin_right = 123.0
-margin_bottom = 121.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = ">"
 
 [node name="ForwardStripesColor" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
-margin_top = 125.0
-margin_right = 123.0
-margin_bottom = 146.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = ">"
 
 [node name="ForwardAntennae" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
-margin_top = 150.0
-margin_right = 123.0
-margin_bottom = 171.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = ">"
 
 [node name="ForwardStinger" type="Button" parent="UserPanel/UserPanelBox/VBoxContainer/HBoxContainer/CharacterCreator/Collums/AvatarDesigner/HBoxContainer/Forward"]
-margin_top = 175.0
-margin_right = 123.0
-margin_bottom = 196.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = ">"
 
 [node name="ExitUserPanel" type="Button" parent="UserPanel"]
+layout_mode = 0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = 133.0
-margin_bottom = 185.0
-custom_fonts/font = ExtResource( 38 )
+offset_top = 133.0
+offset_bottom = 185.0
 text = "Exit User Panel"
 
 [node name="UserInventory" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-script = ExtResource( 40 )
+theme = ExtResource("39")
+script = ExtResource("40")
 
 [node name="InventoryLabel" type="Label" parent="UserInventory"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = "Inventory"
-align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="UserInventory"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = 50.0
-margin_right = -50.0
-margin_bottom = -50.0
-theme = ExtResource( 39 )
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+theme = ExtResource("39")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UserInventory/MarginContainer"]
-margin_right = 924.0
-margin_bottom = 500.0
+layout_mode = 2
 
 [node name="ItemContainer" type="VBoxContainer" parent="UserInventory/MarginContainer/ScrollContainer"]
-margin_right = 924.0
-margin_bottom = 500.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="ExitInventory" type="Button" parent="UserInventory"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -37.0
-margin_bottom = -2.0
-rect_min_size = Vector2( 0, 35 )
+offset_top = -37.0
+offset_bottom = -2.0
 size_flags_horizontal = 3
 text = "Exit Inventory"
 
 [node name="Shop" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 39 )
-script = ExtResource( 41 )
+theme = ExtResource("39")
+script = ExtResource("41")
 
 [node name="ShopLabel" type="Label" parent="Shop"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 text = "Shop"
-align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Shop"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = 50.0
-margin_right = -50.0
-margin_bottom = -50.0
-theme = ExtResource( 39 )
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+theme = ExtResource("39")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Shop/MarginContainer"]
-margin_right = 924.0
-margin_bottom = 500.0
+layout_mode = 2
 
 [node name="ItemContainer" type="VBoxContainer" parent="Shop/MarginContainer/ScrollContainer"]
-margin_right = 924.0
-margin_bottom = 500.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 39 )
+theme = ExtResource("39")
 
 [node name="ExitShop" type="Button" parent="Shop"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -37.0
-margin_bottom = -2.0
-rect_min_size = Vector2( 0, 35 )
+offset_top = -37.0
+offset_bottom = -2.0
 text = "Exit Shop"
 
 [connection signal="pressed" from="Background/HBoxContainer/Hives/HiveContainer/BrowseRecent" to="Background/HBoxContainer/FeedAndPost/VBoxContainer/FeedBackground/RecentTags" method="_on_BrowseRecent_pressed"]
