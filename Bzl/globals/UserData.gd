@@ -13,7 +13,7 @@ func _ready():
 	
 	var data = file.get_as_text()
 	file.close()
-	print(data)
+	
 	# Initialize the users dictionary as an empty dictionary
 	users = {}
 	
