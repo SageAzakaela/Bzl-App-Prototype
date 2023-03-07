@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6nl63d84axt1"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://gui/Searchbar.gd" id="1_gli0w"]
+[ext_resource type="Script" path="res://buzzes/Searchbar.gd" id="1_gli0w"]
 
 [node name="Searchbar" type="HBoxContainer"]
 alignment = 1

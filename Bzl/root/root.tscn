@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://damceadvuc61f"]
 
 [ext_resource type="Script" path="res://root/root.gd" id="1_hoc70"]
-[ext_resource type="PackedScene" uid="uid://b4q0v4l62q0b2" path="res://gui/GUI.tscn" id="2_hbhb8"]
+[ext_resource type="PackedScene" uid="uid://damihgm8shwxu" path="res://gui/GUI.tscn" id="2_hbhb8"]
 [ext_resource type="PackedScene" uid="uid://dinyt3g430uc8" path="res://login/Login.tscn" id="3_1g8jj"]
 
 [node name="root" type="Node"]

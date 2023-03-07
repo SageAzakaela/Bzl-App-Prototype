@@ -1,3 +1,6 @@
-res://gui/GUI.tscn
+res://default_env.tres
+res://BuzzContainer.tscn
+res://buzzes/BuzzContainer.tscn
+res://root/root.tscn
 res://login/Login.tres
-res://Prototype/BZL_Default_Theme.tres
+res://gui/GUI.tscn
