@@ -5,6 +5,9 @@ signal successfully_authenticated
 
 var temporary_user: User
 
+@onready var sign_in_form := $SignIn
+@onready var sign_up_form := $SignUp
+
 @onready var sign_in_mail_input := $SignIn/MailHBox/Mail
 @onready var sign_in_password_input := $SignIn/PasswordHBox/Password
 
@@ -51,3 +54,13 @@ func _on_signup_succeeded(data):
 	UserManager.create_user()
 	
 	sign_in()
+
+
+func _on_switch_to_sign_up_pressed():
+	sign_in_form.hide()
+	sign_up_form.show()
+	
+
+func _on_switch_to_sign_in_pressed():
+	sign_up_form.hide()
+	sign_in_form.show()

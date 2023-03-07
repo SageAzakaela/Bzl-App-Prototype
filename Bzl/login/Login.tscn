@@ -25,7 +25,6 @@ grow_vertical = 2
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 
 [node name="SignIn" type="VBoxContainer" parent="."]
-visible = false
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -101,6 +100,7 @@ text = "Sign up"
 underline = 2
 
 [node name="SignUp" type="VBoxContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -188,7 +188,7 @@ size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("2_p7ehm")
 theme_override_styles/focus = ExtResource("2_p7ehm")
 theme_override_styles/read_only = ExtResource("2_p7ehm")
-placeholder_text = "repeat password"
+placeholder_text = "password confirmation"
 secret = true
 
 [node name="SignUpButton" type="Button" parent="SignUp"]
@@ -213,4 +213,6 @@ text = "Sign in"
 underline = 2
 
 [connection signal="pressed" from="SignIn/SignInButton" to="." method="_on_sign_in_button_pressed"]
+[connection signal="pressed" from="SignIn/HBoxContainer/LinkButton" to="." method="_on_switch_to_sign_up_pressed"]
 [connection signal="pressed" from="SignUp/SignUpButton" to="." method="_on_sign_up_button_pressed"]
+[connection signal="pressed" from="SignUp/HBoxContainer/LinkButton" to="." method="_on_switch_to_sign_in_pressed"]
