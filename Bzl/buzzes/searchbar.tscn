@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://c6nl63d84axt1"]
 
-[ext_resource type="Script" path="res://GUI/Searchbar.gd" id="1_si7ea"]
+[ext_resource type="Script" path="res://gui/Searchbar.gd" id="1_gli0w"]
 
 [node name="Searchbar" type="HBoxContainer"]
 alignment = 1
-script = ExtResource("1_si7ea")
+script = ExtResource("1_gli0w")
 
 [node name="SearchBox1" type="LineEdit" parent="."]
 custom_minimum_size = Vector2(100, 0)

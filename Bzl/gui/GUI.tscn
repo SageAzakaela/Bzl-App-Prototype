@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4q0v4l62q0b2"]
+[gd_scene load_steps=4 format=3 uid="uid://brego7r8wuuff"]
 
-[ext_resource type="Script" path="res://GUI/GUI.gd" id="1_1h4pk"]
-[ext_resource type="PackedScene" uid="uid://c6nl63d84axt1" path="res://buzzes/searchbar.tscn" id="2_um7yc"]
-[ext_resource type="PackedScene" uid="uid://dngrctagnt5b7" path="res://content-container/BuzzContainer.tscn" id="3_fj1ax"]
+[ext_resource type="Script" path="res://gui/GUI.gd" id="1_vgmmr"]
+[ext_resource type="PackedScene" uid="uid://c6nl63d84axt1" path="res://buzzes/searchbar.tscn" id="2_wa7oe"]
+[ext_resource type="PackedScene" uid="uid://dngrctagnt5b7" path="res://BuzzContainer.tscn" id="3_86y67"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1h4pk")
+script = ExtResource("1_vgmmr")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -47,7 +47,7 @@ offset_top = 10.0
 offset_right = -10.0
 offset_bottom = -10.0
 
-[node name="Searchbar" parent="VBoxContainer/Topbar/MarginContainer" instance=ExtResource("2_um7yc")]
+[node name="Searchbar" parent="VBoxContainer/Topbar/MarginContainer" instance=ExtResource("2_wa7oe")]
 layout_mode = 2
 
 [node name="Main" type="HBoxContainer" parent="VBoxContainer"]
@@ -91,7 +91,7 @@ offset_bottom = -10.0
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="BuzzContainer" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer" instance=ExtResource("3_fj1ax")]
+[node name="BuzzContainer" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer" instance=ExtResource("3_86y67")]
 layout_mode = 2
 container_path = NodePath("../..")
 
