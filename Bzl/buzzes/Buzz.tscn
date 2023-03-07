@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bag7h2rnkxdq7"]
 
-[ext_resource type="Texture2D" uid="uid://dlbwt4iaekh7t" path="res://icon.png" id="1_jdm6m"]
+[ext_resource type="Texture2D" uid="uid://d0mo582acy3n2" path="res://icon.png" id="1_jdm6m"]
 [ext_resource type="Script" path="res://buzzes/Buzz.gd" id="1_oxec7"]
 
 [node name="Buzz" type="Panel"]

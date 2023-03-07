@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dinyt3g430uc8"]
+[gd_scene load_steps=6 format=3 uid="uid://dinyt3g430uc8"]
 
 [ext_resource type="Script" path="res://login/Login.gd" id="1_i1wbo"]
 [ext_resource type="Texture2D" uid="uid://c5ue0feld3yfg" path="res://resources/icons/user.png" id="1_nn3l6"]
 [ext_resource type="Texture2D" uid="uid://0s3kf1s27ttu" path="res://resources/icons/padlock.png" id="2_m0l5s"]
 [ext_resource type="StyleBox" uid="uid://dpjqfwy18vnvc" path="res://login/Login.tres" id="2_p7ehm"]
+[ext_resource type="Texture2D" uid="uid://dhs41m4f7cwe1" path="res://resources/icons/email.png" id="5_8r6c3"]
 
 [node name="Login" type="Control"]
 layout_mode = 3
@@ -23,7 +24,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="SignIn" type="VBoxContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -40,17 +42,17 @@ grow_vertical = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="UsernameHBox" type="HBoxContainer" parent="VBoxContainer"]
+[node name="MailHBox" type="HBoxContainer" parent="SignIn"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="UserIcon" type="TextureRect" parent="VBoxContainer/UsernameHBox"]
+[node name="MailIcon" type="TextureRect" parent="SignIn/MailHBox"]
 layout_mode = 2
-texture = ExtResource("1_nn3l6")
+texture = ExtResource("5_8r6c3")
 expand_mode = 2
 
-[node name="Mail" type="LineEdit" parent="VBoxContainer/UsernameHBox"]
+[node name="Mail" type="LineEdit" parent="SignIn/MailHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("2_p7ehm")
@@ -58,17 +60,17 @@ theme_override_styles/focus = ExtResource("2_p7ehm")
 theme_override_styles/read_only = ExtResource("2_p7ehm")
 placeholder_text = "email"
 
-[node name="PasswordHBox" type="HBoxContainer" parent="VBoxContainer"]
+[node name="PasswordHBox" type="HBoxContainer" parent="SignIn"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="LockIcon" type="TextureRect" parent="VBoxContainer/PasswordHBox"]
+[node name="LockIcon" type="TextureRect" parent="SignIn/PasswordHBox"]
 layout_mode = 2
 texture = ExtResource("2_m0l5s")
 expand_mode = 2
 
-[node name="Password" type="LineEdit" parent="VBoxContainer/PasswordHBox"]
+[node name="Password" type="LineEdit" parent="SignIn/PasswordHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("2_p7ehm")
@@ -77,22 +79,138 @@ theme_override_styles/read_only = ExtResource("2_p7ehm")
 placeholder_text = "password"
 secret = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="SignInButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="SignInButton" type="Button" parent="SignIn"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Sign in"
 
-[node name="SignUpButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SignIn"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="SignIn/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.247059, 0.247059, 1)
+text = "Don't have an account?"
+
+[node name="LinkButton" type="LinkButton" parent="SignIn/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.498039, 0.498039, 0.498039, 1)
+text = "Sign up"
+underline = 2
+
+[node name="SignUp" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="MailHBox" type="HBoxContainer" parent="SignUp"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MailIcon" type="TextureRect" parent="SignUp/MailHBox"]
+layout_mode = 2
+texture = ExtResource("5_8r6c3")
+expand_mode = 2
+
+[node name="Mail" type="LineEdit" parent="SignUp/MailHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("2_p7ehm")
+theme_override_styles/focus = ExtResource("2_p7ehm")
+theme_override_styles/read_only = ExtResource("2_p7ehm")
+placeholder_text = "email"
+
+[node name="UsernameHBox" type="HBoxContainer" parent="SignUp"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="UserIcon" type="TextureRect" parent="SignUp/UsernameHBox"]
+layout_mode = 2
+texture = ExtResource("1_nn3l6")
+expand_mode = 2
+
+[node name="Username" type="LineEdit" parent="SignUp/UsernameHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("2_p7ehm")
+theme_override_styles/focus = ExtResource("2_p7ehm")
+theme_override_styles/read_only = ExtResource("2_p7ehm")
+placeholder_text = "username"
+
+[node name="PasswordHBox" type="HBoxContainer" parent="SignUp"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="LockIcon" type="TextureRect" parent="SignUp/PasswordHBox"]
+layout_mode = 2
+texture = ExtResource("2_m0l5s")
+expand_mode = 2
+
+[node name="Password" type="LineEdit" parent="SignUp/PasswordHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("2_p7ehm")
+theme_override_styles/focus = ExtResource("2_p7ehm")
+theme_override_styles/read_only = ExtResource("2_p7ehm")
+placeholder_text = "password"
+secret = true
+
+[node name="PasswordConfirmationHBox" type="HBoxContainer" parent="SignUp"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="LockIcon" type="TextureRect" parent="SignUp/PasswordConfirmationHBox"]
+layout_mode = 2
+texture = ExtResource("2_m0l5s")
+expand_mode = 2
+
+[node name="PasswordConfirmation" type="LineEdit" parent="SignUp/PasswordConfirmationHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("2_p7ehm")
+theme_override_styles/focus = ExtResource("2_p7ehm")
+theme_override_styles/read_only = ExtResource("2_p7ehm")
+placeholder_text = "repeat password"
+secret = true
+
+[node name="SignUpButton" type="Button" parent="SignUp"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Sign up
-"
+text = "Sign up"
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/SignInButton" to="." method="_on_sign_in_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/SignUpButton" to="." method="_on_sign_up_button_pressed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SignUp"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="SignUp/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.247059, 0.247059, 1)
+text = "Already have an account?"
+
+[node name="LinkButton" type="LinkButton" parent="SignUp/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.498039, 0.498039, 0.498039, 1)
+text = "Sign in"
+underline = 2
+
+[connection signal="pressed" from="SignIn/SignInButton" to="." method="_on_sign_in_button_pressed"]
+[connection signal="pressed" from="SignUp/SignUpButton" to="." method="_on_sign_up_button_pressed"]

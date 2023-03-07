@@ -14,8 +14,8 @@ func create_user():
 	# Get a reference to the user database path
 	var db_ref = Firebase.Database.get_database_reference("/users/")
 	
-	db_ref.connect("new_data_update", self, func(data): user.db_id = user.key)
-	db_ref.connect("patch_data_update", self, func(data): user.set_with_dict(data))
+	db_ref.connect("new_data_update", func(data): user.db_id = data["db_id"])
+	db_ref.connect("patch_data_update", func(data): user.set_with_dict(data))
 	
 	# Add user to the data base
 	db_ref.push(data_dict)

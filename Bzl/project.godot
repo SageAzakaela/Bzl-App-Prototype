@@ -19,7 +19,7 @@ config/icon="res://icon.png"
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 CurrentLogIn="*res://globals/CurrentLogIn.gd"
-UserData="*res://globals/UserManager.gd"
+UserManager="*res://globals/UserManager.gd"
 
 [display]
 
