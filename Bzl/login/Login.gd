@@ -16,11 +16,12 @@ var temporary_user: User
 
 func _ready():
 	Firebase.Auth.connect("signup_succeeded", _on_signup_succeeded)
+	Firebase.Auth.connect("login_succeeded", func(data): emit_signal("successfully_authenticated"))
 
 
 func sign_in():
-	if UserData.check_user(sign_in_mail_input.text, sign_in_password_input.text):
-		emit_signal("successfully_authenticated")
+	if UserManager.user != null:
+		Firebase.Auth.login_with_email_and_password(UserManager.user.email, UserManager.user.password)
 
 
 func _on_sign_in_button_pressed():
