@@ -1,6 +1,6 @@
 res://default_env.tres
-res://BuzzContainer.tscn
-res://buzzes/BuzzContainer.tscn
 res://root/root.tscn
 res://login/Login.tres
+res://user/User.gd
 res://gui/GUI.tscn
+res://globals/UserManager.gd

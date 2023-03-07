@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="User" load_steps=2 format=3 uid="uid://cf1vsmkmknc8c"]
+
+[ext_resource type="Script" path="res://user/User.gd" id="1_kfna7"]
+
+[resource]
+script = ExtResource("1_kfna7")
+db_id = "1234abcd"
+username = "DokkaeCat"
+email = "dokkae@cat.com"
+pronouns = "He/Him"
+bio = "..."
+nectar = 0
+avatar_color = 0
+avatar_eyes = 0
+avatar_eye_color = 0
+avatar_wing_color = 0
+avatar_stripe = 0
+avatar_stripe_color = 0
+avatar_antennae = 0
+avatar_stinger = 0
