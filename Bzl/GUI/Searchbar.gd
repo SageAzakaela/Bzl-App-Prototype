@@ -27,7 +27,8 @@ func _on_search_entered(id: int, text: String):
 		
 	keywords[id] = text
 	
-	emit_signal("on_search_entered", keywords)
+	if text != "":
+		emit_signal("on_search_entered", keywords)
 
 
 class SearchBox:
