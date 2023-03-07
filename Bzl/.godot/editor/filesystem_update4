@@ -14,3 +14,4 @@ res://GUI/ContentContainer.gd
 res://content-container/buzz_container.tscn
 res://GUI/BuzzContainer.gd
 res://content-container/BuzzContainer.tscn
+res://buzzes/searchbar.tscn
