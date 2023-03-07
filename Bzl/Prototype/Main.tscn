@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://cy7mop2irrw01" path="res://Prototype/Buzzes_1st_Attempt/Station_505_Intensity1.mp3" id="1"]
 [ext_resource type="Texture2D" uid="uid://biohh0rd4y368" path="res://Prototype/Buzzes_1st_Attempt/black-and-purple-hexagon-grid.jpg" id="2"]
-[ext_resource type="PackedScene" path="res://Prototype/Buzzes/NewBuzz.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bweft41i8tlwc" path="res://Prototype/Buzzes/NewBuzz.tscn" id="3"]
 [ext_resource type="Script" path="res://Prototype/Main.gd" id="4"]
 [ext_resource type="AudioStream" uid="uid://ck3xh4ag5mgf3" path="res://Prototype/Buzzes/Blip_Select18.wav" id="5"]
 [ext_resource type="Script" path="res://Prototype/CreateUserButton.gd" id="6"]
@@ -311,6 +311,7 @@ pitch_scale = 0.9
 autoplay = true
 
 [node name="LogInScreen" type="Panel" parent="."]
+visible = false
 custom_minimum_size = Vector2(600, 600)
 layout_mode = 0
 anchor_right = 1.0

@@ -8,6 +8,11 @@ custom_minimum_size = Vector2(350, 250)
 offset_right = 350.0
 offset_bottom = 250.0
 script = ExtResource("1_oxec7")
+title = "Interesting Buzz Title"
+author = "Username"
+lifetime = 999
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dapibus ultrices in iaculis nunc sed augue lacus viverra. Malesuada fames ac turpis egestas integer eget aliquet. Sem fringilla ut morbi tincidunt augue interdum. Leo urna molestie at elementum eu."
+keywords = Array[String](["keyword1", "keyword2", "keyword3", "keyword4", "keyword5", "keyword6"])
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

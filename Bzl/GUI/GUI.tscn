@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4q0v4l62q0b2"]
+[gd_scene load_steps=4 format=3 uid="uid://b4q0v4l62q0b2"]
 
-[ext_resource type="Script" path="res://GUI/ContentContainer.gd" id="1_75rkm"]
-[ext_resource type="PackedScene" uid="uid://bag7h2rnkxdq7" path="res://buzzes/Buzz.tscn" id="2_81lxv"]
+[ext_resource type="Script" path="res://GUI/GUI.gd" id="1_1h4pk"]
+[ext_resource type="PackedScene" uid="uid://c6nl63d84axt1" path="res://buzzes/searchbar.tscn" id="2_um7yc"]
+[ext_resource type="PackedScene" uid="uid://dngrctagnt5b7" path="res://content-container/BuzzContainer.tscn" id="3_fj1ax"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1h4pk")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -45,39 +47,8 @@ offset_top = 10.0
 offset_right = -10.0
 offset_bottom = -10.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Topbar/MarginContainer"]
+[node name="Searchbar" parent="VBoxContainer/Topbar/MarginContainer" instance=ExtResource("2_um7yc")]
 layout_mode = 2
-alignment = 1
-
-[node name="Keyword1" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-placeholder_text = "Keyword"
-
-[node name="Keyword2" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-placeholder_text = "Keyword"
-
-[node name="Keyword3" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-placeholder_text = "Keyword"
-
-[node name="Keyword4" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-placeholder_text = "Keyword"
-
-[node name="Keyword5" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-placeholder_text = "Keyword"
-
-[node name="Keyword6" type="LineEdit" parent="VBoxContainer/Topbar/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-placeholder_text = "Keyword"
 
 [node name="Main" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -120,40 +91,8 @@ offset_bottom = -10.0
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="ContentContainer" type="GridContainer" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer"]
+[node name="BuzzContainer" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer" instance=ExtResource("3_fj1ax")]
 layout_mode = 2
-columns = 2
-script = ExtResource("1_75rkm")
 container_path = NodePath("../..")
 
-[node name="Buzz1" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
-layout_mode = 2
-
-[node name="Buzz2" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
-layout_mode = 2
-
-[node name="Buzz3" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
-layout_mode = 2
-
-[node name="Buzz4" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
-layout_mode = 2
-
-[node name="Buzz5" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
-layout_mode = 2
-
-[node name="Buzz6" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
-layout_mode = 2
-
-[node name="Buzz7" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
-layout_mode = 2
-
-[node name="Buzz8" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
-layout_mode = 2
-
-[node name="Buzz9" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
-layout_mode = 2
-
-[node name="Buzz10" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" instance=ExtResource("2_81lxv")]
-layout_mode = 2
-
-[connection signal="resized" from="VBoxContainer/Main/Content/MarginContainer" to="VBoxContainer/Main/Content/MarginContainer/ScrollContainer/ContentContainer" method="_on_margin_container_resized"]
+[connection signal="on_search_entered" from="VBoxContainer/Topbar/MarginContainer/Searchbar" to="." method="_on_searchbar_search_entered"]

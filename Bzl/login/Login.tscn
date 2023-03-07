@@ -50,13 +50,13 @@ layout_mode = 2
 texture = ExtResource("1_nn3l6")
 expand_mode = 2
 
-[node name="Username" type="LineEdit" parent="VBoxContainer/UsernameHBox"]
+[node name="Mail" type="LineEdit" parent="VBoxContainer/UsernameHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("2_p7ehm")
 theme_override_styles/focus = ExtResource("2_p7ehm")
 theme_override_styles/read_only = ExtResource("2_p7ehm")
-placeholder_text = "Username"
+placeholder_text = "email"
 
 [node name="PasswordHBox" type="HBoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -74,7 +74,7 @@ size_flags_horizontal = 3
 theme_override_styles/normal = ExtResource("2_p7ehm")
 theme_override_styles/focus = ExtResource("2_p7ehm")
 theme_override_styles/read_only = ExtResource("2_p7ehm")
-placeholder_text = "Password"
+placeholder_text = "password"
 secret = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]

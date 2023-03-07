@@ -4,7 +4,7 @@ extends Control
 signal successfully_authenticated
 
 
-@onready var username_input := $VBoxContainer/UsernameHBox/Username
+@onready var username_input := $VBoxContainer/UsernameHBox/Mail
 @onready var password_input := $VBoxContainer/PasswordHBox/Password
 
 

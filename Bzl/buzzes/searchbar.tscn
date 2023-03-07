@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6nl63d84axt1"]
+
+[ext_resource type="Script" path="res://GUI/Searchbar.gd" id="1_si7ea"]
+
+[node name="Searchbar" type="HBoxContainer"]
+alignment = 1
+script = ExtResource("1_si7ea")
+
+[node name="SearchBox1" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"
+
+[node name="SearchBox2" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"
+
+[node name="SearchBox3" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"
+
+[node name="SearchBox4" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"
+
+[node name="SearchBox5" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"
+
+[node name="SearchBox6" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+placeholder_text = "Keyword"

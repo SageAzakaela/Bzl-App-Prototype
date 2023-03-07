@@ -1,13 +1,14 @@
 extends Panel
+class_name Buzz
 
 
-@export var update_on_startup := false
+@export var update_on_startup := true
 
 @export var title := ""
 @export var author := ""
 @export var lifetime := 0
-@export var text := ""
-@export var keywords: Array[String] = []
+@export_multiline var text := ""
+@export var keywords: Array[String]
 
 @onready var title_label = $MarginContainer/VBoxContainer/Header/InfoMargins/Info/Title
 @onready var author_label = $MarginContainer/VBoxContainer/Header/InfoMargins/Info/HBoxContainer/Author
