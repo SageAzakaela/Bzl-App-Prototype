@@ -13,6 +13,6 @@ func _ready():
 	get_window().max_size = max_size
 
 
-func _on_login_successfully_authenticated():
+func _on_sign_in_succeeded():
 	$GUI.visible = true
 	$Login.visible = false

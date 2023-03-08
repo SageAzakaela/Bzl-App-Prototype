@@ -13,3 +13,4 @@ res://user/User.gd
 res://addons/godot-firebase/auth/auth.gd
 res://globals/UserManager.gd
 res://login/Login.gd
+res://root/root.gd

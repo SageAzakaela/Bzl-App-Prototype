@@ -14,4 +14,4 @@ visible = false
 
 [node name="Login" parent="." instance=ExtResource("3_1g8jj")]
 
-[connection signal="successfully_authenticated" from="Login" to="." method="_on_login_successfully_authenticated"]
+[connection signal="sign_in_succeeded" from="Login" to="." method="_on_sign_in_succeeded"]

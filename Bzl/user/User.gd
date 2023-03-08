@@ -2,7 +2,7 @@ extends Resource
 class_name User
 
 
-@export var db_id: String
+@export var uid: String
 
 @export var username: String
 @export var email: String
@@ -68,7 +68,7 @@ func set_avatar_stinger(value: int):
 #------< functions >------#
 func get_as_dict() -> Dictionary:
 	var data: Dictionary = {
-		"db_id": db_id,
+		"uid": uid,
 		
 		"username": username, 
 		"email": email, 
@@ -92,7 +92,7 @@ func get_as_dict() -> Dictionary:
 func set_with_dict(data: Dictionary):
 	var get_value_or_fallback = func(key, fallback): return data[key] if key in data else fallback
 	
-	db_id = get_value_or_fallback.call("db_id", "")
+	uid = get_value_or_fallback.call("uid", "")
 	username = get_value_or_fallback.call("username", "")
 	email = get_value_or_fallback.call("email", "")
 	pronouns = get_value_or_fallback.call("pronouns", "")
