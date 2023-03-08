@@ -29,10 +29,12 @@ func set_with_dict(data: Dictionary):
 	
 	bid = get_value_or_fallback.call("bid", "")
 	title = get_value_or_fallback.call("title", "")
-	author = get_value_or_fallback.call("author", null)
+	var author_uid = get_value_or_fallback.call("author", "")
 	keywords = get_value_or_fallback.call("keywords", [])
 	timestamp = get_value_or_fallback.call("timestamp", {})
 	content = get_value_or_fallback.call("content", "")
+	
+	# TODO: get UserData with athor uid
 
 func get_as_json() -> String:
 	return JSON.stringify(get_as_dict())
