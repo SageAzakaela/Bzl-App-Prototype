@@ -3,7 +3,7 @@
 extends HBoxContainer
 
 
-signal on_search_entered(keywords: Array[String])
+signal search_entered(keywords: Array[String])
 
 var keywords: Array[String]
 var search_boxes: Array[SearchBox]
@@ -16,7 +16,7 @@ func _ready():
 		keywords.append("")
 		
 		var box := SearchBox.new(i, search_box_references[i])
-		box.connect("on_search_entered", _on_search_entered)
+		box.on_search_entered.connect(_on_search_entered)
 		
 		search_boxes.append(box)
 
@@ -28,7 +28,7 @@ func _on_search_entered(id: int, text: String):
 	keywords[id] = text
 	
 	if text != "":
-		emit_signal("on_search_entered", keywords)
+		search_entered.emit(keywords)
 
 
 class SearchBox:
@@ -43,4 +43,4 @@ class SearchBox:
 		search_box_reference.connect("text_changed", _on_text_changed)
 
 	func _on_text_changed(text: String):
-		emit_signal("on_search_entered", id, text)
+		on_search_entered.emit(id, text)

@@ -6,11 +6,11 @@ signal sign_in_succeeded
 signal sign_up_failed(code: float, message: String)
 signal sign_in_failed(code: float, message: String)
 
-var _active_user: User : get = get_active_user
+var _active_user: UserData : get = get_active_user
 
 
 # -----< Getter / Setter >----- #
-func get_active_user() -> User:
+func get_active_user() -> UserData:
 	return _active_user
 
 
@@ -29,7 +29,7 @@ func _ready():
 
 # -----< Authentication >----- #
 func signup_user(email: String, password: String):
-	_active_user = User.new()
+	_active_user = UserData.new()
 	
 	_active_user.uid = calculate_hash(email, password)
 	_active_user.email = email
@@ -37,18 +37,18 @@ func signup_user(email: String, password: String):
 	Firebase.Auth.signup_with_email_and_password(email, password)
 
 func signin_user(email: String, password: String):
-	_active_user = User.new()
+	_active_user = UserData.new()
 	_active_user.uid = calculate_hash(email, password)
 	_active_user.email = email
 	
 	Firebase.Auth.login_with_email_and_password(email, password)
 
-func get_user(uid: String) -> User:
+func get_user(uid: String) -> UserData:
 	var document_task : FirestoreTask = DBManager.users_collection.get_doc(uid)
 	var document : FirestoreDocument = await document_task.get_document
 	
 	var user_data := FirestoreDocument.fields2dict(document.document)
-	var user := User.new()
+	var user := UserData.new()
 	user.set_with_dict(user_data)
 	
 	return user

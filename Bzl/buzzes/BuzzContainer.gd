@@ -5,6 +5,8 @@ extends GridContainer
 
 var container : Container
 
+@onready var buzz_scene := preload("res://buzzes/Buzz.tscn")
+
 
 func _ready():
 	container = get_node_or_null(container_path)
@@ -13,6 +15,21 @@ func _ready():
 		container.connect("resized", _on_margin_container_resized)
 
 
+func display(buzzes: Array[BuzzData]):
+	for child in get_children():
+		child.hide()
+		child.queue_free()
+	
+	for buzz in buzzes:
+		buzz = buzz as BuzzData
+		
+		var instance := buzz_scene.instantiate() as Buzz
+		instance.buzz_data = buzz
+		
+		add_child(instance)
+
+
+#------< helper >------#
 func calculate_columns():
 	if container == null:
 		return
@@ -23,17 +40,6 @@ func calculate_columns():
 	columns = number_of_columns
 
 
+#------< signals >------#
 func _on_margin_container_resized():
 	calculate_columns()
-	
-
-func search(keywords: Array[String]):
-	for buzz in get_children():
-		buzz = buzz as Buzz
-		
-		buzz.hide()
-		
-		for i in range(0, buzz.keywords.size()):
-			for j in range(0, keywords.size()):
-				if buzz.keywords[i] == keywords[j]:
-					buzz.show()

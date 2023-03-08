@@ -5,4 +5,4 @@ extends Control
 
 
 func _on_searchbar_search_entered(keywords: Array[String]):
-	buzz_container.search(keywords)
+	print(await BuzzManager.fetch(keywords))

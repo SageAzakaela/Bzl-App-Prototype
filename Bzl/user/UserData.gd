@@ -1,5 +1,5 @@
 extends Resource
-class_name User
+class_name UserData
 
 
 @export var uid: String

@@ -14,3 +14,16 @@ res://addons/godot-firebase/auth/auth.gd
 res://globals/UserManager.gd
 res://login/Login.gd
 res://root/root.gd
+res://buzzes/Buzz.gd
+res://buzzes/BuzzHolder.gd
+res://buzzes/BuzzData.gd
+res://buzzes/BuzzHandler.gd
+res://user/UserData.gd
+res://buzzes/BuzzContainer.gd
+res://buzzes/idk.tres
+res://buzzes/Searchbar.gd
+res://gui/GUI.gd
+res://globals/BuzzManager.gd
+res://addons/godot-firebase/firestore/firestore_task.gd
+res://addons/godot-firebase/firebase/firebase.tscn
+res://addons/godot-firebase/storage/storage.gd

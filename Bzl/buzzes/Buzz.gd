@@ -4,11 +4,7 @@ class_name Buzz
 
 @export var update_on_startup := true
 
-@export var title := ""
-@export var author := ""
-@export var lifetime := 0
-@export_multiline var text := ""
-@export var keywords: Array[String]
+@export var buzz_data: BuzzData
 
 @onready var title_label = $MarginContainer/VBoxContainer/Header/InfoMargins/Info/Title
 @onready var author_label = $MarginContainer/VBoxContainer/Header/InfoMargins/Info/HBoxContainer/Author
@@ -23,15 +19,18 @@ func _ready():
 
 
 func update_values():
-	title_label.text = title
-	author_label.text = author
-	lifetime_label.text = str(lifetime)
-	text_label.text = text
+	if buzz_data == null or buzz_data.author == null:
+		return
+	
+	title_label.text = buzz_data.title
+	author_label.text = buzz_data.author.username
+	lifetime_label.text = str(Time.get_unix_time_from_system() - buzz_data.timestamp)
+	text_label.text = buzz_data.text
 	
 	keywords_label.text = ""
 	
-	for i in range(0, keywords.size()):
-		keywords_label.text += "#" + keywords[i]
+	for i in range(0, buzz_data.keywords.size()):
+		keywords_label.text += "#" + buzz_data.keywords[i]
 		
-		if i != keywords.size() - 1:
+		if i != buzz_data.keywords.size() - 1:
 			keywords_label.text += " "

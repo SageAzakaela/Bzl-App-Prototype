@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bag7h2rnkxdq7"]
+[gd_scene load_steps=3 format=3 uid="uid://dd1lp5n1y20l3"]
 
 [ext_resource type="Texture2D" uid="uid://d0mo582acy3n2" path="res://icon.png" id="1_jdm6m"]
 [ext_resource type="Script" path="res://buzzes/Buzz.gd" id="1_oxec7"]
@@ -8,11 +8,6 @@ custom_minimum_size = Vector2(350, 250)
 offset_right = 350.0
 offset_bottom = 250.0
 script = ExtResource("1_oxec7")
-title = "Interesting Buzz Title"
-author = "Username"
-lifetime = 999
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dapibus ultrices in iaculis nunc sed augue lacus viverra. Malesuada fames ac turpis egestas integer eget aliquet. Sem fringilla ut morbi tincidunt augue interdum. Leo urna molestie at elementum eu."
-keywords = Array[String](["keyword1", "keyword2", "keyword3", "keyword4", "keyword5", "keyword6"])
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BuzzData" load_steps=2 format=3 uid="uid://dbp321rt78kg4"]
+
+[ext_resource type="Script" path="res://buzzes/BuzzData.gd" id="1_c54s4"]
+
+[resource]
+script = ExtResource("1_c54s4")
+bid = "bid0123456789"
+title = "Interesting Buzz Title!!!"
+author = "uid1502558174"
+keywords = Array[String](["cat", "neko", "kitty", "test", "new"])
+timestamp = 999
+text = "Thi is my first post test with the new Firestore DB!!! :3"

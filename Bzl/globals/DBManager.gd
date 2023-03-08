@@ -2,7 +2,4 @@ extends Node
 
 
 @onready var users_collection : FirestoreCollection = Firebase.Firestore.collection("users")
-@onready var posts_collection : FirestoreCollection = Firebase.Firestore.collection("buzzes")
-
-
-
+@onready var buzzes_collection : FirestoreCollection = Firebase.Firestore.collection("buzzes")
