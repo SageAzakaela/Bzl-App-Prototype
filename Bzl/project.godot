@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
+DBManager="*res://globals/DBManager.gd"
 CurrentLogIn="*res://globals/CurrentLogIn.gd"
 UserManager="*res://globals/UserManager.gd"
 

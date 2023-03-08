@@ -20,8 +20,9 @@ var temporary_password: String
 
 
 func _ready():
-	Firebase.Auth.connect("signup_succeeded", _on_signup_succeeded)
-	Firebase.Auth.connect("login_succeeded", _on_signin_succeeded)
+	#Firebase.Auth.connect("signup_succeeded", _on_signup_succeeded)
+	#Firebase.Auth.connect("login_succeeded", _on_signin_succeeded)
+	pass
 
 
 func sign_in():
@@ -34,11 +35,12 @@ func sign_in():
 	temporary_username = sign_up_username_input.text
 	temporary_password = sign_up_password_input.text
 	
-	Firebase.Auth.login_with_email_and_password(temporary_email, temporary_password)
+	#Firebase.Auth.login_with_email_and_password(temporary_email, temporary_password)
 
 
 func _on_sign_in_button_pressed():
-	sign_in()
+	#sign_in()
+	pass
 
 
 func _on_sign_up_button_pressed():
@@ -55,7 +57,7 @@ func _on_sign_up_button_pressed():
 	temporary_username = sign_up_username_input.text
 	temporary_password = sign_up_password_input.text
 	
-	Firebase.Auth.signup_with_email_and_password(temporary_email, temporary_password)
+	#Firebase.Auth.signup_with_email_and_password(temporary_email, temporary_password)
 
 
 func _on_signup_succeeded(data):
@@ -75,7 +77,7 @@ func _on_signup_succeeded(data):
 func _on_signin_succeeded(data):
 	print("Signed in") 
 	
-	UserManager.user = UserManager.get_user(UserManager.calculate_hash(temporary_email, temporary_password))
+	UserManager.user = await UserManager.get_user(UserManager.calculate_hash(temporary_email, temporary_password))
 	
 	emit_signal("successfully_authenticated")
 

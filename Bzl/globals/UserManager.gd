@@ -1,41 +1,71 @@
 extends Node
 
 
-var user: User
+signal on_user_signup_succeeded(user: User)
+signal on_user_signin_succeeded(user: User)
+signal on_user_signup_failed(code: float, message: String)
+signal on_user_signin_failed(code: float, message: String)
+
+var _temporary_user_data: User
 
 
-func create_user():
-	if user == null:
-		push_warning("No active user assigned")
-		return
+func _ready():
+	Firebase.Auth.connect("signup_succeeded", _on_signup_succeeded)
+	Firebase.Auth.connect("login_succeeded", _on_signin_succeeded)
 	
-	# Get a reference to the user database path
-	var db_ref = Firebase.Database.get_database_reference("/test/users/" + user.db_id)
+	Firebase.Auth.connect("signup_failed", _on_signup_failed)
+	Firebase.Auth.connect("login_failed", _on_signin_failed)
 	
-	db_ref.connect("new_data_update", func(data): user.db_id = data["db_id"])
-	db_ref.connect("patch_data_update", func(data): user.set_with_dict(data))
-	
-	# Add user to the data base
-	db_ref.update("/", user.get_as_dict())
+	#signin_user("testmail0@gmail.com", "test1234")
+	#var user := await get_user(calculate_hash("testmail0@gmail.com", "test1234"))
+	#print(user.get_as_dict())
 
 
-func get_user(db_id: String) -> User:
-	var db_ref = Firebase.Database.get_database_reference("/test/users/" + db_id)
+func signup_user(email: String, password: String):
+	_temporary_user_data = User.new()
 	
-	return User.new().set_with_dict(db_ref.get_data())
+	_temporary_user_data.db_id = calculate_hash(email, password)
+	_temporary_user_data.email = email
 	
+	Firebase.Auth.signup_with_email_and_password(email, password)
 
+
+func signin_user(email: String, password: String):
+	Firebase.Auth.login_with_email_and_password(email, password)
+
+
+func get_user(uid: String) -> User:
+	var document_task : FirestoreTask = DBManager.users_collection.get_doc(uid)
+	var document : FirestoreDocument = await document_task.get_document
+	
+	var user_data := FirestoreDocument.fields2dict(document.document)
+	var user := User.new()
+	user.set_with_dict(user_data)
+	
+	return user
+
+
+# -----< Helpers >----- #
 func calculate_hash(email: String, password: String) -> String:
 	return "uid" + str(hash(email + password))
 
 
-func update_user():
-	if user == null:
-		push_warning("No active user assigned")
-		return
+# -----< Signals >----- #
+func _on_signup_succeeded(auth_info: Dictionary):
+	var add_task : FirestoreTask = DBManager.users_collection.add(_temporary_user_data.db_id, _temporary_user_data.get_as_dict())
+	var document : FirestoreTask = await add_task.task_finished
 	
-	# Get a reference to the database path for this user
-	var db_ref = Firebase.Database.get_database_reference("/test/users/" + user.db_id)
+	emit_signal("on_user_signup_succeeded", _temporary_user_data)
+	_temporary_user_data = null
+
+func _on_signup_failed(code: float, message: String):
+	emit_signal("on_user_signup_failed", code, message)
+	_temporary_user_data = null
+
+func _on_signin_succeeded(auth_info: Dictionary):
+	emit_signal("on_user_signin_succeeded", _temporary_user_data)
+	_temporary_user_data = null
 	
-	# Update the user's data in the database
-	db_ref.update("/", user.get_as_dict())
+func _on_signin_failed(code: float, message: String):
+	emit_signal("on_user_signin_failed", code, message)
+	_temporary_user_data = null
