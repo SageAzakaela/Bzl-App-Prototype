@@ -7,3 +7,7 @@ res://globals/UserManager.gd
 res://login/Login.tscn
 res://buzzes/Buzz.tscn
 res://login/Login.gd
+res://addons/godot-firebase/firebase/firebase.gd
+res://addons/godot-firebase/database/database_store.gd
+res://addons/godot-firebase/database/database.gd
+res://addons/godot-firebase/database/reference.gd

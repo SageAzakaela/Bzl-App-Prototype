@@ -3,7 +3,9 @@ extends Control
 
 signal successfully_authenticated
 
-var temporary_user: User
+var temporary_email: String
+var temporary_username: String
+var temporary_password: String
 
 @onready var sign_in_form := $SignIn
 @onready var sign_up_form := $SignUp
@@ -19,12 +21,20 @@ var temporary_user: User
 
 func _ready():
 	Firebase.Auth.connect("signup_succeeded", _on_signup_succeeded)
-	Firebase.Auth.connect("login_succeeded", func(data): emit_signal("successfully_authenticated"))
+	Firebase.Auth.connect("login_succeeded", _on_signin_succeeded)
 
 
 func sign_in():
-	if UserManager.user != null:
-		Firebase.Auth.login_with_email_and_password(UserManager.user.email, UserManager.user.password)
+	if sign_in_mail_input.text.length() == 0 or sign_in_password_input.text.length() == 0:
+		return
+	
+	print("Signing in")
+	
+	temporary_email = sign_up_mail_input.text
+	temporary_username = sign_up_username_input.text
+	temporary_password = sign_up_password_input.text
+	
+	Firebase.Auth.login_with_email_and_password(temporary_email, temporary_password)
 
 
 func _on_sign_in_button_pressed():
@@ -32,28 +42,42 @@ func _on_sign_in_button_pressed():
 
 
 func _on_sign_up_button_pressed():
-	if sign_up_mail_input.text.length() == 0 or sign_up_username_input.text.length() == 0 or sign_up_password_input.text.size() == 0 or sign_up_password_confirmation_input.text.size() == 0:
+	if sign_up_mail_input.text.length() == 0 or sign_up_username_input.text.length() == 0 or sign_up_password_input.text.length() == 0 or sign_up_password_confirmation_input.text.length() == 0:
 		return
 		
 	if sign_up_password_input.text != sign_up_password_confirmation_input.text:
 		print("Password confirmation does not match")
 		return
 	
-	temporary_user = User.new()
+	print("Signing up")
 	
-	temporary_user.email = sign_up_mail_input.text
-	temporary_user.username = sign_up_username_input.text
+	temporary_email = sign_up_mail_input.text
+	temporary_username = sign_up_username_input.text
+	temporary_password = sign_up_password_input.text
 	
-	Firebase.Auth.signup_with_email_and_password(sign_up_mail_input.text, sign_up_password_input.text)	
+	Firebase.Auth.signup_with_email_and_password(temporary_email, temporary_password)
 
 
 func _on_signup_succeeded(data):
-	UserManager.user = temporary_user
-	temporary_user = null
+	print("Signed up")
 	
+	var user := User.new()
+	user.email = temporary_email
+	user.username = temporary_username
+	user.db_id = UserManager.calculate_hash(temporary_email, temporary_password)
+	
+	UserManager.user = user
 	UserManager.create_user()
 	
 	sign_in()
+
+
+func _on_signin_succeeded(data):
+	print("Signed in") 
+	
+	UserManager.user = UserManager.get_user(UserManager.calculate_hash(temporary_email, temporary_password))
+	
+	emit_signal("successfully_authenticated")
 
 
 func _on_switch_to_sign_up_pressed():
