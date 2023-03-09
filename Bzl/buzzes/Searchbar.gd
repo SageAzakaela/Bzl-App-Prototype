@@ -27,8 +27,7 @@ func _on_search_entered(id: int, text: String):
 		
 	keywords[id] = text
 	
-	if text != "":
-		search_entered.emit(keywords)
+	search_entered.emit(keywords)
 
 
 class SearchBox:

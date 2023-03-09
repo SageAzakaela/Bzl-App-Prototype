@@ -19,7 +19,7 @@ func display(buzzes: Array[BuzzData]):
 	for child in get_children():
 		child.hide()
 		child.queue_free()
-	
+		
 	for buzz in buzzes:
 		buzz = buzz as BuzzData
 		

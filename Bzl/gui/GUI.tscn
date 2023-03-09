@@ -13,6 +13,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vgmmr")
 
+[node name="SearchTimout" type="Timer" parent="."]
+wait_time = 0.75
+one_shot = true
+
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
 anchor_right = 1.0
@@ -95,4 +99,5 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 container_path = NodePath("../..")
 
+[connection signal="timeout" from="SearchTimout" to="." method="_on_search_timout_timeout"]
 [connection signal="search_entered" from="VBoxContainer/Topbar/MarginContainer/Searchbar" to="." method="_on_searchbar_search_entered"]

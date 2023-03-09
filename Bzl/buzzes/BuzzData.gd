@@ -4,11 +4,33 @@ class_name BuzzData
 
 @export var bid: String
 @export var title: String
-@export var author: UserData
+@export var author: String
 @export var keywords: Array[String]
-@export var timestamp: int
+@export var timestamp: float
 @export_multiline var content: String
 
+
+func equals(buzz_data: BuzzData) -> bool:
+	if bid != buzz_data.bid:
+		return false
+		
+	if title != buzz_data.title:
+		return false
+		
+	if author != buzz_data.author:
+		return false
+		
+	for i in range(0, min(keywords.size(), buzz_data.keywords.size())):
+		if keywords[i] != buzz_data.keywords[i]:
+			return false
+		
+	if timestamp != buzz_data.timestamp:
+		return false
+		
+	if content != buzz_data.content:
+		return false
+		
+	return true
 
 #------< functions >------#
 func get_as_dict() -> Dictionary:
@@ -27,11 +49,17 @@ func get_as_dict() -> Dictionary:
 func set_with_dict(data: Dictionary):
 	var get_value_or_fallback = func(key, fallback): return data[key] if key in data else fallback
 	
+	var array_to_string_array = func(array): 
+		var new: Array[String]
+		for i in array: 
+			new.append(i as String)
+		return new
+	
 	bid = get_value_or_fallback.call("bid", "")
 	title = get_value_or_fallback.call("title", "")
-	var author_uid = get_value_or_fallback.call("author", "")
-	keywords = get_value_or_fallback.call("keywords", [])
-	timestamp = get_value_or_fallback.call("timestamp", {})
+	author = get_value_or_fallback.call("author", "")
+	keywords = array_to_string_array.call(get_value_or_fallback.call("keywords", []))
+	timestamp = get_value_or_fallback.call("timestamp", 0.0)
 	content = get_value_or_fallback.call("content", "")
 	
 	# TODO: get UserData with athor uid

@@ -15,17 +15,21 @@ class_name Buzz
 
 func _ready():
 	if update_on_startup:
-		update_values()
+		hide()
+		await update_values()
+		show()
 
 
-func update_values():
+func update_values():	
 	if buzz_data == null or buzz_data.author == null:
 		return
 	
+	var author := await UserManager.get_user(buzz_data.author)
+	
 	title_label.text = buzz_data.title
-	author_label.text = buzz_data.author.username
-	lifetime_label.text = str(Time.get_unix_time_from_system() - buzz_data.timestamp)
-	text_label.text = buzz_data.text
+	author_label.text = author.username
+	lifetime_label.text = Time.get_date_string_from_unix_time(buzz_data.timestamp)
+	text_label.text = buzz_data.content
 	
 	keywords_label.text = ""
 	

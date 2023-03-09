@@ -3,8 +3,8 @@ extends Node
 
 signal sign_up_succeeded
 signal sign_in_succeeded
-signal sign_up_failed(code: float, message: String)
-signal sign_in_failed(code: float, message: String)
+signal sign_up_failed(code: String, message: String)
+signal sign_in_failed(code: String, message: String)
 
 var _active_user: UserData : get = get_active_user
 
@@ -71,10 +71,10 @@ func on_sign_in_succeeded(auth_info: Dictionary):
 	
 	emit_signal("sign_in_succeeded")
 
-func on_sign_up_failed(code: float, message: String):
+func on_sign_up_failed(code: String, message: String):
 	emit_signal("sign_up_failed", code, message)
 	_active_user = null
 
-func on_sign_in_failed(code: float, message: String):
+func on_sign_in_failed(code: String, message: String):
 	emit_signal("sign_in_failed", code, message)
 	_active_user = null

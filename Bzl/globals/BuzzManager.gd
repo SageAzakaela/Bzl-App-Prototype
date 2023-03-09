@@ -11,7 +11,10 @@ func fetch(keywords: Array[String]) -> Array[BuzzData]:
 		var tmp: BuzzData = await get_buzz(buzz_docs[i]["doc_name"])
 		
 		for j in range(0, keywords.size()):
-			if tmp.keywords.find(keywords[j]) != -1:
+			if keywords[j] == "":
+				continue
+				
+			if tmp.keywords.has(keywords[j]):
 				buzzes.append(tmp)
 				break
 	
@@ -23,7 +26,20 @@ func get_buzz(bid: String) -> BuzzData:
 	var document : FirestoreDocument = await document_task.get_document
 	
 	var buzz_data := FirestoreDocument.fields2dict(document.document)
+	
 	var buzz := BuzzData.new()
 	buzz.set_with_dict(buzz_data)
 	
 	return buzz
+
+
+func create_buzz(buzz: BuzzData):
+	buzz.bid = calculate_hash(buzz.content, buzz.timestamp)
+	
+	var add_task : FirestoreTask = DBManager.buzzes_collection.add(buzz.bid, buzz.get_as_dict())
+	var document : FirestoreTask = await add_task.task_finished
+	
+	
+# -----< helpers >----- #
+func calculate_hash(content: String, timestamp: int):
+	return "bid" + str(hash(content + str(timestamp)))

@@ -67,8 +67,8 @@ func _on_sign_up_succeeded():
 func _on_sign_in_succeeded():
 	emit_signal("sign_in_succeeded")
 
-func _on_sign_up_failed(code: float, message: String):
+func _on_sign_up_failed(code: String, message: String):
 	pass
 
-func _on_sign_in_failed(code: float, message: String):
+func _on_sign_in_failed(code: String, message: String):
 	pass
