@@ -52,6 +52,7 @@ func _on_sign_up_button_pressed():
 		return
 	
 	UserManager.signup_user(sign_up_mail_input.text, sign_up_password_input.text)
+	UserManager.get_active_user().username = sign_up_username_input.text
 
 
 func _on_switch_to_sign_up_pressed():

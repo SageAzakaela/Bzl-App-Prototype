@@ -1,16 +1,8 @@
 res://default_env.tres
-res://addons/godot-firebase/firebase/firebase.tscn
+res://buzzes/Buzz.tscn
 res://login/Login.tres
-res://globals/BuzzManager.gd
-res://buzzes/BuzzData.gd
-res://gui/GUI.gd
 res://gui/GUI.tscn
 res://root/root.tscn
 res://login/Login.tscn
-res://buzzes/Buzz.tscn
-res://buzzes/Buzz.gd
 res://login/Login.gd
-res://globals/UserManager.gd
 res://buzzes/BuzzContainer.gd
-res://buzzes/BuzzContainer.tscn
-res://buzzes/Searchbar.gd

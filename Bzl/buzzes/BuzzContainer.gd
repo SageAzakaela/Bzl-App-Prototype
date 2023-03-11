@@ -2,6 +2,7 @@ extends GridContainer
 
 
 @export_node_path("Container") var container_path: NodePath
+@export var dynamic_columns: bool = true
 
 var container : Container
 
@@ -42,4 +43,5 @@ func calculate_columns():
 
 #------< signals >------#
 func _on_margin_container_resized():
-	calculate_columns()
+	if dynamic_columns:
+		calculate_columns()
