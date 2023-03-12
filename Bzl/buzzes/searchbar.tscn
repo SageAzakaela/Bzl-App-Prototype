@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://nc7ejsa1nh3"]
 
 [ext_resource type="Script" path="res://buzzes/Searchbar.gd" id="1_gli0w"]
 

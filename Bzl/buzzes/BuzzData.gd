@@ -4,7 +4,7 @@ class_name BuzzData
 
 @export var bid: String
 @export var title: String
-@export var author: String
+@export var author: UserData = UserData.new()
 @export var keywords: Array[String]
 @export var timestamp: float
 @export_multiline var content: String
@@ -55,9 +55,14 @@ func set_with_dict(data: Dictionary):
 			new.append(i as String)
 		return new
 	
+	var author_data = get_value_or_fallback.call("author", {})
+	
+	if author_data != {}:
+		author.uid = author_data["uid"]
+		author.username = author_data["username"]
+	
 	bid = get_value_or_fallback.call("bid", "")
 	title = get_value_or_fallback.call("title", "")
-	author = get_value_or_fallback.call("author", "")
 	keywords = array_to_string_array.call(get_value_or_fallback.call("keywords", []))
 	timestamp = get_value_or_fallback.call("timestamp", 0.0)
 	content = get_value_or_fallback.call("content", "")

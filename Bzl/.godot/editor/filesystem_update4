@@ -6,3 +6,9 @@ res://root/root.tscn
 res://login/Login.tscn
 res://login/Login.gd
 res://buzzes/BuzzContainer.gd
+res://gui/GUI.gd
+res://globals/BuzzManager.gd
+res://buzzes/BuzzData.gd
+res://buzzes/Buzz.gd
+res://buzzes/Searchbar.gd
+res://buzzes/searchbar.tscn

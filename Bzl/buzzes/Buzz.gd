@@ -24,10 +24,8 @@ func update_values():
 	if buzz_data == null or buzz_data.author == null:
 		return
 	
-	var author := await UserManager.get_user(buzz_data.author)
-	
 	title_label.text = buzz_data.title
-	author_label.text = author.username
+	author_label.text = buzz_data.author.username
 	lifetime_label.text = Time.get_date_string_from_unix_time(buzz_data.timestamp)
 	text_label.text = buzz_data.content
 	

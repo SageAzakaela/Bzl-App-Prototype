@@ -14,14 +14,4 @@ func _on_searchbar_search_entered(keywords: Array[String]):
 
 
 func _on_search_timout_timeout():
-	var buzz := BuzzData.new()
-	
-	buzz.author = UserManager.get_active_user().uid
-	buzz.title = "Whooooo hooo!! It works"
-	buzz.content = "I finally got buzz posting to work!!!"
-	buzz.keywords = ["update", "bzl", "news", "test"]
-	buzz.timestamp = Time.get_unix_time_from_system()
-	
-	#BuzzManager.create_buzz(buzz)
-	
-	buzz_container.display(await BuzzManager.fetch(current_keywords))
+	buzz_container.display(await BuzzManager.fast_fetch(current_keywords))
