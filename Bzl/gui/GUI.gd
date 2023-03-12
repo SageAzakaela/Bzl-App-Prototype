@@ -14,4 +14,4 @@ func _on_searchbar_search_entered(keywords: Array[String]):
 
 
 func _on_search_timout_timeout():
-	buzz_container.display(await BuzzManager.fast_fetch(current_keywords))
+	buzz_container.display(await BuzzManager.fetch(current_keywords))

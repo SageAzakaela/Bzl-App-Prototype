@@ -1,7 +1,7 @@
 extends Node
 
 
-func fast_fetch(keywords: Array[String]) -> Array[BuzzData]:
+func fetch(keywords: Array[String]) -> Array[BuzzData]:
 	var query := FirestoreQuery.new()
 	
 	query.from("buzzes")
@@ -14,30 +14,13 @@ func fast_fetch(keywords: Array[String]) -> Array[BuzzData]:
 	
 	var buzzes: Array[BuzzData]
 	
+	if result.data is String:
+		return buzzes
+	
 	for i in range(0, result.data.size()):
 		var new_buzz := BuzzData.new()
 		new_buzz.set_with_dict(result.data[i]["doc_fields"])
 		buzzes.append(new_buzz)
-	
-	return buzzes
-
-
-func fetch(keywords: Array[String]) -> Array[BuzzData]:
-	var buzzes: Array[BuzzData]
-	
-	var task: FirestoreTask = Firebase.Firestore.list("buzzes", 50)
-	var buzz_docs: Array = await task.listed_documents
-	
-	for i in range(0, buzz_docs.size()):
-		var tmp: BuzzData = await get_buzz(buzz_docs[i]["doc_name"])
-		
-		for j in range(0, keywords.size()):
-			if keywords[j] == "":
-				continue
-				
-			if tmp.keywords.has(keywords[j]):
-				buzzes.append(tmp)
-				break
 	
 	return buzzes
 
