@@ -62,5 +62,5 @@ func create_buzz(buzz: BuzzData):
 	
 	
 # -----< helpers >----- #
-func calculate_hash(content: String, timestamp: int):
+func calculate_hash(content: String, timestamp: float):
 	return "bid" + str(hash(content + str(timestamp)))

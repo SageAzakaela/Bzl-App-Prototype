@@ -60,13 +60,13 @@ func calculate_hash(email: String, password: String) -> String:
 
 
 # -----< Signals >----- #
-func on_sign_up_succeeded(auth_info: Dictionary):
+func on_sign_up_succeeded(_auth_info: Dictionary):
 	var add_task : FirestoreTask = DBManager.users_collection.add(_active_user.uid, _active_user.get_as_dict())
 	var document : FirestoreTask = await add_task.task_finished
 	
 	emit_signal("sign_up_succeeded")
 
-func on_sign_in_succeeded(auth_info: Dictionary):
+func on_sign_in_succeeded(_auth_info: Dictionary):
 	_active_user = await get_user(_active_user.uid)
 	
 	emit_signal("sign_in_succeeded")
