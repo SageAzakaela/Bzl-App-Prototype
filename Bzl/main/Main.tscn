@@ -1,17 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://damihgm8shwxu"]
+[gd_scene load_steps=3 format=3 uid="uid://dfwbcaguvm6uk"]
 
-[ext_resource type="Script" path="res://gui/GUI.gd" id="1_vgmmr"]
-[ext_resource type="PackedScene" uid="uid://nc7ejsa1nh3" path="res://buzzes/searchbar.tscn" id="2_wa7oe"]
-[ext_resource type="PackedScene" uid="uid://drr1mnwpmtuas" path="res://buzzes/BuzzContainer.tscn" id="3_86y67"]
+[ext_resource type="PackedScene" uid="uid://x4n6mgw3c6i4" path="res://main/content-pages/DiscoveryContent.tscn" id="2_7ebra"]
+[ext_resource type="PackedScene" uid="uid://b2kh2kbsvdyyy" path="res://main/content-pages/CreationContent/CreationContent.tscn" id="2_vnfgv"]
 
-[node name="GUI" type="Control"]
+[node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vgmmr")
 
 [node name="SearchTimout" type="Timer" parent="."]
 wait_time = 0.25
@@ -31,29 +29,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="Topbar" type="Panel" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Topbar"]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color(0.0666667, 0.0666667, 0.0666667, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Topbar"]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0
-
-[node name="Searchbar" parent="VBoxContainer/Topbar/MarginContainer" instance=ExtResource("2_wa7oe")]
-layout_mode = 2
-
 [node name="Main" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -71,6 +46,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.0666667, 0.0666667, 0.0666667, 1)
 
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Main/Sidebar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
 [node name="Content" type="Panel" parent="VBoxContainer/Main"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -83,6 +70,7 @@ anchor_bottom = 1.0
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Main/Content"]
+clip_contents = true
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -91,13 +79,11 @@ offset_top = 10.0
 offset_right = -10.0
 offset_bottom = -10.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Main/Content/MarginContainer"]
+[node name="DiscoveryContent" parent="VBoxContainer/Main/Content/MarginContainer" instance=ExtResource("2_7ebra")]
 layout_mode = 2
-horizontal_scroll_mode = 0
 
-[node name="BuzzContainer" parent="VBoxContainer/Main/Content/MarginContainer/ScrollContainer" instance=ExtResource("3_86y67")]
+[node name="CreationContent" parent="VBoxContainer/Main/Content/MarginContainer" instance=ExtResource("2_vnfgv")]
+visible = false
 layout_mode = 2
-container_path = NodePath("../..")
 
 [connection signal="timeout" from="SearchTimout" to="." method="_on_search_timout_timeout"]
-[connection signal="search_entered" from="VBoxContainer/Topbar/MarginContainer/Searchbar" to="." method="_on_searchbar_search_entered"]

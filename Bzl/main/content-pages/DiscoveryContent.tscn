@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://x4n6mgw3c6i4"]
+
+[ext_resource type="PackedScene" uid="uid://nc7ejsa1nh3" path="res://buzzes/searchbar.tscn" id="1_14bw7"]
+[ext_resource type="Script" path="res://main/content-pages/DiscoveryContent.gd" id="1_65qm1"]
+[ext_resource type="PackedScene" uid="uid://drr1mnwpmtuas" path="res://buzzes/BuzzContainer.tscn" id="1_m4kl7"]
+
+[node name="DiscoveryContent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_65qm1")
+
+[node name="SearchTimeout" type="Timer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Searchbar" parent="VBoxContainer" instance=ExtResource("1_14bw7")]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BuzzContainer" parent="VBoxContainer/ScrollContainer" instance=ExtResource("1_m4kl7")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[connection signal="timeout" from="SearchTimeout" to="." method="_on_search_timeout_timeout"]
+[connection signal="search_entered" from="VBoxContainer/Searchbar" to="." method="_on_searchbar_search_entered"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://nc7ejsa1nh3"]
+[gd_scene load_steps=3 format=3 uid="uid://nc7ejsa1nh3"]
 
 [ext_resource type="Script" path="res://buzzes/Searchbar.gd" id="1_gli0w"]
+[ext_resource type="StyleBox" uid="uid://cm0x03fw0227m" path="res://InputStyle.tres" id="2_ta6u7"]
 
 [node name="Searchbar" type="HBoxContainer"]
 alignment = 1
@@ -9,29 +10,47 @@ script = ExtResource("1_gli0w")
 [node name="SearchBox1" type="LineEdit" parent="."]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_ta6u7")
+theme_override_styles/focus = ExtResource("2_ta6u7")
+theme_override_styles/read_only = ExtResource("2_ta6u7")
 placeholder_text = "Keyword"
 
 [node name="SearchBox2" type="LineEdit" parent="."]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_ta6u7")
+theme_override_styles/focus = ExtResource("2_ta6u7")
+theme_override_styles/read_only = ExtResource("2_ta6u7")
 placeholder_text = "Keyword"
 
 [node name="SearchBox3" type="LineEdit" parent="."]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_ta6u7")
+theme_override_styles/focus = ExtResource("2_ta6u7")
+theme_override_styles/read_only = ExtResource("2_ta6u7")
 placeholder_text = "Keyword"
 
 [node name="SearchBox4" type="LineEdit" parent="."]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_ta6u7")
+theme_override_styles/focus = ExtResource("2_ta6u7")
+theme_override_styles/read_only = ExtResource("2_ta6u7")
 placeholder_text = "Keyword"
 
 [node name="SearchBox5" type="LineEdit" parent="."]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_ta6u7")
+theme_override_styles/focus = ExtResource("2_ta6u7")
+theme_override_styles/read_only = ExtResource("2_ta6u7")
 placeholder_text = "Keyword"
 
 [node name="SearchBox6" type="LineEdit" parent="."]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_styles/normal = ExtResource("2_ta6u7")
+theme_override_styles/focus = ExtResource("2_ta6u7")
+theme_override_styles/read_only = ExtResource("2_ta6u7")
 placeholder_text = "Keyword"

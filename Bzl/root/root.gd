@@ -14,5 +14,5 @@ func _ready():
 
 
 func _on_sign_in_succeeded():
-	$GUI.visible = true
+	$Main.visible = true
 	$Login.visible = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dinyt3g430uc8"]
+[gd_scene load_steps=7 format=3 uid="uid://dinyt3g430uc8"]
 
 [ext_resource type="Script" path="res://login/Login.gd" id="1_i1wbo"]
 [ext_resource type="Texture2D" uid="uid://c5ue0feld3yfg" path="res://resources/icons/user.png" id="1_nn3l6"]
 [ext_resource type="Texture2D" uid="uid://0s3kf1s27ttu" path="res://resources/icons/padlock.png" id="2_m0l5s"]
 [ext_resource type="StyleBox" uid="uid://dpjqfwy18vnvc" path="res://login/Login.tres" id="2_p7ehm"]
+[ext_resource type="StyleBox" uid="uid://cm0x03fw0227m" path="res://InputStyle.tres" id="3_aedt8"]
 [ext_resource type="Texture2D" uid="uid://dhs41m4f7cwe1" path="res://resources/icons/email.png" id="5_8r6c3"]
 
 [node name="Login" type="Control"]
@@ -54,9 +55,9 @@ expand_mode = 2
 [node name="Mail" type="LineEdit" parent="SignIn/MailHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = ExtResource("2_p7ehm")
-theme_override_styles/focus = ExtResource("2_p7ehm")
-theme_override_styles/read_only = ExtResource("2_p7ehm")
+theme_override_styles/normal = ExtResource("3_aedt8")
+theme_override_styles/focus = ExtResource("3_aedt8")
+theme_override_styles/read_only = ExtResource("3_aedt8")
 placeholder_text = "email"
 
 [node name="PasswordHBox" type="HBoxContainer" parent="SignIn"]

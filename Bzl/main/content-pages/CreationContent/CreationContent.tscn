@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2kh2kbsvdyyy"]
+
+[ext_resource type="PackedScene" uid="uid://nc7ejsa1nh3" path="res://buzzes/searchbar.tscn" id="1_4aj6k"]
+[ext_resource type="Script" path="res://main/content-pages/CreationContent/CreationContent.gd" id="1_hmwie"]
+[ext_resource type="StyleBox" uid="uid://cm0x03fw0227m" path="res://InputStyle.tres" id="3_edylv"]
+
+[node name="CreationContent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hmwie")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="TagInput" parent="VBoxContainer/MarginContainer" instance=ExtResource("1_4aj6k")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TitleInput" type="LineEdit" parent="VBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("3_edylv")
+theme_override_styles/focus = ExtResource("3_edylv")
+theme_override_styles/read_only = ExtResource("3_edylv")
+placeholder_text = "Title"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextInput" type="TextEdit" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("3_edylv")
+theme_override_styles/focus = ExtResource("3_edylv")
+theme_override_styles/read_only = ExtResource("3_edylv")
+placeholder_text = "Your text goes here..."
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+
+[node name="PostButton" type="Button" parent="VBoxContainer/MarginContainer4"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_edylv")
+theme_override_styles/hover = ExtResource("3_edylv")
+theme_override_styles/pressed = ExtResource("3_edylv")
+theme_override_styles/disabled = ExtResource("3_edylv")
+theme_override_styles/focus = ExtResource("3_edylv")
+text = "Post"
