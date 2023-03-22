@@ -38,8 +38,8 @@ func get_as_dict() -> Dictionary:
 		"bid": bid,
 		
 		"title": title, 
-		"author": author, 
-		"keywords": keywords, 
+		"author": {"uid": author.uid, "username": author.username}, 
+		"keywords": keywords,
 		"timestamp": timestamp,
 		"content": content 
 	}

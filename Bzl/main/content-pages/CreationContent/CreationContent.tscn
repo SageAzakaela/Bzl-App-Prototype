@@ -69,3 +69,6 @@ theme_override_styles/pressed = ExtResource("3_edylv")
 theme_override_styles/disabled = ExtResource("3_edylv")
 theme_override_styles/focus = ExtResource("3_edylv")
 text = "Post"
+
+[connection signal="search_entered" from="VBoxContainer/MarginContainer/TagInput" to="." method="_on_tag_input_search_entered"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer4/PostButton" to="." method="_on_post_button_pressed"]

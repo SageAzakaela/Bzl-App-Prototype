@@ -37,7 +37,14 @@ func get_buzz(bid: String) -> BuzzData:
 	return buzz
 
 
-func create_buzz(buzz: BuzzData):
+func create_buzz(title: String, content: String, keywords: Array[String]):
+	var buzz := BuzzData.new()
+	
+	buzz.author = UserManager.get_active_user()
+	buzz.title = title
+	buzz.content = content
+	buzz.keywords = keywords
+	buzz.timestamp = Time.get_unix_time_from_system()
 	buzz.bid = calculate_hash(buzz.content, buzz.timestamp)
 	
 	var add_task : FirestoreTask = DBManager.buzzes_collection.add(buzz.bid, buzz.get_as_dict())

@@ -24,7 +24,8 @@ func _ready():
 func _on_search_entered(id: int, text: String):
 	if not id in range(0, search_boxes.size()):
 		return
-		
+	
+	
 	keywords[id] = text
 	
 	search_entered.emit(keywords)

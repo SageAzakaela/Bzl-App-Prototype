@@ -15,9 +15,7 @@ class_name Buzz
 
 func _ready():
 	if update_on_startup:
-		hide()
-		await update_values()
-		show()
+		update_values()
 
 
 func update_values():	
@@ -32,6 +30,9 @@ func update_values():
 	keywords_label.text = ""
 	
 	for i in range(0, buzz_data.keywords.size()):
+		if buzz_data.keywords[i] == "":
+			continue
+		
 		keywords_label.text += "#" + buzz_data.keywords[i]
 		
 		if i != buzz_data.keywords.size() - 1:
