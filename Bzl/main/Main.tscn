@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfwbcaguvm6uk"]
+[gd_scene load_steps=4 format=3 uid="uid://dfwbcaguvm6uk"]
 
+[ext_resource type="Script" path="res://main/Main.gd" id="1_fovjg"]
 [ext_resource type="PackedScene" uid="uid://x4n6mgw3c6i4" path="res://main/content-pages/DiscoveryContent.tscn" id="2_7ebra"]
 [ext_resource type="PackedScene" uid="uid://b2kh2kbsvdyyy" path="res://main/content-pages/CreationContent/CreationContent.tscn" id="2_vnfgv"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fovjg")
 
 [node name="SearchTimout" type="Timer" parent="."]
 wait_time = 0.25
@@ -58,6 +60,17 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main/Sidebar/MarginContainer"]
+layout_mode = 2
+
+[node name="Discover" type="Button" parent="VBoxContainer/Main/Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Discover"
+
+[node name="Create" type="Button" parent="VBoxContainer/Main/Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Create"
+
 [node name="Content" type="Panel" parent="VBoxContainer/Main"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -79,7 +92,7 @@ offset_top = 10.0
 offset_right = -10.0
 offset_bottom = -10.0
 
-[node name="DiscoveryContent" parent="VBoxContainer/Main/Content/MarginContainer" instance=ExtResource("2_7ebra")]
+[node name="DiscoverContent" parent="VBoxContainer/Main/Content/MarginContainer" instance=ExtResource("2_7ebra")]
 layout_mode = 2
 
 [node name="CreationContent" parent="VBoxContainer/Main/Content/MarginContainer" instance=ExtResource("2_vnfgv")]
@@ -87,3 +100,5 @@ visible = false
 layout_mode = 2
 
 [connection signal="timeout" from="SearchTimout" to="." method="_on_search_timout_timeout"]
+[connection signal="pressed" from="VBoxContainer/Main/Sidebar/MarginContainer/VBoxContainer/Discover" to="." method="_on_discover_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main/Sidebar/MarginContainer/VBoxContainer/Create" to="." method="_on_create_pressed"]
